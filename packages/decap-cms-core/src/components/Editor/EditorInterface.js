@@ -47,24 +47,15 @@ function ReactSplitPaneGlobalStyles() {
     <Global
       styles={css`
         .Resizer.vertical {
-          width: 21px;
+          width: 2px;
           cursor: col-resize;
           position: relative;
           transition: background-color ${transitions.main};
-
-          &:before {
-            content: '';
-            width: 2px;
-            height: 100%;
-            position: relative;
-            left: 10px;
-            background-color: ${colors.textFieldBorder};
-            display: block;
-          }
+          background-color: ${colors.textFieldBorder};
 
           &:hover,
           &:active {
-            background-color: ${colorsRaw.GrayLight};
+            background-color: ${colorsRaw.blue};
           }
         }
       `}
