@@ -50,12 +50,26 @@ function ReactSplitPaneGlobalStyles() {
           width: 2px;
           cursor: col-resize;
           position: relative;
-          transition: background-color ${transitions.main};
-          background-color: ${colors.textFieldBorder};
+          background: none;
+
+          &:before {
+            content: '';
+            width: 2px;
+            height: 100%;
+            position: relative;
+            background-color: ${colors.textFieldBorder};
+            display: block;
+            z-index: 10;
+            transition: background-color ${transitions.main};
+          }
 
           &:hover,
           &:active {
-            background-color: ${colorsRaw.blue};
+            &:before {
+              width: 4px;
+              left: -1px;
+              background-color: ${colorsRaw.blue};
+            }
           }
         }
       `}
