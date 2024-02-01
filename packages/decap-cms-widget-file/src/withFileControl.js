@@ -177,7 +177,6 @@ const FileLinkList = styled.ul`
 const FileWidgetButton = styled.button`
   ${buttons.button};
   ${components.badge};
-  margin-bottom: 12px;
 `;
 
 const FileWidgetButtonRemove = styled.button`
@@ -442,21 +441,25 @@ export default function withFileControl({ forImage } = {}) {
           {forImage ? this.renderImages() : null}
           <div>
             {forImage ? null : this.renderFileLinks()}
-            <FileWidgetButton onClick={this.handleChange}>
-              {t(
-                `editor.editorWidgets.${subject}.${
-                  this.allowsMultiple() ? 'addMore' : 'chooseDifferent'
-                }`,
-              )}
-            </FileWidgetButton>
-            {field.get('choose_url', true) && !this.allowsMultiple() ? (
-              <FileWidgetButton onClick={this.handleUrl(subject)}>
-                {t(`editor.editorWidgets.${subject}.replaceUrl`)}
+            <div css={css`
+              display: flex;
+              gap: 10px;
+            `}>
+              <FileWidgetButton onClick={this.handleChange}>
+                {t(
+                  `editor.editorWidgets.${subject}.${this.allowsMultiple() ? 'addMore' : 'chooseDifferent'
+                  }`,
+                )}
               </FileWidgetButton>
-            ) : null}
-            <FileWidgetButtonRemove onClick={this.handleRemove}>
-              {t(`editor.editorWidgets.${subject}.remove${allowsMultiple ? 'All' : ''}`)}
-            </FileWidgetButtonRemove>
+              {field.get('choose_url', true) && !this.allowsMultiple() ? (
+                <FileWidgetButton onClick={this.handleUrl(subject)}>
+                  {t(`editor.editorWidgets.${subject}.replaceUrl`)}
+                </FileWidgetButton>
+              ) : null}
+              <FileWidgetButtonRemove onClick={this.handleRemove}>
+                {t(`editor.editorWidgets.${subject}.remove${allowsMultiple ? 'All' : ''}`)}
+              </FileWidgetButtonRemove>
+            </div>
           </div>
         </div>
       );
@@ -465,7 +468,10 @@ export default function withFileControl({ forImage } = {}) {
     renderNoSelection = subject => {
       const { t, field } = this.props;
       return (
-        <>
+        <span css={css`
+            display: flex;
+            gap: 10px;
+          `}>
           <FileWidgetButton onClick={this.handleChange}>
             {t(`editor.editorWidgets.${subject}.choose${this.allowsMultiple() ? 'Multiple' : ''}`)}
           </FileWidgetButton>
@@ -474,7 +480,7 @@ export default function withFileControl({ forImage } = {}) {
               {t(`editor.editorWidgets.${subject}.chooseUrl`)}
             </FileWidgetButton>
           ) : null}
-        </>
+        </span>
       );
     };
 
@@ -484,7 +490,12 @@ export default function withFileControl({ forImage } = {}) {
 
       return (
         <div className={classNameWrapper}>
-          <span>{value ? this.renderSelection(subject) : this.renderNoSelection(subject)}</span>
+          <span css={css`
+            display: flex;
+            gap: 10px;
+          `}>
+            {value ? this.renderSelection(subject) : this.renderNoSelection(subject)}
+          </span>
         </div>
       );
     }
