@@ -11,8 +11,7 @@ import {
   StyledDropdownButton,
   Loader,
   lengths,
-  components,
-  shadows,
+  components
 } from 'decap-cms-ui-default';
 
 import { createNewEntry } from '../../actions/collections';
@@ -38,10 +37,6 @@ const WorkflowTop = styled.div`
 const WorkflowTopRow = styled.div`
   display: flex;
   justify-content: space-between;
-
-  span[role='button'] {
-    ${shadows.dropDeep};
-  }
 `;
 
 const WorkflowTopHeading = styled.h1`
