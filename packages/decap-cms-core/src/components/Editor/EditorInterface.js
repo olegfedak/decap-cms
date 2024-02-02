@@ -100,7 +100,7 @@ const EditorContainer = styled.div`
   top: 0;
   left: 0;
   overflow: hidden;
-  padding-top: 66px;
+  padding-top: 56px;
   background-color: ${colors.background};
 `;
 
