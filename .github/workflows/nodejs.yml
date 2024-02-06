@@ -27,7 +27,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        node-version: [16.x, 18.x]
+        node-version: [18.x, 20.x]
     steps:
       - uses: actions/checkout@v3
         if: ${{ needs.changes.outputs.cms == 'true' }}
@@ -41,22 +41,22 @@ jobs:
         run: node --version && npm --version && yarn --version
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - name: install dependecies
-        run: yarn --frozen-lockfile --network-timeout 1000000 && yarn bootstrap
+        run: npm install
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - name: run unit tests
-        run: yarn test:ci
+        run: npm run test:ci
         env:
           CI: true
           NODE_OPTIONS: --max-old-space-size=4096
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - name: build demo site
-        run: yarn build:demo
+        run: npm run build:demo
         env:
           NODE_OPTIONS: --max-old-space-size=4096
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - uses: actions/upload-artifact@master
         with:
-          name: dev-test-website-${{ runner.os }}
+          name: dev-test-website-${{ runner.os }}-${{ matrix.node-version }}
           path: dev-test
         if: ${{ needs.changes.outputs.cms == 'true' }}
 
@@ -66,7 +66,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x, 18.x]
+        node-version: [18.x, 20.x]
       fail-fast: false
 
     steps:
@@ -77,11 +77,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           check-latest: true
-          cache: yarn
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - uses: actions/download-artifact@master
         with:
-          name: dev-test-website-${{ runner.os }}
+          name: dev-test-website-${{ runner.os }}-18.x
           path: dev-test
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - name: npm install
@@ -89,11 +88,11 @@ jobs:
           node --version
           npm --version
           yarn --version
-          yarn --frozen-lockfile
+          npm install
         if: ${{ needs.changes.outputs.cms == 'true' }}
       - name: e2e test
         run: |
-          yarn test:e2e:run-ci
+          npm run test:e2e:run-ci
         env:
           IS_FORK: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == true }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
