@@ -42,7 +42,6 @@ const AvatarPlaceholderIcon = styled(Icon)`
 
 const AppHeaderSiteLink = styled.a`
   font-size: 14px;
-  font-weight: 400;
   color: #7b8290;
   padding: 10px 16px;
 `;
@@ -84,6 +83,7 @@ function SettingsDropdown({ displayUrl, isTestRepo, imageUrl, onLogoutClick, t }
         </AppHeaderSiteLink>
       ) : null}
       <Dropdown
+        isInHeader={true}
         dropdownTopOverlap="50px"
         dropdownWidth="100px"
         dropdownPosition="right"
