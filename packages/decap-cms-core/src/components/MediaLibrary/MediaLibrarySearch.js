@@ -1,25 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Icon, lengths, colors, zIndex } from 'decap-cms-ui-default';
+import { Icon, lengths, colors, zIndex, transitions } from 'decap-cms-ui-default';
 
 const SearchContainer = styled.div`
-  height: 37px;
+  height: 36px;
   display: flex;
   align-items: center;
   position: relative;
-  width: 400px;
+
+  @media (max-width: 480px) {
+    grid-column: 1/-1;
+  }
 `;
 
 const SearchInput = styled.input`
-  background-color: #eff0f4;
+  background-color: transparent;
   border-radius: ${lengths.borderRadius};
-
   font-size: 14px;
-  padding: 10px 6px 10px 32px;
+  padding: 10px 6px 10px 36px;
   width: 100%;
   position: relative;
   z-index: ${zIndex.zIndex1};
+  transition: ${transitions.main};
 
   &:focus {
     outline: none;
@@ -30,7 +33,7 @@ const SearchInput = styled.input`
 const SearchIcon = styled(Icon)`
   position: absolute;
   top: 50%;
-  left: 6px;
+  left: 8px;
   z-index: ${zIndex.zIndex2};
   transform: translate(0, -50%);
 `;

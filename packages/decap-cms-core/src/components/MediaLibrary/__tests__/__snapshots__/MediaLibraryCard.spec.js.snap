@@ -7,9 +7,11 @@ exports[`MediaLibraryCard should match snapshot for draft image 1`] = `
   height: 240px;
   margin: 10px;
   border: solid 2px #dfdfe3;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .emotion-0:focus {
@@ -18,7 +20,6 @@ exports[`MediaLibraryCard should match snapshot for draft image 1`] = `
 
 .emotion-2 {
   height: 162px;
-  background-color: #f2f2f2;
   -webkit-background-size: 16px 16px;
   background-size: 16px 16px;
   -webkit-background-position: 0 0,8px 8px;
@@ -38,7 +39,6 @@ exports[`MediaLibraryCard should match snapshot for draft image 1`] = `
         #e6e6e6 75%,
         #e6e6e6
       );
-  box-shadow: inset 0 0 4px rgba(68, 74, 87, 0.3);
   border-bottom: solid 2px #dfdfe3;
   position: relative;
 }
@@ -48,7 +48,7 @@ exports[`MediaLibraryCard should match snapshot for draft image 1`] = `
   background-color: #f6d8ff;
   position: absolute;
   padding: 8px;
-  border-radius: 5px 0 5px 0;
+  border-radius: 0 0 6px 0;
 }
 
 .emotion-6 {
@@ -59,10 +59,11 @@ exports[`MediaLibraryCard should match snapshot for draft image 1`] = `
 }
 
 .emotion-8 {
-  color: #798291;
+  color: #717a89;
   padding: 8px;
   margin-top: 20px;
   overflow-wrap: break-word;
+  font-size: 14px;
   line-height: 1.3!important;
 }
 
@@ -103,9 +104,11 @@ exports[`MediaLibraryCard should match snapshot for non draft image 1`] = `
   height: 240px;
   margin: 10px;
   border: solid 2px #dfdfe3;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .emotion-0:focus {
@@ -114,7 +117,6 @@ exports[`MediaLibraryCard should match snapshot for non draft image 1`] = `
 
 .emotion-2 {
   height: 162px;
-  background-color: #f2f2f2;
   -webkit-background-size: 16px 16px;
   background-size: 16px 16px;
   -webkit-background-position: 0 0,8px 8px;
@@ -134,7 +136,6 @@ exports[`MediaLibraryCard should match snapshot for non draft image 1`] = `
         #e6e6e6 75%,
         #e6e6e6
       );
-  box-shadow: inset 0 0 4px rgba(68, 74, 87, 0.3);
   border-bottom: solid 2px #dfdfe3;
   position: relative;
 }
@@ -147,10 +148,11 @@ exports[`MediaLibraryCard should match snapshot for non draft image 1`] = `
 }
 
 .emotion-6 {
-  color: #798291;
+  color: #717a89;
   padding: 8px;
   margin-top: 20px;
   overflow-wrap: break-word;
+  font-size: 14px;
   line-height: 1.3!important;
 }
 
@@ -185,9 +187,11 @@ exports[`MediaLibraryCard should match snapshot for non viewable image 1`] = `
   height: 240px;
   margin: 10px;
   border: solid 2px #dfdfe3;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .emotion-0:focus {
@@ -196,7 +200,6 @@ exports[`MediaLibraryCard should match snapshot for non viewable image 1`] = `
 
 .emotion-2 {
   height: 162px;
-  background-color: #f2f2f2;
   -webkit-background-size: 16px 16px;
   background-size: 16px 16px;
   -webkit-background-position: 0 0,8px 8px;
@@ -216,7 +219,6 @@ exports[`MediaLibraryCard should match snapshot for non viewable image 1`] = `
         #e6e6e6 75%,
         #e6e6e6
       );
-  box-shadow: inset 0 0 4px rgba(68, 74, 87, 0.3);
   border-bottom: solid 2px #dfdfe3;
   position: relative;
 }
@@ -231,10 +233,11 @@ exports[`MediaLibraryCard should match snapshot for non viewable image 1`] = `
 }
 
 .emotion-6 {
-  color: #798291;
+  color: #717a89;
   padding: 8px;
   margin-top: 20px;
   overflow-wrap: break-word;
+  font-size: 14px;
   line-height: 1.3!important;
 }
 

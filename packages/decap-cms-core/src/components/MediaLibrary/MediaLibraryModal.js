@@ -9,46 +9,35 @@ import { colors } from 'decap-cms-ui-default';
 import { Modal } from '../UI';
 import MediaLibraryTop from './MediaLibraryTop';
 import MediaLibraryCardGrid from './MediaLibraryCardGrid';
+import MediaLibraryBottom from './MediaLibraryBottom';
 import EmptyMessage from './EmptyMessage';
 
 /**
  * Responsive styling needs to be overhauled. Current setup requires specifying
  * widths per breakpoint.
  */
-const cardWidth = `280px`;
+const cardWidth = `170px`;
 const cardHeight = `240px`;
 const cardMargin = `10px`;
 
 /**
  * cardWidth + cardMargin * 2 = cardOutsideWidth
  * (not using calc because this will be nested in other calcs)
+ * const cardOutsideWidth = `300px`;
  */
-const cardOutsideWidth = `300px`;
 
 const StyledModal = styled(Modal)`
   display: grid;
-  grid-template-rows: 120px auto;
-  width: calc(${cardOutsideWidth} + 20px);
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+  width: calc(100% - 10%);
+  height: calc(100% - 10%);
+  max-width: 1200px;
   background-color: ${props => props.isPrivate && colors.grayDark};
 
-  @media (min-width: 800px) {
-    width: calc(${cardOutsideWidth} * 2 + 20px);
-  }
-
-  @media (min-width: 1120px) {
-    width: calc(${cardOutsideWidth} * 3 + 20px);
-  }
-
-  @media (min-width: 1440px) {
-    width: calc(${cardOutsideWidth} * 4 + 20px);
-  }
-
-  @media (min-width: 1760px) {
-    width: calc(${cardOutsideWidth} * 5 + 20px);
-  }
-
-  @media (min-width: 2080px) {
-    width: calc(${cardOutsideWidth} * 6 + 20px);
+  @media (max-width: 800px) {
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
   }
 
   h1 {
@@ -150,6 +139,17 @@ function MediaLibraryModal({
         isPrivate={privateUpload}
         loadDisplayURL={loadDisplayURL}
         displayURLs={displayURLs}
+      />
+      <MediaLibraryBottom
+        t={t}
+        onDownload={handleDownload}
+        onDelete={handleDelete}
+        canInsert={canInsert}
+        onInsert={handleInsert}
+        hasSelection={hasSelection}
+        isPersisting={isPersisting}
+        isDeleting={isDeleting}
+        selectedFile={selectedFile}
       />
     </StyledModal>
   );

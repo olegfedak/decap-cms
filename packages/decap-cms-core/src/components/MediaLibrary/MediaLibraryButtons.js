@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import copyToClipboard from 'copy-text-to-clipboard';
 import { isAbsolutePath } from 'decap-cms-lib-util';
-import { buttons, shadows, zIndex } from 'decap-cms-ui-default';
+import { buttons, zIndex } from 'decap-cms-ui-default';
 
 import { FileUploadButton } from '../UI';
 
@@ -13,8 +13,8 @@ const styles = {
     ${buttons.button};
     ${buttons.default};
     display: inline-block;
-    margin-left: 15px;
-    margin-right: 2px;
+    flex: none;
+    flex-shrink: 0;
 
     &[disabled] {
       ${buttons.disabled};
@@ -26,8 +26,11 @@ const styles = {
 export const UploadButton = styled(FileUploadButton)`
   ${styles.button};
   ${buttons.gray};
-  ${shadows.dropMain};
-  margin-bottom: 0;
+
+  @media (max-width: 480px) {
+    grid-row: 1;
+    grid-column: 2;
+  }
 
   span {
     font-size: 14px;
@@ -52,12 +55,12 @@ export const UploadButton = styled(FileUploadButton)`
 
 export const DeleteButton = styled.button`
   ${styles.button};
-  ${buttons.lightRed};
+  ${buttons.lightGray};
 `;
 
 export const InsertButton = styled.button`
   ${styles.button};
-  ${buttons.green};
+  ${buttons.accent};
 `;
 
 const ActionButton = styled.button`
@@ -65,7 +68,7 @@ const ActionButton = styled.button`
   ${props =>
     !props.disabled &&
     css`
-      ${buttons.gray}
+      ${buttons.lightGray}
     `}
 `;
 
