@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { dirname, sep } from 'path';
 import { stringTemplate } from 'decap-cms-lib-widgets';
-import { Icon, colors, components } from 'decap-cms-ui-default';
+import { Icon, colors, components, lengths } from 'decap-cms-ui-default';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { sortBy } from 'lodash';
@@ -48,8 +48,8 @@ const TreeNavLink = styled(NavLink)`
   font-weight: 500;
   align-items: center;
   padding: 8px;
-  padding-left: ${props => props.depth * 16 + 18}px;
-  border-left: 2px solid #fff;
+  padding-left: ${props => props.depth * 10 + 10}px;
+  border-radius: ${lengths.borderRadius};
 
   ${Icon} {
     margin-right: 4px;

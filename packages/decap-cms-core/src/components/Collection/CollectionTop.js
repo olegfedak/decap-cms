@@ -13,7 +13,6 @@ const CollectionTopContainer = styled.div`
 
 const CollectionTopRow = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
 `;
 
@@ -24,14 +23,11 @@ const CollectionTopHeading = styled.h1`
 const CollectionTopNewButton = styled(Link)`
   ${buttons.button};
   ${buttons.default};
-  ${buttons.gray};
-
-  padding: 0 30px;
+  ${buttons.accent};
 `;
 
 const CollectionTopDescription = styled.p`
   ${components.cardTopDescription};
-  margin-bottom: 0;
 `;
 
 function getCollectionProps(collection) {

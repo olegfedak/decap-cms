@@ -3,11 +3,26 @@
 exports[`Collection should render connected component 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  margin: 28px 18px;
+  margin: 20px 18px;
 }
 
-.emotion-2 {
-  padding-left: 280px;
+@media (max-width: 800px) {
+  .emotion-0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .emotion-2 {
+    padding-left: 270px;
+  }
 }
 
 <div
@@ -45,11 +60,26 @@ exports[`Collection should render connected component 1`] = `
 exports[`Collection should render with collection with create url 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  margin: 28px 18px;
+  margin: 20px 18px;
 }
 
-.emotion-2 {
-  padding-left: 280px;
+@media (max-width: 800px) {
+  .emotion-0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .emotion-2 {
+    padding-left: 270px;
+  }
 }
 
 <div
@@ -78,11 +108,26 @@ exports[`Collection should render with collection with create url 1`] = `
 exports[`Collection should render with collection with create url and path 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  margin: 28px 18px;
+  margin: 20px 18px;
 }
 
-.emotion-2 {
-  padding-left: 280px;
+@media (max-width: 800px) {
+  .emotion-0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .emotion-2 {
+    padding-left: 270px;
+  }
 }
 
 <div
@@ -113,11 +158,26 @@ exports[`Collection should render with collection with create url and path 1`] =
 exports[`Collection should render with collection without create url 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  margin: 28px 18px;
+  margin: 20px 18px;
 }
 
-.emotion-2 {
-  padding-left: 280px;
+@media (max-width: 800px) {
+  .emotion-0 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 800px) {
+  .emotion-2 {
+    padding-left: 270px;
+  }
 }
 
 <div

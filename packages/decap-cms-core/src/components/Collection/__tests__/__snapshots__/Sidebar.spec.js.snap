@@ -4,12 +4,10 @@ exports[`Sidebar should render nested collection with filterTerm 1`] = `
 <DocumentFragment>
   .emotion-0 {
   box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.05),0 1px 3px 0 rgba(68, 74, 87, 0.1);
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #fff;
-  width: 250px;
   padding: 8px 0 12px;
-  position: fixed;
-  max-height: calc(100vh - 112px);
+  max-height: calc(100vh - 100px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -19,19 +17,34 @@ exports[`Sidebar should render nested collection with filterTerm 1`] = `
   flex-direction: column;
 }
 
+@media (min-width: 800px) {
+  .emotion-0 {
+    position: fixed;
+    width: 250px;
+  }
+}
+
 .emotion-2 {
   font-size: 22px;
   font-weight: 600;
-  line-height: 37px;
   padding: 0;
   margin: 10px 20px;
   color: #313d3e;
 }
 
 .emotion-4 {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
+  padding: 0 10px;
   list-style: none;
   overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
 }
 
 <aside
@@ -65,12 +78,10 @@ exports[`Sidebar should render sidebar with a nested collection 1`] = `
 <DocumentFragment>
   .emotion-0 {
   box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.05),0 1px 3px 0 rgba(68, 74, 87, 0.1);
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #fff;
-  width: 250px;
   padding: 8px 0 12px;
-  position: fixed;
-  max-height: calc(100vh - 112px);
+  max-height: calc(100vh - 100px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,19 +91,34 @@ exports[`Sidebar should render sidebar with a nested collection 1`] = `
   flex-direction: column;
 }
 
+@media (min-width: 800px) {
+  .emotion-0 {
+    position: fixed;
+    width: 250px;
+  }
+}
+
 .emotion-2 {
   font-size: 22px;
   font-weight: 600;
-  line-height: 37px;
   padding: 0;
   margin: 10px 20px;
   color: #313d3e;
 }
 
 .emotion-4 {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
+  padding: 0 10px;
   list-style: none;
   overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
 }
 
 <aside
@@ -125,12 +151,10 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
 <DocumentFragment>
   .emotion-0 {
   box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.05),0 1px 3px 0 rgba(68, 74, 87, 0.1);
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #fff;
-  width: 250px;
   padding: 8px 0 12px;
-  position: fixed;
-  max-height: calc(100vh - 112px);
+  max-height: calc(100vh - 100px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -140,19 +164,34 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
   flex-direction: column;
 }
 
+@media (min-width: 800px) {
+  .emotion-0 {
+    position: fixed;
+    width: 250px;
+  }
+}
+
 .emotion-2 {
   font-size: 22px;
   font-weight: 600;
-  line-height: 37px;
   padding: 0;
   margin: 10px 20px;
   color: #313d3e;
 }
 
 .emotion-4 {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
+  padding: 0 10px;
   list-style: none;
   overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .emotion-6 {
@@ -166,9 +205,9 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 8px 18px;
-  border-left: 2px solid #fff;
+  padding: 8px 10px;
   z-index: -1;
+  border-radius: 6px;
 }
 
 .emotion-6 mocked-icon {
@@ -181,8 +220,8 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
 .emotion-6:hover,
 .emotion-6:active,
 .emotion-6.sidebar-active {
-  color: #3a69c7;
-  background-color: #e8f5fe;
+  color: #683bab;
+  background-color: #683bab19;
   border-left-color: #4863c6;
 }
 
@@ -222,12 +261,10 @@ exports[`Sidebar should render sidebar without search 1`] = `
 <DocumentFragment>
   .emotion-0 {
   box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.05),0 1px 3px 0 rgba(68, 74, 87, 0.1);
-  border-radius: 5px;
+  border-radius: 6px;
   background-color: #fff;
-  width: 250px;
   padding: 8px 0 12px;
-  position: fixed;
-  max-height: calc(100vh - 112px);
+  max-height: calc(100vh - 100px);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -237,19 +274,34 @@ exports[`Sidebar should render sidebar without search 1`] = `
   flex-direction: column;
 }
 
+@media (min-width: 800px) {
+  .emotion-0 {
+    position: fixed;
+    width: 250px;
+  }
+}
+
 .emotion-2 {
   font-size: 22px;
   font-weight: 600;
-  line-height: 37px;
   padding: 0;
   margin: 10px 20px;
   color: #313d3e;
 }
 
 .emotion-4 {
-  margin: 12px 0 0;
+  margin: 10px 0 0;
+  padding: 0 10px;
   list-style: none;
   overflow: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .emotion-6 {
@@ -263,9 +315,9 @@ exports[`Sidebar should render sidebar without search 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 8px 18px;
-  border-left: 2px solid #fff;
+  padding: 8px 10px;
   z-index: -1;
+  border-radius: 6px;
 }
 
 .emotion-6 mocked-icon {
@@ -278,8 +330,8 @@ exports[`Sidebar should render sidebar without search 1`] = `
 .emotion-6:hover,
 .emotion-6:active,
 .emotion-6.sidebar-active {
-  color: #3a69c7;
-  background-color: #e8f5fe;
+  color: #683bab;
+  background-color: #683bab19;
   border-left-color: #4863c6;
 }
 
