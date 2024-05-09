@@ -11,7 +11,7 @@ import {
   StyledDropdownButton,
   Loader,
   lengths,
-  components
+  components,
 } from 'decap-cms-ui-default';
 
 import { createNewEntry } from '../../actions/collections';
@@ -26,8 +26,10 @@ import { EDITORIAL_WORKFLOW, status } from '../../constants/publishModes';
 import WorkflowList from './WorkflowList';
 
 const WorkflowContainer = styled.div`
+  width: 100%;
+  max-width: 1440px;
   padding: ${lengths.pageMargin} 0;
-  height: 100vh;
+  overflow-y: hidden;
 `;
 
 const WorkflowTop = styled.div`

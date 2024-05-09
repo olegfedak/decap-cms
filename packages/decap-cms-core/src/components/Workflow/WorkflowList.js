@@ -13,9 +13,42 @@ import WorkflowCard from './WorkflowCard';
 import { selectEntryCollectionTitle } from '../../reducers/collections';
 
 const WorkflowListContainer = styled.div`
-  min-height: 60%;
-  display: grid;
-  grid-template-columns: 33.3% 33.3% 33.3%;
+  height: calc(100vh - 80px);
+  display: flex;
+  gap: 16px;
+  margin: 0 -16px;
+  padding-inline: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+
+  & > div {
+    scroll-snap-align: center;
+
+    @media (max-width: 460px) {
+      min-width: 80vw;
+    }
+
+    @media (min-width: 461px) and (max-width: 640px) {
+      min-width: 70vw;
+    }
+
+    @media (min-width: 641px) and (max-width: 780px) {
+      min-width: 60vw;
+    }
+
+    @media (min-width: 781px) and (max-width: 900px) {
+      min-width: 50vw;
+    }
+
+    @media (min-width: 901px) and (max-width: 1000px) {
+      min-width: 40vw;
+    }
+
+    @media (min-width: 1001px) {
+      width: 33.33%;
+    }
+  }
 `;
 
 const WorkflowListContainerOpenAuthoring = styled.div`
@@ -41,26 +74,34 @@ const styles = {
         display: block;
         position: absolute;
         width: 2px;
-        height: 80%;
-        top: 76px;
+        height: 100%;
+        top: 58px;
         background-color: ${colors.textFieldBorder};
       }
 
       &:before {
-        left: -23px;
+        left: -12px;
       }
 
       &:after {
-        right: -23px;
+        right: -12px;
       }
     `,
   column: css`
-    margin: 0 20px;
     transition: background-color 0.5s ease;
     border: 2px dashed transparent;
     border-radius: 4px;
-    position: relative;
     height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    & > div {
+      position: sticky;
+      top: 0;
+      overflow-y: scroll;
+      height: 100%;
+    }
   `,
   columnHovered: css`
     border-color: ${colors.active};
@@ -80,9 +121,11 @@ const styles = {
 const ColumnHeader = styled.h2`
   font-size: 20px;
   font-weight: normal;
-  padding: 4px 14px;
+  padding: 4px 20px;
   border-radius: ${lengths.borderRadius};
-  margin-bottom: 28px;
+  position: sticky;
+  top: 0;
+  flex: content;
 
   ${props =>
     props.name === 'draft' &&
@@ -106,12 +149,13 @@ const ColumnHeader = styled.h2`
     `}
 `;
 
-const ColumnCount = styled.p`
-  font-size: 13px;
-  font-weight: 500;
-  color: ${colors.text};
-  text-transform: uppercase;
-  margin-bottom: 6px;
+const ColumnName = styled.div`
+  display: inline-block;
+`;
+
+const ColumnCount = styled.div`
+  display: inline-block;
+  margin-inline-start: 10px;
 `;
 
 // This is a namespace so that we can only drop these elements on a DropTarget with the same
@@ -176,7 +220,7 @@ class WorkflowList extends React.Component {
         >
           {(connect, { isHovered }) =>
             connect(
-              <div style={{ height: '100%' }}>
+              <div style={{ 'min-height': '100%' }}>
                 <div
                   css={[
                     styles.column,
@@ -187,13 +231,14 @@ class WorkflowList extends React.Component {
                   ]}
                 >
                   <ColumnHeader name={currColumn}>
-                    {getColumnHeaderText(currColumn, this.props.t)}
+                    <ColumnName>{getColumnHeaderText(currColumn, this.props.t)}</ColumnName>
+                    <ColumnCount>
+                      {this.props.t('workflow.workflowList.currentEntries', {
+                        smart_count: currEntries.size,
+                      })}
+                    </ColumnCount>
                   </ColumnHeader>
-                  <ColumnCount>
-                    {this.props.t('workflow.workflowList.currentEntries', {
-                      smart_count: currEntries.size,
-                    })}
-                  </ColumnCount>
+
                   {this.renderColumns(currEntries, currColumn)}
                 </div>
               </div>,

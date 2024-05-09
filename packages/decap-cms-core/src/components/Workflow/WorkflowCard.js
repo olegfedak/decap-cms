@@ -23,7 +23,7 @@ const styles = {
 
 const WorkflowLink = styled(Link)`
   display: block;
-  padding: 0 18px 18px;
+  padding: 0 20px 18px;
   height: 200px;
   overflow: hidden;
 `;
@@ -32,7 +32,7 @@ const CardCollection = styled.div`
   font-size: 14px;
   color: ${colors.textLead};
   text-transform: uppercase;
-  margin-top: 12px;
+  margin-top: 18px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -61,7 +61,7 @@ const CardButtonContainer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 12px 18px;
+  padding: 18px 20px;
   display: flex;
   opacity: 0;
   transition: opacity ${transitions.main};
@@ -88,7 +88,7 @@ const PublishButton = styled.button`
 
 const WorkflowCardContainer = styled.div`
   ${components.card};
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   position: relative;
   overflow: hidden;
 
