@@ -12,9 +12,12 @@ import { selectEntryCollectionTitle } from '../../../reducers/collections';
 const ListCard = styled.li`
   ${components.card};
   width: ${lengths.topCardWidth};
-  margin-left: 12px;
-  margin-bottom: 10px;
   overflow: hidden;
+  margin: 0 0 10px 10px;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 const ListCardLink = styled(Link)`
@@ -29,11 +32,18 @@ const ListCardLink = styled(Link)`
 
 const GridCard = styled.li`
   ${components.card};
-  flex: 0 0 335px;
-  height: 240px;
   overflow: hidden;
-  margin-left: 12px;
-  margin-bottom: 16px;
+  flex-basis: calc(33.33% - 10px);
+  margin: 0 0 10px 10px;
+  max-height: 350px;
+  min-height: 310px;
+
+  @media (max-width: 1100px) {
+    flex-basis: calc(50% - 10px);
+  }
+  @media (max-width: 480px) {
+    flex-basis: 100%;
+  }
 `;
 
 const GridCardLink = styled(Link)`
@@ -86,7 +96,7 @@ const CardImage = styled.div`
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 150px;
+  height: 240px;
 `;
 
 function EntryCard({
