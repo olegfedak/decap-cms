@@ -30,16 +30,17 @@ exports[`GitGatewayAuthenticationPage should render with identity error 1`] = `
 
 .emotion-4 {
   border: 0;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 12px 0 rgba(68, 74, 87, 0.15),0 1px 3px 0 rgba(68, 74, 87, 0.25);
+  overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 10px 25px 0 rgba(68, 74, 87, 0.2),0 0px 1px 0px rgba(68, 74, 87, 0.5);
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 15px;
-  background-color: #798291;
-  color: #fff;
-  background-color: #313d3e;
+  padding: 0 20px;
+  background-color: #717a89;
   color: #fff;
   padding: 0 12px;
   margin-top: 0;
@@ -61,8 +62,9 @@ exports[`GitGatewayAuthenticationPage should render with identity error 1`] = `
 }
 
 .emotion-4[disabled] {
-  background-color: #eff0f4;
-  color: #798291;
+  background-color: #717a8926;
+  color: #717a89;
+  opacity: 0.5;
   cursor: default;
 }
 
@@ -75,6 +77,8 @@ exports[`GitGatewayAuthenticationPage should render with identity error 1`] = `
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   color: #c4c6d2;
   position: absolute;
   bottom: 10px;
@@ -168,16 +172,17 @@ exports[`GitGatewayAuthenticationPage should render with no identity error 1`] =
 
 .emotion-4 {
   border: 0;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 12px 0 rgba(68, 74, 87, 0.15),0 1px 3px 0 rgba(68, 74, 87, 0.25);
+  overflow: hidden;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 10px 25px 0 rgba(68, 74, 87, 0.2),0 0px 1px 0px rgba(68, 74, 87, 0.5);
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 15px;
-  background-color: #798291;
-  color: #fff;
-  background-color: #313d3e;
+  padding: 0 20px;
+  background-color: #717a89;
   color: #fff;
   padding: 0 12px;
   margin-top: 0;
@@ -199,8 +204,9 @@ exports[`GitGatewayAuthenticationPage should render with no identity error 1`] =
 }
 
 .emotion-4[disabled] {
-  background-color: #eff0f4;
-  color: #798291;
+  background-color: #717a8926;
+  color: #717a89;
+  opacity: 0.5;
   cursor: default;
 }
 
@@ -213,6 +219,8 @@ exports[`GitGatewayAuthenticationPage should render with no identity error 1`] =
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   color: #c4c6d2;
   position: absolute;
   bottom: 10px;
