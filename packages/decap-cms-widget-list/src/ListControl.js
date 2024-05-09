@@ -24,6 +24,7 @@ import {
   colors,
   lengths,
   FieldLabel,
+  borders,
 } from 'decap-cms-ui-default';
 import { stringTemplate, validations } from 'decap-cms-lib-widgets';
 
@@ -39,16 +40,21 @@ const ObjectControl = DecapCmsWidgetObject.controlComponent;
 const ListItem = styled.div();
 
 const StyledListItemTopBar = styled(ListItemTopBar)`
-  background-color: ${colors.textFieldBorder};
+  border: ${borders.textField};
+  border-color: ${props => (props.error ? colors.errorText : colors.textFieldBorder)};
+  border-bottom: 0;
+  background-color: ${colors.inputBackground};
 `;
 
 const NestedObjectLabel = styled.div`
   display: ${props => (props.collapsed ? 'block' : 'none')};
-  border-top: 0;
   color: ${props => (props.error ? colors.errorText : 'inherit')};
-  background-color: ${colors.textFieldBorder};
-  padding: 13px;
+  border: ${borders.textField};
+  border-color: ${props => (props.error ? colors.errorText : colors.textFieldBorder)};
+  border-top: 0;
   border-radius: 0 0 ${lengths.borderRadius} ${lengths.borderRadius};
+  background-color: ${colors.inputBackground};
+  padding: 13px;
 `;
 
 const styleStrings = {
@@ -62,11 +68,7 @@ const styleStrings = {
 
 const styles = {
   listControlItem: css`
-    margin-top: 18px;
-
-    &:first-of-type {
-      margin-top: 26px;
-    }
+    margin-block-end: 14px;
   `,
   listControlItemCollapsed: css`
     padding-bottom: 0;
@@ -102,7 +104,7 @@ function SortableList({ items, children, onSortEnd, keys }) {
 }
 
 function SortableListItem(props) {
-  const { setNodeRef, transform, transition } = useSortable({
+  const { setNodeRef, transform, transition, classNameWrapper } = useSortable({
     id: props.id,
   });
 
@@ -119,6 +121,7 @@ function SortableListItem(props) {
       ref={setNodeRef}
       style={style}
       css={[styles.listControlItem, collapsed && styles.listControlItemCollapsed]}
+      className={classNameWrapper}
     >
       {props.children}
     </ListItem>
@@ -618,6 +621,7 @@ export default class ListControl extends React.Component {
           id={key}
           onRemove={partial(this.handleRemove, index)}
           data-testid={`styled-list-item-top-bar-${key}`}
+          error={hasError}
         />
         <NestedObjectLabel collapsed={collapsed} error={hasError}>
           {this.objectLabel(item)}

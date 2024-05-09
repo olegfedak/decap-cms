@@ -75,7 +75,7 @@ const StyledListItemTopBar = styled(ListItemTopBar)`
   display: flex;
   justify-content: space-between;
   height: 26px;
-  border-radius: ${lengths.borderRadius} ${lengths.borderRadius} 0 0;
+  border-radius: 0 ${lengths.borderRadius} 0 0;
   position: relative;
 `;
 

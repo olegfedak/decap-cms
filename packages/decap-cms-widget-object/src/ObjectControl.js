@@ -8,7 +8,7 @@ import { stringTemplate } from 'decap-cms-lib-widgets';
 
 const styleStrings = {
   nestedObjectControl: `
-    padding: 6px 14px 14px;
+    padding: 6px 14px 0;
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;

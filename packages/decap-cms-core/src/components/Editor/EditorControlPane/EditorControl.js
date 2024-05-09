@@ -70,20 +70,15 @@ const styleStrings = {
 };
 
 const ControlContainer = styled.div`
-  margin-top: 16px;
-
-  &:first-of-type {
-    margin-top: 36px;
-  }
+  margin-block-end: 16px;
 `;
 
 const ControlErrorsList = styled.ul`
   list-style-type: none;
-  font-size: 12px;
+  font-size: 13px;
   color: ${colors.errorText};
   margin-bottom: 5px;
   text-align: right;
-  text-transform: uppercase;
   position: relative;
   font-weight: 600;
   top: 20px;

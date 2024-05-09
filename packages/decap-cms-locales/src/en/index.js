@@ -142,7 +142,7 @@ const en = {
       deleting: 'Deleting...',
       updating: 'Updating...',
       status: 'Status: %{status}',
-      backCollection: ' Writing in %{collectionLabel} collection',
+      backCollection: '%{collectionLabel} collection',
       unsavedChanges: 'Unsaved Changes',
       changesSaved: 'Changes saved',
       draft: 'Draft',
@@ -288,7 +288,7 @@ const en = {
     workflow: {
       loading: 'Loading Editorial Workflow Entries',
       workflowHeading: 'Editorial Workflow',
-      newPost: 'New Post',
+      newPost: 'New Entry',
       description:
         '%{smart_count} entry waiting for review, %{readyCount} ready to go live. |||| %{smart_count} entries waiting for review, %{readyCount} ready to go live. ',
       dateFormat: 'MMMM D',
@@ -310,7 +310,7 @@ const en = {
       draftHeader: 'Drafts',
       inReviewHeader: 'In Review',
       readyHeader: 'Ready',
-      currentEntries: '%{smart_count} entry |||| %{smart_count} entries',
+      currentEntries: '%{smart_count} |||| %{smart_count}',
     },
   },
 };
