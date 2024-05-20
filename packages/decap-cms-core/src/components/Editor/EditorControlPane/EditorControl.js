@@ -70,7 +70,7 @@ const styleStrings = {
 };
 
 const ControlContainer = styled.div`
-  margin-block-end: 16px;
+  margin-block-end: 20px;
 `;
 
 const ControlErrorsList = styled.ul`
@@ -82,15 +82,17 @@ const ControlErrorsList = styled.ul`
   position: relative;
   font-weight: 600;
   top: 20px;
+  margin-block-start: -21px;
 `;
 
 export const ControlHint = styled.p`
   margin-bottom: 0;
-  padding: 3px 0;
+  padding: 6px 0;
   font-size: 12px;
   color: ${props =>
     props.error ? colors.errorText : props.active ? colors.active : colors.controlLabel};
   transition: color ${transitions.main};
+  line-height: 1.4;
 `;
 
 function LabelComponent({ field, isActive, hasErrors, uniqueFieldId, isFieldOptional, t }) {

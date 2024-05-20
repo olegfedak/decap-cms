@@ -118,7 +118,7 @@ const shadows = {
     box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.1),0  1px 8px 0 rgba(68, 74, 87, 0.1);
   `,
   dropDeep: `
-    box-shadow: 0 10px 25px 0 rgba(68, 74, 87, 0.2),0 0px 1px 0px rgba(68, 74, 87, 0.5);
+    box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5)
   `,
   inset: `
     box-shadow: inset 0 0 4px rgba(68, 74, 87, 0.3);
@@ -210,7 +210,7 @@ const buttons = {
     &:focus,
     &:hover {
       color: ${colorsRaw.accent};
-      box-shadow: 0 0 0 1px ${colorsRaw.accent} 56, 0 1px 2px 0 ${colorsRaw.accent}36;
+      box-shadow: 0 0 0 1px ${colorsRaw.accent}56, 0 1px 2px 0 ${colorsRaw.accent}36;
     }
   `,
   medium: css`
@@ -229,10 +229,23 @@ const buttons = {
   accent: css`
     background-color: ${colorsRaw.accent};
     color: ${colorsRaw.white};
+
+    &:hover {
+      background: oklch(from ${colorsRaw.accent} calc(l + 0.05) c h);
+    }
+    &:focus,
+    &:active {
+      background: oklch(from ${colorsRaw.accent} calc(l - 0.05) c h);
+    }
   `,
   lightAccent: css`
-    background-color: ${colorsRaw.accentLight};
-    color: ${colorsRaw.accent};
+    background: ${colors.activeBackground};
+    color: ${colors.active};
+
+    &:focus,
+    &:hover {
+      background: oklch(from ${colors.activeBackground} l c h / calc(alpha + 5%));
+    }
   `,
   gray: css`
     background-color: ${colorsRaw.gray};
@@ -247,6 +260,11 @@ const buttons = {
   lightGray: css`
     background-color: ${colorsRaw.grayLight};
     color: ${colorsRaw.gray};
+
+    &:focus,
+    &:hover {
+      background-color: oklch(from ${colorsRaw.grayLight} l c h / calc(alpha + 5%));
+    }
   `,
   grayText: css`
     background-color: transparent;
@@ -459,6 +477,10 @@ function GlobalStyles() {
   return (
     <Global
       styles={css`
+        :root {
+          --accent: #683bab;
+        }
+
         *,
         *:before,
         *:after {
@@ -487,7 +509,7 @@ function GlobalStyles() {
         body {
           font-family: ${fonts.primary};
           font-weight: normal;
-          background-color: ${colors.background};
+          background-color: ${colorsRaw.gray}15;
           color: ${colors.text};
           margin: 0;
         }

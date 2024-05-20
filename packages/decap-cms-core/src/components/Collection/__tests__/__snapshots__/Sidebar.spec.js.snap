@@ -47,6 +47,18 @@ exports[`Sidebar should render nested collection with filterTerm 1`] = `
   gap: 2px;
 }
 
+.emotion-4>li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1;
+}
+
 <aside
     class="emotion-0 emotion-1"
   >
@@ -119,6 +131,18 @@ exports[`Sidebar should render sidebar with a nested collection 1`] = `
   -ms-flex-direction: column;
   flex-direction: column;
   gap: 2px;
+}
+
+.emotion-4>li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1;
 }
 
 <aside
@@ -194,6 +218,18 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
   gap: 2px;
 }
 
+.emotion-4>li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1;
+}
+
 .emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -222,7 +258,6 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
 .emotion-6.sidebar-active {
   color: #683bab;
   background-color: #683bab19;
-  border-left-color: #4863c6;
 }
 
 <aside
@@ -304,6 +339,18 @@ exports[`Sidebar should render sidebar without search 1`] = `
   gap: 2px;
 }
 
+.emotion-4>li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 1;
+}
+
 .emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -332,7 +379,6 @@ exports[`Sidebar should render sidebar without search 1`] = `
 .emotion-6.sidebar-active {
   color: #683bab;
   background-color: #683bab19;
-  border-left-color: #4863c6;
 }
 
 <aside

@@ -104,8 +104,6 @@ exports[`EditorToolbar should render normal save button 1`] = `
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -133,6 +131,15 @@ exports[`EditorToolbar should render normal save button 1`] = `
   color: currentColor;
 }
 
+.emotion-15:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-15:focus,
+.emotion-15:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-17 {
   border: 0;
   border-radius: 6px;
@@ -151,6 +158,11 @@ exports[`EditorToolbar should render normal save button 1`] = `
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-17:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-19 {
@@ -189,7 +201,7 @@ exports[`EditorToolbar should render normal save button 1`] = `
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -356,8 +368,6 @@ exports[`EditorToolbar should render normal save button 2`] = `
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -385,6 +395,15 @@ exports[`EditorToolbar should render normal save button 2`] = `
   color: currentColor;
 }
 
+.emotion-15:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-15:focus,
+.emotion-15:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-17 {
   border: 0;
   border-radius: 6px;
@@ -403,6 +422,11 @@ exports[`EditorToolbar should render normal save button 2`] = `
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-17:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-19 {
@@ -441,7 +465,7 @@ exports[`EditorToolbar should render normal save button 2`] = `
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -622,6 +646,11 @@ exports[`EditorToolbar should render with default props 1`] = `
   color: #717a89;
 }
 
+.emotion-14:hover {
+  background-color: #fcefea;
+  color: #D60032;
+}
+
 .emotion-16 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -658,7 +687,7 @@ exports[`EditorToolbar should render with default props 1`] = `
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -809,6 +838,15 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -842,8 +880,6 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -851,7 +887,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab19;
+  background: #683bab19;
   color: #683bab;
 }
 
@@ -869,6 +905,11 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   top: 16px;
   right: 10px;
   color: currentColor;
+}
+
+.emotion-17:focus,
+.emotion-17:hover {
+  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
 }
 
 .emotion-19 {
@@ -889,6 +930,11 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-19:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-21 {
@@ -927,7 +973,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -1090,6 +1136,15 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -1123,8 +1178,6 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -1132,7 +1185,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab19;
+  background: #683bab19;
   color: #683bab;
 }
 
@@ -1150,6 +1203,11 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   top: 16px;
   right: 10px;
   color: currentColor;
+}
+
+.emotion-17:focus,
+.emotion-17:hover {
+  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
 }
 
 .emotion-19 {
@@ -1249,7 +1307,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -1439,6 +1497,15 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -1472,8 +1539,6 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -1481,7 +1546,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab19;
+  background: #683bab19;
   color: #683bab;
 }
 
@@ -1499,6 +1564,11 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   top: 16px;
   right: 10px;
   color: currentColor;
+}
+
+.emotion-17:focus,
+.emotion-17:hover {
+  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
 }
 
 .emotion-19 {
@@ -1519,6 +1589,11 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-19:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-21 {
@@ -1557,7 +1632,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -1720,6 +1795,15 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -1753,8 +1837,6 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -1762,7 +1844,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab19;
+  background: #683bab19;
   color: #683bab;
 }
 
@@ -1780,6 +1862,11 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   top: 16px;
   right: 10px;
   color: currentColor;
+}
+
+.emotion-17:focus,
+.emotion-17:hover {
+  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
 }
 
 .emotion-19 {
@@ -1861,7 +1948,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2046,6 +2133,15 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -2079,8 +2175,6 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -2088,7 +2182,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab19;
+  background: #683bab19;
   color: #683bab;
 }
 
@@ -2106,6 +2200,11 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   top: 16px;
   right: 10px;
   color: currentColor;
+}
+
+.emotion-17:focus,
+.emotion-17:hover {
+  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
 }
 
 .emotion-19 {
@@ -2126,6 +2225,11 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-19:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-21 {
@@ -2164,7 +2268,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2327,6 +2431,15 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -2360,8 +2473,6 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   line-height: 36px;
   font-weight: 500;
   padding: 0 20px;
-  background-color: #683bab;
-  color: #fff;
   display: block;
   padding-left: 20px;
   padding-right: 35px;
@@ -2369,7 +2480,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab19;
+  background: #683bab19;
   color: #683bab;
 }
 
@@ -2387,6 +2498,11 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   top: 16px;
   right: 10px;
   color: currentColor;
+}
+
+.emotion-17:focus,
+.emotion-17:hover {
+  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
 }
 
 .emotion-19 {
@@ -2486,7 +2602,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2676,6 +2792,15 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -2701,6 +2826,11 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-14:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-16 {
@@ -2739,7 +2869,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2889,6 +3019,15 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -2932,7 +3071,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3077,6 +3216,15 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -3102,6 +3250,11 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-14:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-16 {
@@ -3140,7 +3293,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3290,6 +3443,15 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -3315,6 +3477,11 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-14:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-16 {
@@ -3353,7 +3520,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3503,6 +3670,15 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -3528,6 +3704,11 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-14:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-16 {
@@ -3566,7 +3747,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3716,6 +3897,15 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #fff;
 }
 
+.emotion-12:hover {
+  background: oklch(from #683bab calc(l + 0.05) c h);
+}
+
+.emotion-12:focus,
+.emotion-12:active {
+  background: oklch(from #683bab calc(l - 0.05) c h);
+}
+
 .emotion-12[disabled] {
   background-color: #717a8926;
   color: #717a89;
@@ -3741,6 +3931,11 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   display: block;
   background-color: transparent;
   color: #717a89;
+}
+
+.emotion-14:hover {
+  background-color: #fcefea;
+  color: #D60032;
 }
 
 .emotion-16 {
@@ -3779,7 +3974,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-1ukbwgl-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div

@@ -12,6 +12,7 @@ import {
   Loader,
   lengths,
   components,
+  buttons,
 } from 'decap-cms-ui-default';
 
 import { createNewEntry } from '../../actions/collections';
@@ -47,6 +48,10 @@ const WorkflowTopHeading = styled.h1`
 
 const WorkflowTopDescription = styled.p`
   ${components.cardTopDescription};
+`;
+
+const WorkflowNewEntryButton = styled(StyledDropdownButton)`
+  ${buttons.accent};
 `;
 
 class Workflow extends Component {
@@ -98,7 +103,7 @@ class Workflow extends Component {
               dropdownPosition="left"
               dropdownTopOverlap="40px"
               renderButton={() => (
-                <StyledDropdownButton>{t('workflow.workflow.newPost')}</StyledDropdownButton>
+                <WorkflowNewEntryButton>{t('workflow.workflow.newPost')}</WorkflowNewEntryButton>
               )}
             >
               {collections

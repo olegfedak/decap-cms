@@ -70,15 +70,18 @@ const CardButtonContainer = styled.div`
 
 const DeleteButton = styled.button`
   ${styles.button};
-  background-color: ${colorsRaw.redLight};
-  color: ${colorsRaw.red};
+  ${buttons.lightGray};
   margin-right: 6px;
+
+  &:hover {
+    background-color: ${colorsRaw.redLight};
+    color: ${colorsRaw.red};
+  }
 `;
 
 const PublishButton = styled.button`
   ${styles.button};
-  background-color: ${colorsRaw.teal};
-  color: ${colors.textLight};
+  ${buttons.accent};
   margin-left: 6px;
 
   &[disabled] {

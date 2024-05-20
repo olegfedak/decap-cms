@@ -5,7 +5,6 @@ import { partial } from 'lodash';
 import {
   AuthenticationPage,
   buttons,
-  shadows,
   colors,
   colorsRaw,
   lengths,
@@ -14,7 +13,6 @@ import {
 
 const LoginButton = styled.button`
   ${buttons.button};
-  ${shadows.dropDeep};
   ${buttons.default};
   ${buttons.gray};
 

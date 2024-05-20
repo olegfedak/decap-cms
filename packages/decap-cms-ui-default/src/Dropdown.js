@@ -16,7 +16,6 @@ const StyledWrapper = styled(Wrapper)`
 const StyledDropdownButton = styled(DropdownButton)`
   ${buttons.button};
   ${buttons.default};
-  ${buttons.accent};
   display: block;
   padding-left: 20px;
   padding-right: 35px;

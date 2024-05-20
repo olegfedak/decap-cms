@@ -48,7 +48,7 @@ const AppHeaderSiteLink = styled.a`
 
 const AppHeaderTestRepoIndicator = styled.a`
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: #7b8290;
   padding: 10px 16px;
 `;

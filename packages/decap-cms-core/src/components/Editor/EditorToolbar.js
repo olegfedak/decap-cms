@@ -112,7 +112,6 @@ const ToolbarSubSectionLast = styled(ToolbarSubSectionFirst)`
 
 const ToolbarSectionBackLink = styled(Link)`
   ${styles.toolbarSection};
-  border-right-width: 1px;
   font-weight: normal;
   padding: 0 16px;
   flex: none;
@@ -174,6 +173,10 @@ const ToolbarButton = styled.button`
 
 const DeleteButton = styled(ToolbarButton)`
   ${buttons.grayText};
+
+  &:hover {
+    ${buttons.lightRed};
+  }
 `;
 
 const SaveButton = styled(ToolbarButton)`
@@ -184,7 +187,7 @@ const SaveButton = styled(ToolbarButton)`
 `;
 
 const PublishedToolbarButton = styled(DropdownButton)`
-  ${styles.publishedButton}
+  ${buttons.lightAccent}
 `;
 
 const PublishedButton = styled(ToolbarButton)`
@@ -196,8 +199,7 @@ const PublishButton = styled(DropdownButton)`
 `;
 
 const StatusButton = styled(DropdownButton)`
-  background-color: ${colorsRaw.accentLight};
-  color: ${colorsRaw.accent};
+  ${buttons.lightAccent};
 `;
 
 const PreviewButtonContainer = styled.div`
@@ -596,7 +598,7 @@ export class EditorToolbar extends React.Component {
       currentStatus
         ? [
             this.renderWorkflowStatusControls(),
-            this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish }),
+            !hasChanged && this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish }),
           ]
         : !isNewEntry &&
           this.renderExistingEntryWorkflowPublishControls({ canCreate, canPublish, canDelete }),

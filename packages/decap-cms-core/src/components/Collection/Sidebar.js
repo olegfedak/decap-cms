@@ -15,7 +15,6 @@ const styles = {
   sidebarNavLinkActive: css`
     color: ${colors.active};
     background-color: ${colors.activeBackground};
-    border-left-color: #4863c6;
   `,
 };
 
@@ -48,6 +47,13 @@ const SidebarNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 2px;
+
+  & > li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 1;
+  }
 `;
 
 const SidebarNavLink = styled(NavLink)`

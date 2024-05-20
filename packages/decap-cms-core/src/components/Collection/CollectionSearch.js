@@ -46,6 +46,7 @@ const SearchInput = styled.input`
 const SuggestionsContainer = styled.div`
   position: relative;
   width: 100%;
+  z-index: ${zIndex.zIndex2};
 `;
 
 const Suggestions = styled.ul`

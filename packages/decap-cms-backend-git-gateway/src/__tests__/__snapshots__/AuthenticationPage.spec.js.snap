@@ -35,7 +35,7 @@ exports[`GitGatewayAuthenticationPage should render with identity error 1`] = `
   overflow: hidden;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  box-shadow: 0 10px 25px 0 rgba(68, 74, 87, 0.2),0 0px 1px 0px rgba(68, 74, 87, 0.5);
+  box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5);
   height: 36px;
   line-height: 36px;
   font-weight: 500;
@@ -177,7 +177,7 @@ exports[`GitGatewayAuthenticationPage should render with no identity error 1`] =
   overflow: hidden;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-  box-shadow: 0 10px 25px 0 rgba(68, 74, 87, 0.2),0 0px 1px 0px rgba(68, 74, 87, 0.5);
+  box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5);
   height: 36px;
   line-height: 36px;
   font-weight: 500;
