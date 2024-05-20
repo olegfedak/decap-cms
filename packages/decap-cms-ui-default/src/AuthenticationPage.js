@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
 import Icon from './Icon';
-import { buttons, shadows } from './styles';
+import { buttons } from './styles';
 import GoBackButton from './GoBackButton';
 
 const StyledAuthenticationPage = styled.section`
@@ -13,15 +13,15 @@ const StyledAuthenticationPage = styled.section`
   justify-content: center;
   gap: 50px;
   height: 100vh;
+  padding: 20px;
 `;
 
 const CustomIconWrapper = styled.span`
-  width: 300px;
-  height: auto;
+  max-width: 350px;
 `;
 
 const DecapLogoIcon = styled(Icon)`
-  height: auto;
+  max-width: 350px;
 `;
 
 const NetlifyCreditIcon = styled(Icon)`
@@ -42,12 +42,11 @@ function renderPageLogo(logoUrl) {
   if (logoUrl) {
     return <CustomLogoIcon url={logoUrl} />;
   }
-  return <DecapLogoIcon size="300px" type="decap-cms" />;
+  return <DecapLogoIcon size="auto" type="decap-cms" />;
 }
 
 const LoginButton = styled.button`
   ${buttons.button};
-  ${shadows.dropDeep};
   ${buttons.default};
   ${buttons.gray};
   &[disabled] {

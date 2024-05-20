@@ -10,6 +10,7 @@ const StyledAuthenticationPage = styled.section`
   justify-content: center;
   gap: 10%;
   height: 100vh;
+  padding: 20px;
 `;
 
 const PageLogoIcon = styled(Icon)`
