@@ -8,7 +8,7 @@ function BooleanBackground({ isActive, ...props }) {
   return (
     <ToggleBackground
       css={css`
-        background-color: ${isActive ? colors.active : colors.textFieldBorder};
+        background-color: ${isActive ? colors.active : colors.inactive};
       `}
       {...props}
     />

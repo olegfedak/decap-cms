@@ -5,7 +5,6 @@ import { partial } from 'lodash';
 import {
   AuthenticationPage,
   buttons,
-  shadows,
   colors,
   colorsRaw,
   lengths,
@@ -14,7 +13,6 @@ import {
 
 const LoginButton = styled.button`
   ${buttons.button};
-  ${shadows.dropDeep};
   ${buttons.default};
   ${buttons.gray};
 
@@ -25,8 +23,8 @@ const LoginButton = styled.button`
 `;
 
 const AuthForm = styled.form`
-  width: 350px;
-  margin-top: -80px;
+  width: 100%;
+  max-width: 350px;
 `;
 
 const AuthInput = styled.input`
@@ -49,6 +47,7 @@ const AuthInput = styled.input`
 
 const ErrorMessage = styled.p`
   color: ${colors.errorText};
+  margin-bottom: 6px;
 `;
 
 let component = null;
@@ -199,7 +198,7 @@ export default class GitGatewayAuthenticationPage extends React.Component {
           <AuthForm onSubmit={this.handleLogin}>
             {!error ? null : <ErrorMessage>{error}</ErrorMessage>}
             {!errors.server ? null : <ErrorMessage>{String(errors.server)}</ErrorMessage>}
-            <ErrorMessage>{errors.email || null}</ErrorMessage>
+            {!errors.email ? null : <ErrorMessage>{errors.email}</ErrorMessage>}
             <AuthInput
               type="text"
               name="email"
@@ -207,7 +206,7 @@ export default class GitGatewayAuthenticationPage extends React.Component {
               value={this.state.email}
               onChange={partial(this.handleChange, 'email')}
             />
-            <ErrorMessage>{errors.password || null}</ErrorMessage>
+            {!errors.password ? null : <ErrorMessage>{errors.password}</ErrorMessage>}
             <AuthInput
               type="password"
               name="password"

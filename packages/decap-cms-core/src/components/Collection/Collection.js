@@ -27,10 +27,18 @@ import {
 
 const CollectionContainer = styled.div`
   margin: ${lengths.pageMargin};
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 `;
 
 const CollectionMain = styled.main`
-  padding-left: 280px;
+  @media (min-width: 800px) {
+    padding-left: 270px;
+  }
 `;
 
 const SearchResultContainer = styled.div`

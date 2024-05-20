@@ -7,15 +7,7 @@ import { Map, List } from 'immutable';
 import { once } from 'lodash';
 import { v4 as uuid } from 'uuid';
 import { oneLine } from 'common-tags';
-import {
-  lengths,
-  components,
-  buttons,
-  borders,
-  effects,
-  shadows,
-  IconButton,
-} from 'decap-cms-ui-default';
+import { lengths, components, buttons, colors, IconButton } from 'decap-cms-ui-default';
 import { basename } from 'decap-cms-lib-util';
 import { arrayMoveImmutable as arrayMove } from 'array-move';
 import {
@@ -38,11 +30,9 @@ const ImageWrapper = styled.div`
   height: 100px;
   margin-right: 20px;
   margin-bottom: 20px;
-  border: ${borders.textField};
+  border: solid 1px ${colors.textFieldBorder};
   border-radius: ${lengths.borderRadius};
   overflow: hidden;
-  ${effects.checkerboard};
-  ${shadows.inset};
   cursor: ${props => (props.sortable ? 'pointer' : 'auto')};
 `;
 
@@ -176,13 +166,24 @@ const FileLinkList = styled.ul`
 
 const FileWidgetButton = styled.button`
   ${buttons.button};
-  ${components.badge};
-  margin-bottom: 12px;
+  ${buttons.widget};
+  font-weight: 500;
+  line-height: 1;
+  background-color: #fff;
+  color: #5d626f;
+  padding: 4px 10px;
+  box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
 `;
 
 const FileWidgetButtonRemove = styled.button`
   ${buttons.button};
   ${components.badgeDanger};
+  font-weight: 500;
+  line-height: 1;
+  background-color: #fff;
+  color: #5d626f;
+  padding: 4px 10px;
+  box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
 `;
 
 function isMultiple(value) {
@@ -444,21 +445,29 @@ export default function withFileControl({ forImage } = {}) {
           {forImage ? this.renderImages() : null}
           <div>
             {forImage ? null : this.renderFileLinks()}
-            <FileWidgetButton onClick={this.handleChange}>
-              {t(
-                `editor.editorWidgets.${subject}.${
-                  this.allowsMultiple() ? 'addMore' : 'chooseDifferent'
-                }`,
-              )}
-            </FileWidgetButton>
-            {field.get('choose_url', true) && !this.allowsMultiple() ? (
-              <FileWidgetButton onClick={this.handleUrl(subject)}>
-                {t(`editor.editorWidgets.${subject}.replaceUrl`)}
+            <div
+              css={css`
+                display: flex;
+                flex-flow: wrap;
+                gap: 10px;
+              `}
+            >
+              <FileWidgetButton onClick={this.handleChange}>
+                {t(
+                  `editor.editorWidgets.${subject}.${
+                    this.allowsMultiple() ? 'addMore' : 'chooseDifferent'
+                  }`,
+                )}
               </FileWidgetButton>
-            ) : null}
-            <FileWidgetButtonRemove onClick={this.handleRemove}>
-              {t(`editor.editorWidgets.${subject}.remove${allowsMultiple ? 'All' : ''}`)}
-            </FileWidgetButtonRemove>
+              {field.get('choose_url', true) && !this.allowsMultiple() ? (
+                <FileWidgetButton onClick={this.handleUrl(subject)}>
+                  {t(`editor.editorWidgets.${subject}.replaceUrl`)}
+                </FileWidgetButton>
+              ) : null}
+              <FileWidgetButtonRemove onClick={this.handleRemove}>
+                {t(`editor.editorWidgets.${subject}.remove${allowsMultiple ? 'All' : ''}`)}
+              </FileWidgetButtonRemove>
+            </div>
           </div>
         </div>
       );
@@ -467,7 +476,12 @@ export default function withFileControl({ forImage } = {}) {
     renderNoSelection = subject => {
       const { t, field } = this.props;
       return (
-        <>
+        <span
+          css={css`
+            display: flex;
+            gap: 10px;
+          `}
+        >
           <FileWidgetButton onClick={this.handleChange}>
             {t(`editor.editorWidgets.${subject}.choose${this.allowsMultiple() ? 'Multiple' : ''}`)}
           </FileWidgetButton>
@@ -476,7 +490,7 @@ export default function withFileControl({ forImage } = {}) {
               {t(`editor.editorWidgets.${subject}.chooseUrl`)}
             </FileWidgetButton>
           ) : null}
-        </>
+        </span>
       );
     };
 
@@ -486,7 +500,14 @@ export default function withFileControl({ forImage } = {}) {
 
       return (
         <div className={classNameWrapper}>
-          <span>{value ? this.renderSelection(subject) : this.renderNoSelection(subject)}</span>
+          <span
+            css={css`
+              display: flex;
+              gap: 10px;
+            `}
+          >
+            {value ? this.renderSelection(subject) : this.renderNoSelection(subject)}
+          </span>
         </div>
       );
     }

@@ -22,6 +22,7 @@ const ClearButton = styled.div`
   z-index: ${zIndex.zIndex1000};
   padding: 8px;
   margin-top: 11px;
+  cursor: pointer;
 `;
 
 const ClearButtonWrapper = styled.div`
@@ -33,7 +34,6 @@ const ClearButtonWrapper = styled.div`
 const ColorSwatchBackground = styled.div`
   position: absolute;
   z-index: ${zIndex.zIndex1};
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAMUlEQVQ4T2NkYGAQYcAP3uCTZhw1gGGYhAGBZIA/nYDCgBDAm9BGDWAAJyRCgLaBCAAgXwixzAS0pgAAAABJRU5ErkJggg==');
   height: 38px;
   width: 48px;
   margin-top: 10px;
@@ -44,20 +44,21 @@ const ColorSwatchBackground = styled.div`
 const ColorSwatch = styled.div`
   position: absolute;
   z-index: ${zIndex.zIndex2};
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: ${props => props.background};
   cursor: pointer;
   height: 38px;
   width: 48px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 14px;
   border-radius: 5px;
-  border: 2px solid rgb(223, 223, 227);
   text-align: center;
   font-size: 27px;
-  line-height: 1;
-  padding-top: 4px;
   user-select: none;
   color: ${props => props.color};
+  box-shadow: inset 0 0 0 1px rgba(68, 74, 87, 0.15), inset 0 1px 2px 0 rgba(68, 74, 87, 0.1);
 `;
 
 const ColorPickerContainer = styled.div`
@@ -161,7 +162,6 @@ export default class ColorControl extends React.Component {
           style={{
             paddingLeft: '75px',
             paddingRight: '70px',
-            color: !allowInput && '#bbb',
           }}
           // make readonly and open color picker on click if set to allowInput: false
           onClick={!allowInput ? this.handleClick : undefined}

@@ -19,7 +19,6 @@ function CardWrapper(props) {
       isSelectedFile,
       onAssetClick,
       cardDraftText,
-      cardWidth,
       cardHeight,
       isPrivate,
       displayURLs,
@@ -41,7 +40,7 @@ function CardWrapper(props) {
         ...style,
         left: style.left + gutter * columnIndex,
         top: style.top + gutter,
-        width: style.width - gutter,
+        width: style.width,
         height: style.height - gutter,
       }}
     >
@@ -52,7 +51,7 @@ function CardWrapper(props) {
         onClick={() => onAssetClick(file)}
         isDraft={file.draft}
         draftText={cardDraftText}
-        width={cardWidth}
+        width={'100%'}
         height={cardHeight}
         margin={'0px'}
         isPrivate={isPrivate}
@@ -72,12 +71,10 @@ function VirtualizedGrid(props) {
     <CardGridContainer ref={setScrollContainerRef}>
       <AutoSizer>
         {({ height, width }) => {
-          const cardWidth = parseInt(props.cardWidth, 10);
-          const cardHeight = parseInt(props.cardHeight, 10);
           const gutter = parseInt(props.cardMargin, 10);
-          const columnWidth = cardWidth + gutter;
-          const rowHeight = cardHeight + gutter;
-          const columnCount = Math.floor(width / columnWidth);
+          const columnCount = Math.floor(width / (parseInt(props.cardWidth, 10) + gutter));
+          const columnWidth = (width - gutter * (columnCount - 1)) / columnCount;
+          const rowHeight = parseInt(props.cardHeight, 10) + gutter;
           const rowCount = Math.ceil(mediaItems.length / columnCount);
           return (
             <Grid
@@ -117,27 +114,25 @@ function PaginatedGrid({
 }) {
   return (
     <CardGridContainer ref={setScrollContainerRef}>
-      <CardGrid>
-        {mediaItems.map(file => (
-          <MediaLibraryCard
-            key={file.key}
-            isSelected={isSelectedFile(file)}
-            text={file.name}
-            onClick={() => onAssetClick(file)}
-            isDraft={file.draft}
-            draftText={cardDraftText}
-            width={cardWidth}
-            height={cardHeight}
-            margin={cardMargin}
-            isPrivate={isPrivate}
-            displayURL={displayURLs.get(file.id, file.url ? Map({ url: file.url }) : Map())}
-            loadDisplayURL={() => loadDisplayURL(file)}
-            type={file.type}
-            isViewableImage={file.isViewableImage}
-          />
-        ))}
-        {!canLoadMore ? null : <Waypoint onEnter={onLoadMore} />}
-      </CardGrid>
+      {mediaItems.map(file => (
+        <MediaLibraryCard
+          key={file.key}
+          isSelected={isSelectedFile(file)}
+          text={file.name}
+          onClick={() => onAssetClick(file)}
+          isDraft={file.draft}
+          draftText={cardDraftText}
+          width={cardWidth}
+          height={cardHeight}
+          margin={cardMargin}
+          isPrivate={isPrivate}
+          displayURL={displayURLs.get(file.id, file.url ? Map({ url: file.url }) : Map())}
+          loadDisplayURL={() => loadDisplayURL(file)}
+          type={file.type}
+          isViewableImage={file.isViewableImage}
+        />
+      ))}
+      {!canLoadMore ? null : <Waypoint onEnter={onLoadMore} />}
       {!isPaginating ? null : (
         <PaginatingMessage isPrivate={isPrivate}>{paginatingMessage}</PaginatingMessage>
       )}
@@ -146,16 +141,9 @@ function PaginatedGrid({
 }
 
 const CardGridContainer = styled.div`
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
-`;
-
-const CardGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-
-  margin-left: -10px;
-  margin-right: -10px;
 `;
 
 const PaginatingMessage = styled.h1`

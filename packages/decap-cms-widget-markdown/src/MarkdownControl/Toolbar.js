@@ -17,16 +17,24 @@ import {
 import ToolbarButton from './ToolbarButton';
 
 const ToolbarContainer = styled.div`
-  background-color: ${colors.textFieldBorder};
+  background-color: ${colors.inputBackground};
+  border: solid ${lengths.borderWidth} ${colors.textFieldBorder};
+  border-bottom: 0;
   border-top-right-radius: ${lengths.borderRadius};
   position: relative;
-  display: flex;
+  display: inline-table;
   justify-content: space-between;
   align-items: center;
   padding: 11px 14px;
   min-height: 58px;
   transition: background-color ${transitions.main}, color ${transitions.main};
   color: ${colors.text};
+  width: 100%;
+`;
+
+const ToolbarRichTextTools = styled.div`
+  display: inline;
+  text-align: left;
 `;
 
 const ToolbarDropdownWrapper = styled.div`
@@ -36,10 +44,13 @@ const ToolbarDropdownWrapper = styled.div`
 
 const ToolbarToggle = styled.div`
   flex-shrink: 0;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   font-size: 14px;
   margin: 0 10px;
+  justify-content: end;
+  padding-block: 8px;
+  float: right;
 `;
 
 const StyledToggle = ToolbarToggle.withComponent(Toggle);
@@ -134,7 +145,7 @@ export default class Toolbar extends React.Component {
 
     return (
       <ToolbarContainer>
-        <div>
+        <ToolbarRichTextTools>
           {isVisible('bold') && (
             <ToolbarButton
               type="bold"
@@ -260,7 +271,7 @@ export default class Toolbar extends React.Component {
               </Dropdown>
             </ToolbarDropdownWrapper>
           )}
-        </div>
+        </ToolbarRichTextTools>
         {isShowModeToggle && (
           <ToolbarToggle>
             <ToolbarToggleLabel isActive={!rawMode} offPosition>

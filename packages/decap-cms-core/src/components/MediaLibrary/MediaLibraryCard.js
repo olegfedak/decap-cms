@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import styled from '@emotion/styled';
-import { colors, borders, lengths, shadows, effects } from 'decap-cms-ui-default';
+import { colors, borders, lengths, effects, transitions } from 'decap-cms-ui-default';
 
 const IMAGE_HEIGHT = 160;
 
@@ -16,6 +16,7 @@ const Card = styled.div`
   cursor: pointer;
   overflow: hidden;
   background-color: ${props => props.isPrivate && colors.textFieldBorder};
+  transition: all ${transitions.main};
 
   &:focus {
     outline: none;
@@ -25,7 +26,6 @@ const Card = styled.div`
 const CardImageWrapper = styled.div`
   height: ${IMAGE_HEIGHT + 2}px;
   ${effects.checkerboard};
-  ${shadows.inset};
   border-bottom: solid ${lengths.borderWidth} ${colors.textFieldBorder};
   position: relative;
 `;
@@ -51,6 +51,7 @@ const CardText = styled.p`
   padding: 8px;
   margin-top: 20px;
   overflow-wrap: break-word;
+  font-size: 14px;
   line-height: 1.3 !important;
 `;
 
@@ -59,7 +60,7 @@ const DraftText = styled.p`
   background-color: ${colors.mediaDraftBackground};
   position: absolute;
   padding: 8px;
-  border-radius: ${lengths.borderRadius} 0 ${lengths.borderRadius} 0;
+  border-radius: 0 0 ${lengths.borderRadius} 0;
 `;
 
 class MediaLibraryCard extends React.Component {

@@ -47,10 +47,15 @@ function AppHeader(props) {
 const AppHeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
-  min-width: 800px;
+  gap: 16px;
+  width: 100%;
   max-width: 1440px;
   padding: 0 12px;
   margin: 0 auto;
+  height: 100%;
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
 `;
 
 const AppHeaderButton = styled.button`
@@ -66,7 +71,6 @@ const AppHeaderButton = styled.button`
 
   ${Icon} {
     margin-right: 4px;
-    color: #b3b9c4;
   }
 
   &:hover,
@@ -95,6 +99,7 @@ const AppHeaderNavLink = AppHeaderButton.withComponent(NavLink);
 const AppHeaderActions = styled.div`
   display: inline-flex;
   align-items: center;
+  flex: none;
 `;
 
 const AppHeaderQuickNewButton = styled(StyledDropdownButton)`
@@ -200,12 +205,13 @@ class Header extends React.Component {
           <AppHeaderActions>
             {creatableCollections.size > 0 && (
               <Dropdown
+                isInHeader={true}
                 renderButton={() => (
                   <AppHeaderQuickNewButton> {t('app.header.quickAdd')}</AppHeaderQuickNewButton>
                 )}
-                dropdownTopOverlap="30px"
+                dropdownTopOverlap="48px"
                 dropdownWidth="160px"
-                dropdownPosition="left"
+                dropdownPosition=""
               >
                 {creatableCollections.map(collection => (
                   <DropdownItem

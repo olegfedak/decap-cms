@@ -17,7 +17,7 @@ function Buttons({ t, handleChange, inputFormat, isUtc }) {
     <div
       css={css`
         display: flex;
-        gap: 20px;
+        gap: 10px;
         width: fit-content;
       `}
     >
@@ -153,7 +153,7 @@ class DateTimeControl extends React.Component {
         className={classNameWrapper}
         css={css`
           display: flex !important;
-          gap: 20px;
+          gap: 16px;
           align-items: center;
         `}
       >
@@ -165,6 +165,12 @@ class DateTimeControl extends React.Component {
           onFocus={setActiveStyle}
           onBlur={setInactiveStyle}
           disabled={isDisabled}
+          css={css`
+            font-size: inherit;
+            line-height: 1;
+            color: inherit;
+            background-color: transparent;
+          `}
         />
         {!isDisabled && (
           <Buttons

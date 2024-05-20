@@ -10,11 +10,9 @@ import EntryCard from './EntryCard';
 
 const CardsGrid = styled.ul`
   display: flex;
-  flex-flow: row wrap;
+  flex-wrap: wrap;
+  margin-left: -10px;
   list-style-type: none;
-  margin-left: -12px;
-  margin-top: 16px;
-  margin-bottom: 16px;
 `;
 
 export default class EntryListing extends React.Component {

@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { colorsRaw, colors, Icon, lengths, zIndex } from 'decap-cms-ui-default';
+import { colorsRaw, colors, Icon, lengths, zIndex, transitions } from 'decap-cms-ui-default';
 import { translate } from 'react-polyglot';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
 const SearchContainer = styled.div`
-  margin: 0 12px;
+  margin: 0 10px;
   position: relative;
 
   ${Icon} {
     position: absolute;
     top: 0;
-    left: 6px;
+    left: 8px;
     z-index: ${zIndex.zIndex2};
     height: 100%;
     display: flex;
@@ -28,23 +28,25 @@ const InputContainer = styled.div`
 `;
 
 const SearchInput = styled.input`
-  background-color: #eff0f4;
+  background-color: transparent;
   border-radius: ${lengths.borderRadius};
   font-size: 14px;
-  padding: 10px 6px 10px 34px;
+  padding: 10px 6px 10px 36px;
   width: 100%;
   position: relative;
   z-index: ${zIndex.zIndex1};
+  transition: ${transitions.main};
 
   &:focus {
     outline: none;
-    box-shadow: inset 0 0 0 2px ${colorsRaw.blue};
+    box-shadow: inset 0 0 0 2px ${colors.active};
   }
 `;
 
 const SuggestionsContainer = styled.div`
   position: relative;
   width: 100%;
+  z-index: ${zIndex.zIndex2};
 `;
 
 const Suggestions = styled.ul`
@@ -57,8 +59,9 @@ const Suggestions = styled.ul`
   list-style: none;
   background-color: #fff;
   border-radius: ${lengths.borderRadius};
-  border: 1px solid ${colors.textFieldBorder};
+
   z-index: ${zIndex.zIndex1};
+  box-shadow: 0 10px 25px 0 rgba(68, 74, 87, 0.2), 0 0 1px 0 rgba(68, 74, 87, 0.5);
 `;
 
 const SuggestionHeader = styled.li`

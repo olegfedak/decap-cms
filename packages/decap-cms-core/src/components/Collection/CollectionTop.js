@@ -4,7 +4,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { translate } from 'react-polyglot';
 import { Link } from 'react-router-dom';
-import { components, buttons, shadows } from 'decap-cms-ui-default';
+import { components, buttons } from 'decap-cms-ui-default';
 
 const CollectionTopContainer = styled.div`
   ${components.cardTop};
@@ -13,7 +13,6 @@ const CollectionTopContainer = styled.div`
 
 const CollectionTopRow = styled.div`
   display: flex;
-  align-items: center;
   justify-content: space-between;
 `;
 
@@ -23,16 +22,12 @@ const CollectionTopHeading = styled.h1`
 
 const CollectionTopNewButton = styled(Link)`
   ${buttons.button};
-  ${shadows.dropDeep};
   ${buttons.default};
-  ${buttons.gray};
-
-  padding: 0 30px;
+  ${buttons.accent};
 `;
 
 const CollectionTopDescription = styled.p`
   ${components.cardTopDescription};
-  margin-bottom: 0;
 `;
 
 function getCollectionProps(collection) {

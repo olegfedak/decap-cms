@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Icon, buttons } from 'decap-cms-ui-default';
+import { Icon, buttons, colors } from 'decap-cms-ui-default';
 
 const StyledToolbarButton = styled.button`
   ${buttons.button};
   display: inline-block;
   padding: 6px;
   border: none;
-  background-color: transparent;
+  background-color: ${props => (props.isActive ? colors.activeBackground : 'transparent')};
   font-size: 16px;
-  color: ${props => (props.isActive ? '#1e2532' : 'inherit')};
+  color: ${props => (props.isActive ? colors.active : 'inherit')};
   cursor: pointer;
+  margin: 0 2px 2px 0;
+
+  &:focus {
+    outline-offset: none;
+  }
 
   &:disabled {
     cursor: auto;

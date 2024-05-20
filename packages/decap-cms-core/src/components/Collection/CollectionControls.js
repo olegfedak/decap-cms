@@ -11,12 +11,15 @@ const CollectionControlsContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  margin-top: 22px;
-  width: ${lengths.topCardWidth};
+  margin-bottom: 20px;
   max-width: 100%;
 
   & > div {
     margin-left: 6px;
+  }
+
+  @media (min-width: 800px) {
+    width: ${lengths.topCardWidth};
   }
 `;
 

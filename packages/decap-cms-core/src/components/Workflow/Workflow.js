@@ -12,7 +12,7 @@ import {
   Loader,
   lengths,
   components,
-  shadows,
+  buttons,
 } from 'decap-cms-ui-default';
 
 import { createNewEntry } from '../../actions/collections';
@@ -27,8 +27,10 @@ import { EDITORIAL_WORKFLOW, status } from '../../constants/publishModes';
 import WorkflowList from './WorkflowList';
 
 const WorkflowContainer = styled.div`
+  width: 100%;
+  max-width: 1440px;
   padding: ${lengths.pageMargin} 0;
-  height: 100vh;
+  overflow-y: hidden;
 `;
 
 const WorkflowTop = styled.div`
@@ -38,10 +40,6 @@ const WorkflowTop = styled.div`
 const WorkflowTopRow = styled.div`
   display: flex;
   justify-content: space-between;
-
-  span[role='button'] {
-    ${shadows.dropDeep};
-  }
 `;
 
 const WorkflowTopHeading = styled.h1`
@@ -50,6 +48,10 @@ const WorkflowTopHeading = styled.h1`
 
 const WorkflowTopDescription = styled.p`
   ${components.cardTopDescription};
+`;
+
+const WorkflowNewEntryButton = styled(StyledDropdownButton)`
+  ${buttons.accent};
 `;
 
 class Workflow extends Component {
@@ -101,7 +103,7 @@ class Workflow extends Component {
               dropdownPosition="left"
               dropdownTopOverlap="40px"
               renderButton={() => (
-                <StyledDropdownButton>{t('workflow.workflow.newPost')}</StyledDropdownButton>
+                <WorkflowNewEntryButton>{t('workflow.workflow.newPost')}</WorkflowNewEntryButton>
               )}
             >
               {collections

@@ -3,29 +3,29 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { colors, colorsRaw, shadows, transitions } from './styles';
+import { colors, colorsRaw, transitions } from './styles';
 
 const ToggleContainer = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 40px;
+  width: 34px;
   height: 20px;
   cursor: pointer;
   border: none;
   padding: 0;
   margin: 0;
   background: transparent;
+  vertical-align: sub;
 `;
 
 const ToggleHandle = styled.span`
-  ${shadows.dropDeep};
+  box-shadow: 0 2px 1px 0 rgba(68, 74, 87, 0.1), 0 0 1px 0 rgba(68, 74, 87, 0.3);
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
+  left: 2px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   background-color: ${colorsRaw.white};
   transition: transform ${transitions.main};
@@ -33,13 +33,13 @@ const ToggleHandle = styled.span`
   ${props =>
     props.isActive &&
     css`
-      transform: translateX(20px);
+      transform: translateX(13px);
     `};
 `;
 
 const ToggleBackground = styled.span`
   width: 34px;
-  height: 14px;
+  height: 20px;
   border-radius: 10px;
   background-color: ${colors.active};
 `;

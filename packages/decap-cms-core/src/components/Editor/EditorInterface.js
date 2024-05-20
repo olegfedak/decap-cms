@@ -4,14 +4,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import { css, Global } from '@emotion/react';
 import styled from '@emotion/styled';
 import SplitPane from 'react-split-pane';
-import {
-  colors,
-  colorsRaw,
-  components,
-  transitions,
-  IconButton,
-  zIndex,
-} from 'decap-cms-ui-default';
+import { colors, components, transitions, IconButton, zIndex, lengths } from 'decap-cms-ui-default';
 import { ScrollSync, ScrollSyncPane } from 'react-scroll-sync';
 
 import EditorControlPane from './EditorControlPane/EditorControlPane';
@@ -47,14 +40,14 @@ function ReactSplitPaneGlobalStyles() {
     <Global
       styles={css`
         .Resizer.vertical {
-          width: 2px;
+          width: ${lengths.borderWidth};
           cursor: col-resize;
           position: relative;
           background: none;
 
           &:before {
             content: '';
-            width: 2px;
+            width: ${lengths.borderWidth};
             height: 100%;
             position: relative;
             background-color: ${colors.textFieldBorder};
@@ -68,7 +61,7 @@ function ReactSplitPaneGlobalStyles() {
             &:before {
               width: 4px;
               left: -1px;
-              background-color: ${colorsRaw.blue};
+              background-color: ${colors.active};
             }
           }
         }
@@ -79,6 +72,7 @@ function ReactSplitPaneGlobalStyles() {
 
 const StyledSplitPane = styled(SplitPane)`
   ${styles.splitPane};
+  background-color: transparent;
 
   /**
    * Quick fix for preview pane not fully displaying in Safari
@@ -94,14 +88,21 @@ const NoPreviewContainer = styled.div`
 
 const EditorContainer = styled.div`
   width: 100%;
-  min-width: 800px;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
-  padding-top: 66px;
-  background-color: ${colors.background};
+  padding-top: 60px;
+  background-color: ${colors.inputBackground};
+`;
+
+const EditorHeader = styled.div`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 320;
 `;
 
 const Editor = styled.div`
@@ -125,8 +126,12 @@ const ControlPaneContainer = styled(PreviewPaneContainer)`
 const ViewControls = styled.div`
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 16px;
   z-index: ${zIndex.zIndex299};
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 function EditorContent({
@@ -328,38 +333,40 @@ class EditorInterface extends Component {
 
     return (
       <EditorContainer>
-        <EditorToolbar
-          isPersisting={entry.get('isPersisting')}
-          isPublishing={entry.get('isPublishing')}
-          isUpdatingStatus={entry.get('isUpdatingStatus')}
-          isDeleting={entry.get('isDeleting')}
-          onPersist={this.handleOnPersist}
-          onPersistAndNew={() => this.handleOnPersist({ createNew: true })}
-          onPersistAndDuplicate={() => this.handleOnPersist({ createNew: true, duplicate: true })}
-          onDelete={onDelete}
-          onDeleteUnpublishedChanges={onDeleteUnpublishedChanges}
-          onChangeStatus={onChangeStatus}
-          showDelete={showDelete}
-          onPublish={onPublish}
-          unPublish={unPublish}
-          onDuplicate={onDuplicate}
-          onPublishAndNew={() => this.handleOnPublish({ createNew: true })}
-          onPublishAndDuplicate={() => this.handleOnPublish({ createNew: true, duplicate: true })}
-          user={user}
-          hasChanged={hasChanged}
-          displayUrl={displayUrl}
-          collection={collection}
-          hasWorkflow={hasWorkflow}
-          useOpenAuthoring={useOpenAuthoring}
-          hasUnpublishedChanges={hasUnpublishedChanges}
-          isNewEntry={isNewEntry}
-          isModification={isModification}
-          currentStatus={currentStatus}
-          onLogoutClick={onLogoutClick}
-          loadDeployPreview={loadDeployPreview}
-          deployPreview={deployPreview}
-          editorBackLink={editorBackLink}
-        />
+        <EditorHeader>
+          <EditorToolbar
+            isPersisting={entry.get('isPersisting')}
+            isPublishing={entry.get('isPublishing')}
+            isUpdatingStatus={entry.get('isUpdatingStatus')}
+            isDeleting={entry.get('isDeleting')}
+            onPersist={this.handleOnPersist}
+            onPersistAndNew={() => this.handleOnPersist({ createNew: true })}
+            onPersistAndDuplicate={() => this.handleOnPersist({ createNew: true, duplicate: true })}
+            onDelete={onDelete}
+            onDeleteUnpublishedChanges={onDeleteUnpublishedChanges}
+            onChangeStatus={onChangeStatus}
+            showDelete={showDelete}
+            onPublish={onPublish}
+            unPublish={unPublish}
+            onDuplicate={onDuplicate}
+            onPublishAndNew={() => this.handleOnPublish({ createNew: true })}
+            onPublishAndDuplicate={() => this.handleOnPublish({ createNew: true, duplicate: true })}
+            user={user}
+            hasChanged={hasChanged}
+            displayUrl={displayUrl}
+            collection={collection}
+            hasWorkflow={hasWorkflow}
+            useOpenAuthoring={useOpenAuthoring}
+            hasUnpublishedChanges={hasUnpublishedChanges}
+            isNewEntry={isNewEntry}
+            isModification={isModification}
+            currentStatus={currentStatus}
+            onLogoutClick={onLogoutClick}
+            loadDeployPreview={loadDeployPreview}
+            deployPreview={deployPreview}
+            editorBackLink={editorBackLink}
+          />
+        </EditorHeader>
         <Editor key={draftKey}>
           <ViewControls>
             {collectionI18nEnabled && (

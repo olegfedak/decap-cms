@@ -33,9 +33,11 @@ const fonts = {
  */
 const colorsRaw = {
   white: '#fff',
-  grayLight: '#eff0f4',
-  gray: '#798291',
+  grayLight: '#717a8926',
+  gray: '#717a89',
   grayDark: '#313d3e',
+  accent: '#683bab',
+  accentLight: '#683bab19',
   blue: '#3a69c7',
   blueLight: '#e8f5fe',
   green: '#005614',
@@ -64,14 +66,14 @@ const colors = {
   textLead: colorsRaw.grayDark,
   background: colorsRaw.grayLight,
   foreground: colorsRaw.white,
-  active: colorsRaw.blue,
-  activeBackground: colorsRaw.blueLight,
+  active: colorsRaw.accent,
+  activeBackground: colorsRaw.accentLight,
   inactive: colorsRaw.gray,
-  button: colorsRaw.grayDark,
+  button: colorsRaw.gray,
   buttonText: colorsRaw.white,
   inputBackground: colorsRaw.white,
-  infoText: colorsRaw.blue,
-  infoBackground: colorsRaw.blueLight,
+  infoText: colorsRaw.accent,
+  infoBackground: colorsRaw.accentLight,
   successText: colorsRaw.green,
   successBackground: colorsRaw.greenLight,
   warnText: colorsRaw.brown,
@@ -87,14 +89,14 @@ const colors = {
 };
 
 const lengths = {
-  topBarHeight: '56px',
+  topBarHeight: '60px',
   inputPadding: '16px 20px',
-  borderRadius: '5px',
+  borderRadius: '6px',
   richTextEditorMinHeight: '300px',
   borderWidth: '2px',
   topCardWidth: '682px',
-  pageMargin: '28px 18px',
-  objectWidgetTopBarContainerPadding: '0 14px 14px',
+  pageMargin: '20px 18px',
+  objectWidgetTopBarContainerPadding: '0 14px 0',
 };
 
 const borders = {
@@ -102,7 +104,7 @@ const borders = {
 };
 
 const transitions = {
-  main: '.2s ease',
+  main: '.2s ease-in-out',
 };
 
 const shadows = {
@@ -113,10 +115,10 @@ const shadows = {
     box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.05), 0 1px 3px 0 rgba(68, 74, 87, 0.1);
   `,
   dropMiddle: `
-    box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.15), 0 1px 3px 0 rgba(68, 74, 87, 0.3);
+    box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.1),0  1px 8px 0 rgba(68, 74, 87, 0.1);
   `,
   dropDeep: `
-    box-shadow: 0 4px 12px 0 rgba(68, 74, 87, 0.15), 0 1px 3px 0 rgba(68, 74, 87, 0.25);
+    box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5)
   `,
   inset: `
     box-shadow: inset 0 0 4px rgba(68, 74, 87, 0.3);
@@ -125,8 +127,7 @@ const shadows = {
 
 const text = {
   fieldLabel: css`
-    font-size: 12px;
-    text-transform: uppercase;
+    font-size: 13px;
     font-weight: 600;
     color: ${colors.controlLabel};
   `,
@@ -147,7 +148,7 @@ const gradients = {
 
 const effects = {
   checkerboard: css`
-    background-color: ${colors.checkerboardLight};
+    background-color: ${colors.white};
     background-size: 16px 16px;
     background-position: 0 0, 8px 8px;
     background-image: ${gradients.checkerboard}, ${gradients.checkerboard};
@@ -176,7 +177,7 @@ const textBadge = css`
 
 const card = css`
   ${shadows.dropMain};
-  border-radius: 5px;
+  border-radius: ${lengths.borderRadius};
   background-color: #fff;
 `;
 
@@ -185,30 +186,39 @@ const buttons = {
     border: 0;
     border-radius: ${lengths.borderRadius};
     cursor: pointer;
+    overflow: hidden;
+    transition: all ${transitions.main};
   `,
   default: css`
     height: 36px;
     line-height: 36px;
     font-weight: 500;
-    padding: 0 15px;
-    background-color: ${colorsRaw.gray};
-    color: ${colorsRaw.white};
+    padding: 0 20px;
   `,
   widget: css`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    background-color: ${colorsRaw.white};
+    color: ${colors.controlLabel};
+    padding: 4px 10px;
+    box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
+
+    &:focus,
+    &:hover {
+      color: ${colorsRaw.accent};
+      box-shadow: 0 0 0 1px ${colorsRaw.accent}56, 0 1px 2px 0 ${colorsRaw.accent}36;
+    }
   `,
   medium: css`
     height: 27px;
     line-height: 27px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
-    border-radius: 3px;
+    border-radius: 4px;
     padding: 0 24px 0 14px;
   `,
   small: css`
@@ -216,14 +226,44 @@ const buttons = {
     height: 23px;
     line-height: 23px;
   `,
+  accent: css`
+    background-color: ${colorsRaw.accent};
+    color: ${colorsRaw.white};
+
+    &:hover {
+      background: oklch(from ${colorsRaw.accent} calc(l + 0.05) c h);
+    }
+    &:focus,
+    &:active {
+      background: oklch(from ${colorsRaw.accent} calc(l - 0.05) c h);
+    }
+  `,
+  lightAccent: css`
+    background: ${colors.activeBackground};
+    color: ${colors.active};
+
+    &:focus,
+    &:hover {
+      background: oklch(from ${colors.activeBackground} l c h / calc(alpha + 5%));
+    }
+  `,
   gray: css`
-    background-color: ${colors.button};
-    color: ${colors.buttonText};
+    background-color: ${colorsRaw.gray};
+    color: ${colorsRaw.white};
 
     &:focus,
     &:hover {
       color: ${colorsRaw.white};
       background-color: #555a65;
+    }
+  `,
+  lightGray: css`
+    background-color: ${colorsRaw.grayLight};
+    color: ${colorsRaw.gray};
+
+    &:focus,
+    &:hover {
+      background-color: oklch(from ${colorsRaw.grayLight} l c h / calc(alpha + 5%));
     }
   `,
   grayText: css`
@@ -237,6 +277,10 @@ const buttons = {
   lightRed: css`
     background-color: ${colorsRaw.redLight};
     color: ${colorsRaw.redDark};
+  `,
+  blue: css`
+    background-color: ${colorsRaw.blue};
+    color: ${colorsRaw.white};
   `,
   lightBlue: css`
     background-color: ${colorsRaw.blueLight};
@@ -253,6 +297,7 @@ const buttons = {
   disabled: css`
     background-color: ${colorsRaw.grayLight};
     color: ${colorsRaw.gray};
+    opacity: 0.5;
     cursor: default;
   `,
 };
@@ -262,7 +307,7 @@ const caret = css`
   width: 0;
   height: 0;
   border: 5px solid transparent;
-  border-radius: 2px;
+  border-radius: ${lengths.borderWidth};
 `;
 
 const components = {
@@ -310,23 +355,25 @@ const components = {
   `,
   cardTop: css`
     ${card};
-    width: ${lengths.topCardWidth};
     max-width: 100%;
     padding: 18px 20px;
     margin-bottom: 28px;
+
+    @media (min-width: 800px) {
+      width: ${lengths.topCardWidth};
+    }
   `,
   cardTopHeading: css`
     font-size: 22px;
     font-weight: 600;
-    line-height: 37px;
-    margin: 0;
     padding: 0;
+    margin: 0;
   `,
   cardTopDescription: css`
     max-width: 480px;
     color: ${colors.text};
     font-size: 14px;
-    margin-top: 8px;
+    margin: 8px 0 0;
   `,
   objectWidgetTopBarContainer: css`
     padding: ${lengths.objectWidgetTopBarContainerPadding};
@@ -348,7 +395,6 @@ const components = {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: max-content;
 
     &:last-of-type {
       border-bottom: 0;
@@ -396,19 +442,19 @@ const reactSelectStyles = {
   clearIndicator: styles => ({ ...styles, color: `${colors.controlLabel}` }),
   multiValue: styles => ({
     ...styles,
-    backgroundColor: colors.background,
+    backgroundColor: colors.activeBackground,
+    borderRadius: lengths.borderRadius,
   }),
   multiValueLabel: styles => ({
     ...styles,
-    color: colors.textLead,
+    color: colors.active,
     fontWeight: 500,
   }),
   multiValueRemove: styles => ({
     ...styles,
-    color: colors.controlLabel,
+    color: colors.active,
     ':hover': {
       color: colors.errorText,
-      backgroundColor: colors.errorBackground,
     },
   }),
 };
@@ -431,6 +477,10 @@ function GlobalStyles() {
   return (
     <Global
       styles={css`
+        :root {
+          --accent: #683bab;
+        }
+
         *,
         *:before,
         *:after {
@@ -443,8 +493,12 @@ function GlobalStyles() {
 
         /**
        * Don't show outlines if the user is utilizing mouse rather than keyboard.
-       */
-        [data-whatintent='mouse'] *:focus {
+          [data-whatintent='mouse'] *:focus {
+            outline: none;
+          }
+        */
+
+        *:focus {
           outline: none;
         }
 
@@ -455,7 +509,7 @@ function GlobalStyles() {
         body {
           font-family: ${fonts.primary};
           font-weight: normal;
-          background-color: ${colors.background};
+          background-color: ${colorsRaw.gray}15;
           color: ${colors.text};
           margin: 0;
         }
@@ -498,6 +552,7 @@ function GlobalStyles() {
         button {
           font-size: 14px;
           font-weight: 500;
+          transition: color ${transitions.main}, background-color ${transitions.main};
         }
 
         a {

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { colors, colorsRaw, transitions, text } from './styles';
+import { colors, colorsRaw, transitions, text, lengths } from './styles';
 
 const stateColors = {
   default: {
@@ -29,11 +29,12 @@ const FieldLabel = styled.label`
   background-color: ${props => getStateColors(props).background};
   display: inline-block;
   border: 0;
-  border-radius: 3px 3px 0 0;
-  padding: 3px 6px 2px;
+  border-radius: ${lengths.borderRadius} ${lengths.borderRadius} 0 0;
+  padding: 3px 6px 3px;
   margin: 0;
   transition: all ${transitions.main};
   position: relative;
+  line-height: 1.2;
 
   /**
    * Faux outside curve into top of input

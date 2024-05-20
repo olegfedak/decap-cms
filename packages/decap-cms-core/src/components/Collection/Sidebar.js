@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { translate } from 'react-polyglot';
 import { NavLink } from 'react-router-dom';
-import { Icon, components, colors } from 'decap-cms-ui-default';
+import { Icon, components, colors, lengths } from 'decap-cms-ui-default';
 
 import { searchCollections } from '../../actions/collections';
 import CollectionSearch from './CollectionSearch';
@@ -15,33 +15,45 @@ const styles = {
   sidebarNavLinkActive: css`
     color: ${colors.active};
     background-color: ${colors.activeBackground};
-    border-left-color: #4863c6;
   `,
 };
 
 const SidebarContainer = styled.aside`
   ${components.card};
-  width: 250px;
   padding: 8px 0 12px;
-  position: fixed;
-  max-height: calc(100vh - 112px);
+  max-height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 800px) {
+    position: fixed;
+    width: 250px;
+  }
 `;
 
 const SidebarHeading = styled.h2`
   font-size: 22px;
   font-weight: 600;
-  line-height: 37px;
   padding: 0;
   margin: 10px 20px;
   color: ${colors.textLead};
 `;
 
 const SidebarNavList = styled.ul`
-  margin: 12px 0 0;
+  margin: 10px 0 0;
+  padding: 0 10px;
   list-style: none;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  & > li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 1;
+  }
 `;
 
 const SidebarNavLink = styled(NavLink)`
@@ -49,9 +61,9 @@ const SidebarNavLink = styled(NavLink)`
   font-size: 14px;
   font-weight: 500;
   align-items: center;
-  padding: 8px 18px;
-  border-left: 2px solid #fff;
+  padding: 8px 10px;
   z-index: -1;
+  border-radius: ${lengths.borderRadius};
 
   ${Icon} {
     margin-right: 4px;

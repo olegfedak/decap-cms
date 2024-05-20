@@ -8,9 +8,9 @@ import { colors, buttons, components, zIndex } from './styles';
 import Icon from './Icon';
 
 const StyledWrapper = styled(Wrapper)`
-  position: relative;
   font-size: 14px;
   user-select: none;
+  position: ${props => (props.isInHeader ? 'initial' : 'relative')};
 `;
 
 const StyledDropdownButton = styled(DropdownButton)`
@@ -18,7 +18,7 @@ const StyledDropdownButton = styled(DropdownButton)`
   ${buttons.default};
   display: block;
   padding-left: 20px;
-  padding-right: 40px;
+  padding-right: 35px;
   position: relative;
 
   &:after {
@@ -35,10 +35,11 @@ const StyledDropdownButton = styled(DropdownButton)`
 const DropdownList = styled.ul`
   ${components.dropdownList};
   margin: 0;
+  min-width: max-content;
   position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
+  top: auto;
+  left: auto;
+  right: auto;
   z-index: ${zIndex.zIndex299};
 
   ${props => css`
@@ -47,6 +48,10 @@ const DropdownList = styled.ul`
     left: ${props.position === 'left' ? 0 : 'auto'};
     right: ${props.position === 'right' ? 0 : 'auto'};
   `};
+
+  @media (max-width: 600px) {
+    right: ${props => (props.isInHeader = 0)};
+  }
 `;
 
 function StyledMenuItem({ isActive, isCheckedItem = false, ...props }) {
@@ -58,7 +63,6 @@ function StyledMenuItem({ isActive, isCheckedItem = false, ...props }) {
         &:active,
         &:not(:focus),
         &:not(:active) {
-          background-color: ${isActive ? colors.activeBackground : 'inherit'};
           color: ${isActive ? colors.active : '#313d3e'};
           ${isCheckedItem ? 'display: flex; justify-content: start' : ''};
         }
@@ -88,6 +92,7 @@ function Dropdown({
   dropdownWidth = 'auto',
   dropdownPosition = 'left',
   dropdownTopOverlap = '0',
+  isInHeader,
   className,
   children,
 }) {
@@ -96,6 +101,7 @@ function Dropdown({
       closeOnSelection={closeOnSelection}
       onSelection={handler => handler()}
       className={className}
+      isInHeader={isInHeader}
     >
       {renderButton()}
       <Menu>
@@ -112,6 +118,7 @@ Dropdown.propTypes = {
   dropdownWidth: PropTypes.string,
   dropdownPosition: PropTypes.string,
   dropdownTopOverlap: PropTypes.string,
+  isInHeader: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node,
 };

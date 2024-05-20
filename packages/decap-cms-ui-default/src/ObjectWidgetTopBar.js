@@ -5,16 +5,15 @@ import { css } from '@emotion/react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 
 import Icon from './Icon';
-import { colors, buttons } from './styles';
+import { buttons } from './styles';
 import Dropdown, { StyledDropdownButton, DropdownItem } from './Dropdown';
 
 const TopBarContainer = styled.div`
   align-items: center;
-  background-color: ${colors.textFieldBorder};
   display: flex;
   justify-content: space-between;
   margin: 0 -14px;
-  padding: 13px;
+  padding: 13px 14px;
 `;
 
 const ExpandButtonContainer = styled.div`
@@ -31,9 +30,13 @@ const ExpandButtonContainer = styled.div`
 
 const ExpandButton = styled.button`
   ${buttons.button};
-  padding: 4px;
   background-color: transparent;
   color: inherit;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-left: -14px;
+  padding: 4px 8px;
 
   &:last-of-type {
     margin-right: 4px;
@@ -46,6 +49,16 @@ const AddButton = styled.button`
 
   ${Icon} {
     margin-left: 6px;
+  }
+`;
+
+const AddButtonDropdown = styled(StyledDropdownButton)`
+  ${buttons.small};
+  ${buttons.widget};
+  padding-inline-end: 26px;
+
+  &:after {
+    top: auto;
   }
 `;
 
@@ -77,9 +90,9 @@ class ObjectWidgetTopBar extends React.Component {
     return (
       <Dropdown
         renderButton={() => (
-          <StyledDropdownButton>
+          <AddButtonDropdown>
             {this.props.t('editor.editorWidgets.list.addType', { item: this.props.label })}
-          </StyledDropdownButton>
+          </AddButtonDropdown>
         )}
       >
         {types.map((type, idx) => (

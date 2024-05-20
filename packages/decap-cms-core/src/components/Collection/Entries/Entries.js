@@ -8,7 +8,7 @@ import { Loader, lengths } from 'decap-cms-ui-default';
 import EntryListing from './EntryListing';
 
 const PaginationMessage = styled.div`
-  width: ${lengths.topCardWidth};
+  max-width: ${lengths.topCardWidth};
   padding: 16px;
   text-align: center;
 `;

@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Icon, buttons, shadows, GoBackButton } from 'decap-cms-ui-default';
+import { Icon, buttons, GoBackButton } from 'decap-cms-ui-default';
 
 const StyledAuthenticationPage = styled.section`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 10%;
   height: 100vh;
+  padding: 20px;
 `;
 
 const PageLogoIcon = styled(Icon)`
   height: auto;
+  max-width: 300px;
 `;
 
 const LoginButton = styled.button`
   ${buttons.button};
-  ${shadows.dropDeep};
   ${buttons.default};
   ${buttons.gray};
 
@@ -27,6 +28,7 @@ const LoginButton = styled.button`
   display: flex;
   align-items: center;
   position: relative;
+  overflow: initial;
 
   ${Icon} {
     margin-right: 18px;
@@ -61,7 +63,7 @@ export default class AuthenticationPage extends React.Component {
 
     return (
       <StyledAuthenticationPage>
-        <PageLogoIcon size="300px" type="decap-cms" />
+        <PageLogoIcon size="80vh" type="decap-cms" />
         <LoginButton disabled={inProgress} onClick={this.handleLogin}>
           {inProgress ? t('auth.loggingIn') : t('auth.login')}
         </LoginButton>

@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { translate } from 'react-polyglot';
-import { Icon, Dropdown, DropdownItem, DropdownButton, colors } from 'decap-cms-ui-default';
+import {
+  Icon,
+  Dropdown,
+  DropdownItem,
+  DropdownButton,
+  colorsRaw,
+  colors,
+} from 'decap-cms-ui-default';
 
 import { stripProtocol } from '../../lib/urlHelper';
 
@@ -29,20 +36,19 @@ const AvatarImage = styled.img`
 const AvatarPlaceholderIcon = styled(Icon)`
   ${styles.avatarImage};
   height: 32px;
-  color: #1e2532;
+  color: ${colorsRaw.gray};
   background-color: ${colors.textFieldBorder};
 `;
 
 const AppHeaderSiteLink = styled.a`
   font-size: 14px;
-  font-weight: 400;
   color: #7b8290;
   padding: 10px 16px;
 `;
 
 const AppHeaderTestRepoIndicator = styled.a`
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
   color: #7b8290;
   padding: 10px 16px;
 `;
@@ -77,6 +83,7 @@ function SettingsDropdown({ displayUrl, isTestRepo, imageUrl, onLogoutClick, t }
         </AppHeaderSiteLink>
       ) : null}
       <Dropdown
+        isInHeader={true}
         dropdownTopOverlap="50px"
         dropdownWidth="100px"
         dropdownPosition="right"

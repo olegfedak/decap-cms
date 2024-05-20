@@ -13,11 +13,7 @@ const EmptyMessageContainer = styled.div`
 `;
 
 function EmptyMessage({ content, isPrivate }) {
-  return (
-    <EmptyMessageContainer isPrivate={isPrivate}>
-      <h1>{content}</h1>
-    </EmptyMessageContainer>
-  );
+  return <EmptyMessageContainer isPrivate={isPrivate}>{content}</EmptyMessageContainer>;
 }
 
 EmptyMessage.propTypes = {

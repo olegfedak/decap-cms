@@ -27,7 +27,7 @@ const styles = {
     text-overflow: ellipsis;
   `,
   buttonMargin: css`
-    margin: 0 10px;
+    margin: 0;
   `,
   toolbarSection: css`
     height: 100%;
@@ -36,8 +36,8 @@ const styles = {
     border: 0 solid ${colors.textFieldBorder};
   `,
   publishedButton: css`
-    background-color: ${colorsRaw.tealLight};
-    color: ${colorsRaw.tealDark};
+    background-color: ${colors.activeBackground};
+    color: ${colors.active};
   `,
 };
 
@@ -77,48 +77,47 @@ const TooltipContainer = styled.div`
 
 const DropdownButton = styled(StyledDropdownButton)`
   ${styles.noOverflow}
-  @media (max-width: 1200px) {
-    padding-left: 10px;
-  }
 `;
 
 const ToolbarContainer = styled.div`
-  box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.05), 0 1px 3px 0 rgba(68, 74, 87, 0.1),
-    0 2px 54px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  min-width: 800px;
   z-index: ${zIndex.zIndex300};
-  background-color: #fff;
-  height: 66px;
+  background-color: ${colorsRaw.white};
+  height: 60px;
   display: flex;
   justify-content: space-between;
+  padding-right: 12px;
+  overflow-x: auto;
 `;
 
 const ToolbarSectionMain = styled.div`
   ${styles.toolbarSection};
   flex: 10;
   display: flex;
+  gap: 10;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 16px;
 `;
 
 const ToolbarSubSectionFirst = styled.div`
   display: flex;
+  gap: 16px;
   align-items: center;
 `;
 
 const ToolbarSubSectionLast = styled(ToolbarSubSectionFirst)`
   justify-content: flex-end;
+  width: max-content;
 `;
 
 const ToolbarSectionBackLink = styled(Link)`
   ${styles.toolbarSection};
-  border-right-width: 1px;
   font-weight: normal;
-  padding: 0 20px;
+  padding: 0 16px;
+  flex: none;
+  gap: 0;
+  min-width: 200px;
+  max-width: 70vw;
 
   &:hover,
   &:focus {
@@ -128,32 +127,32 @@ const ToolbarSectionBackLink = styled(Link)`
 
 const ToolbarSectionMeta = styled.div`
   ${styles.toolbarSection};
-  border-left-width: 1px;
-  padding: 0 7px;
 `;
 
 const ToolbarDropdown = styled(Dropdown)`
   ${styles.buttonMargin};
+  position: initial;
 
   ${Icon} {
-    color: ${colorsRaw.teal};
+    color: ${colorsRaw.accent};
   }
 `;
 
 const BackArrow = styled.div`
-  color: ${colors.textLead};
+  color: ${colors.text};
   font-size: 21px;
   font-weight: 600;
   margin-right: 16px;
 `;
 
 const BackCollection = styled.div`
-  color: ${colors.textLead};
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
 `;
 
 const BackStatus = styled.div`
   margin-top: 6px;
+  display: none !important;
 `;
 
 const BackStatusUnchanged = styled(BackStatus)`
@@ -170,25 +169,25 @@ const ToolbarButton = styled.button`
   ${styles.buttonMargin};
   ${styles.noOverflow};
   display: block;
-
-  @media (max-width: 1200px) {
-    padding: 0 10px;
-  }
 `;
 
 const DeleteButton = styled(ToolbarButton)`
-  ${buttons.lightRed};
+  ${buttons.grayText};
+
+  &:hover {
+    ${buttons.lightRed};
+  }
 `;
 
 const SaveButton = styled(ToolbarButton)`
-  ${buttons.lightBlue};
+  ${buttons.accent};
   &[disabled] {
     ${buttons.disabled};
   }
 `;
 
 const PublishedToolbarButton = styled(DropdownButton)`
-  ${styles.publishedButton}
+  ${buttons.lightAccent}
 `;
 
 const PublishedButton = styled(ToolbarButton)`
@@ -196,23 +195,22 @@ const PublishedButton = styled(ToolbarButton)`
 `;
 
 const PublishButton = styled(DropdownButton)`
-  background-color: ${colorsRaw.teal};
+  ${buttons.accent};
 `;
 
 const StatusButton = styled(DropdownButton)`
-  background-color: ${colorsRaw.tealLight};
-  color: ${colorsRaw.teal};
+  ${buttons.lightAccent};
 `;
 
 const PreviewButtonContainer = styled.div`
   margin-right: 12px;
-  color: ${colorsRaw.blue};
+  color: ${colorsRaw.accent};
   display: flex;
   align-items: center;
 
   a,
   ${Icon} {
-    color: ${colorsRaw.blue};
+    color: ${colorsRaw.accent};
   }
 
   ${Icon} {
@@ -225,7 +223,7 @@ const RefreshPreviewButton = styled.button`
   background: none;
   border: 0;
   cursor: pointer;
-  color: ${colorsRaw.blue};
+  color: ${colorsRaw.accent};
 
   span {
     margin-right: 6px;
@@ -374,8 +372,9 @@ export class EditorToolbar extends React.Component {
     return (
       <>
         <ToolbarDropdown
-          dropdownTopOverlap="40px"
+          dropdownTopOverlap="50px"
           dropdownWidth="120px"
+          dropdownPosition="none"
           renderButton={() => <StatusButton>{buttonText}</StatusButton>}
         >
           <StatusDropdownItem
@@ -408,8 +407,9 @@ export class EditorToolbar extends React.Component {
 
     return canPublish ? (
       <ToolbarDropdown
-        dropdownTopOverlap="40px"
+        dropdownTopOverlap="50px"
         dropdownWidth="200px"
+        dropdownPosition="none"
         renderButton={() => (
           <PublishButton>
             {isPublishing
@@ -449,8 +449,9 @@ export class EditorToolbar extends React.Component {
 
     return canPublish || canCreate ? (
       <ToolbarDropdown
-        dropdownTopOverlap="40px"
+        dropdownTopOverlap="50px"
         dropdownWidth="150px"
+        dropdownPosition="none"
         key="td-publish-create"
         renderButton={() => (
           <PublishedToolbarButton>
@@ -485,8 +486,9 @@ export class EditorToolbar extends React.Component {
     const { onDuplicate, t } = this.props;
     return canCreate ? (
       <ToolbarDropdown
-        dropdownTopOverlap="40px"
+        dropdownTopOverlap="50px"
         dropdownWidth="150px"
+        dropdownPosition="none"
         renderButton={() => (
           <PublishedToolbarButton>{t('editor.editorToolbar.published')}</PublishedToolbarButton>
         )}
@@ -510,8 +512,9 @@ export class EditorToolbar extends React.Component {
     return (
       <div>
         <ToolbarDropdown
-          dropdownTopOverlap="40px"
+          dropdownTopOverlap="50px"
           dropdownWidth="150px"
+          dropdownPosition="none"
           renderButton={() => (
             <PublishButton>
               {isPersisting
@@ -595,7 +598,7 @@ export class EditorToolbar extends React.Component {
       currentStatus
         ? [
             this.renderWorkflowStatusControls(),
-            this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish }),
+            !hasChanged && this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish }),
           ]
         : !isNewEntry &&
           this.renderExistingEntryWorkflowPublishControls({ canCreate, canPublish, canDelete }),
