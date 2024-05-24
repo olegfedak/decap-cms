@@ -40,28 +40,41 @@ function ReactSplitPaneGlobalStyles() {
     <Global
       styles={css`
         .Resizer.vertical {
-          width: ${lengths.borderWidth};
+          width: calc(${lengths.borderWidth} + 3px);
           cursor: col-resize;
           position: relative;
           background: none;
+          right: -2px;
+          z-index: 1;
 
           &:before {
             content: '';
-            width: ${lengths.borderWidth};
-            height: 100%;
+            width: calc(${lengths.borderWidth} + 1px);
+            height: 36px;
             position: relative;
+            top: calc(50% - 36px);
+            left: -1px;
+            border-radius: ${lengths.borderRadius};
             background-color: ${colors.textFieldBorder};
             display: block;
             z-index: 10;
             transition: background-color ${transitions.main};
           }
 
-          &:hover,
+          &:hover {
+            &:before {
+              background-color: ${colors.text};
+            }
+          }
+
           &:active {
             &:before {
               width: 4px;
-              left: -1px;
+              height: 100%;
+              top: 0;
+              border-radius: 0;
               background-color: ${colors.active};
+              transition: all ${transitions.main};
             }
           }
         }
@@ -125,7 +138,7 @@ const ControlPaneContainer = styled(PreviewPaneContainer)`
 
 const ViewControls = styled.div`
   position: absolute;
-  top: 10px;
+  top: 16px;
   right: 16px;
   z-index: ${zIndex.zIndex299};
 
