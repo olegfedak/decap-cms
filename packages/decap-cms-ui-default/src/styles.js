@@ -200,7 +200,7 @@ const buttons = {
     justify-content: center;
     align-items: center;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     background-color: ${colorsRaw.white};
     color: ${colors.controlLabel};
