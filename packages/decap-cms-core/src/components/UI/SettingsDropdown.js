@@ -22,11 +22,11 @@ const styles = {
 };
 
 const AvatarDropdownButton = styled(DropdownButton)`
-  display: inline-block;
-  padding: 8px;
+  display: flex;
   cursor: pointer;
   color: #1e2532;
   background-color: transparent;
+  align-items: center;
 `;
 
 const AvatarImage = styled.img`

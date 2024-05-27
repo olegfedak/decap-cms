@@ -50,7 +50,7 @@ const AppHeaderContent = styled.div`
   gap: 16px;
   width: 100%;
   max-width: 1440px;
-  padding: 0 12px;
+  padding: 0 20px;
   margin: 0 auto;
   height: 100%;
   align-items: center;
@@ -99,7 +99,7 @@ const AppHeaderNavLink = AppHeaderButton.withComponent(NavLink);
 const AppHeaderActions = styled.div`
   display: inline-flex;
   align-items: center;
-  flex: none;
+  gap: 16px;
 `;
 
 const AppHeaderQuickNewButton = styled(StyledDropdownButton)`
