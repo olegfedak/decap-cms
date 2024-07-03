@@ -107,10 +107,10 @@ function MenuList(props) {
     return props.children;
   }
   const rows = props.children;
-  const itemSize = 30;
+  const itemSize = 38;
   return (
     <FixedSizeList
-      style={{ width: '100%' }}
+      style={{ width: '100%', overflow: 'auto' }}
       width={300}
       height={Math.min(300, rows.length * itemSize + itemSize / 3)}
       itemCount={rows.length}

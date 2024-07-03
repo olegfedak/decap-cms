@@ -66,7 +66,7 @@ const ToolbarToggleLabel = styled.span`
     props.isActive &&
     css`
       font-weight: 600;
-      color: ${colors.active};
+      color: var(--accent);
     `};
 `;
 

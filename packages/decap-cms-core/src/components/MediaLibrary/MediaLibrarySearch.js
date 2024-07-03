@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Icon, lengths, colors, zIndex, transitions } from 'decap-cms-ui-default';
+import { Icon, lengths, zIndex, transitions } from 'decap-cms-ui-default';
 
 const SearchContainer = styled.div`
   height: 36px;
@@ -26,7 +26,7 @@ const SearchInput = styled.input`
 
   &:focus {
     outline: none;
-    box-shadow: inset 0 0 0 2px ${colors.active};
+    box-shadow: inset 0 0 0 2px var(--accent);
   }
 `;
 

@@ -28,8 +28,8 @@ exports[`NestedCollection should render connected component 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 
@@ -114,8 +114,8 @@ exports[`NestedCollection should render connected component 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 
@@ -183,8 +183,8 @@ exports[`NestedCollection should render connected component 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 
@@ -257,8 +257,8 @@ exports[`NestedCollection should render correctly with nested entries 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 
@@ -343,8 +343,8 @@ exports[`NestedCollection should render correctly with nested entries 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 
@@ -412,8 +412,8 @@ exports[`NestedCollection should render correctly with nested entries 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 
@@ -486,8 +486,8 @@ exports[`NestedCollection should render correctly with no entries 1`] = `
 .emotion-0:hover,
 .emotion-0:active,
 .emotion-0.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
   border-left-color: #4863c6;
 }
 

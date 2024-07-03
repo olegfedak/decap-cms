@@ -12,7 +12,7 @@ const TopBarContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 `;
 

@@ -37,10 +37,14 @@ function visualEditorStyles({ minimal }) {
   border-top-right-radius: 0;
   border-top: 0;
   margin-top: -${editorStyleVars.stickyDistanceBottom};
-  padding: 0;
+  padding: var(--space-m) var(--space-l);
   display: flex;
   flex-direction: column;
   z-index: ${zIndex.zIndex100};
+
+  @media (max-width: 600px) {
+    padding: var(--space-m);
+  }
 `;
 }
 
@@ -257,9 +261,6 @@ function Editor(props) {
               >
                 {editorValue.length !== 0 && (
                   <Editable
-                    className={css`
-                      padding: 16px 20px 0;
-                    `}
                     renderElement={renderElement}
                     renderLeaf={renderLeaf}
                     onKeyDown={handleKeyDown}

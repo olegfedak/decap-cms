@@ -4,20 +4,19 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Wrapper, Button as DropdownButton, Menu, MenuItem } from 'react-aria-menubutton';
 
-import { colors, buttons, components, zIndex } from './styles';
+import { buttons, components, zIndex } from './styles';
 import Icon from './Icon';
 
 const StyledWrapper = styled(Wrapper)`
   font-size: 14px;
   user-select: none;
-  position: ${props => (props.isInHeader ? 'initial' : 'relative')};
+  position: ${props => (props.position ? props.position : 'relative')};
 `;
 
 const StyledDropdownButton = styled(DropdownButton)`
   ${buttons.button};
   ${buttons.default};
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
 
@@ -48,10 +47,6 @@ const DropdownList = styled.ul`
     left: ${props.position === 'left' ? 0 : 'auto'};
     right: ${props.position === 'right' ? 0 : 'auto'};
   `};
-
-  @media (max-width: 600px) {
-    right: ${props => (props.isInHeader = 0)};
-  }
 `;
 
 function StyledMenuItem({ isActive, isCheckedItem = false, ...props }) {
@@ -63,12 +58,12 @@ function StyledMenuItem({ isActive, isCheckedItem = false, ...props }) {
         &:active,
         &:not(:focus),
         &:not(:active) {
-          color: ${isActive ? colors.active : '#313d3e'};
+          color: ${isActive ? 'var(--accent)' : '#313d3e'};
           ${isCheckedItem ? 'display: flex; justify-content: start' : ''};
         }
         &:hover {
-          color: ${colors.active};
-          background-color: ${colors.activeBackground};
+          color: var(--accent);
+          background-color: var(--accent-light);
         }
         &.active {
           text-decoration: underline;
@@ -92,7 +87,6 @@ function Dropdown({
   dropdownWidth = 'auto',
   dropdownPosition = 'left',
   dropdownTopOverlap = '0',
-  isInHeader,
   className,
   children,
 }) {
@@ -101,7 +95,6 @@ function Dropdown({
       closeOnSelection={closeOnSelection}
       onSelection={handler => handler()}
       className={className}
-      isInHeader={isInHeader}
     >
       {renderButton()}
       <Menu>
@@ -118,7 +111,6 @@ Dropdown.propTypes = {
   dropdownWidth: PropTypes.string,
   dropdownPosition: PropTypes.string,
   dropdownTopOverlap: PropTypes.string,
-  isInHeader: PropTypes.bool,
   className: PropTypes.string,
   children: PropTypes.node,
 };

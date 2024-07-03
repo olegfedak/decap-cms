@@ -34,7 +34,7 @@ const styleStrings = {
   widget: `
     display: block;
     width: 100%;
-    padding: ${lengths.inputPadding};
+    padding: var(--space-m) var(--space-l);
     margin: 0;
     border: ${borders.textField};
     border-radius: ${lengths.borderRadius};
@@ -52,9 +52,13 @@ const styleStrings = {
       text-indent: 14px;
       height: 58px;
     }
+
+    @media (max-width: 600px) {
+      padding: var(--space-m);
+    }
   `,
   widgetActive: `
-    border-color: ${colors.active};
+    border-color: var(--accent);
   `,
   widgetError: `
     border-color: ${colors.errorText};
@@ -69,7 +73,11 @@ const styleStrings = {
 };
 
 const ControlContainer = styled.div`
-  margin-block-end: 20px;
+  margin-block-end: var(--space-l);
+
+  @media (max-width: 600px) {
+    margin-block-end: var(--space-m);
+  }
 `;
 
 const ControlTopbar = styled.div`
@@ -95,7 +103,7 @@ export const ControlHint = styled.p`
   padding: 6px 6px 0;
   font-size: 12px;
   color: ${props =>
-    props.error ? colors.errorText : props.active ? colors.active : colors.controlLabel};
+    props.error ? colors.errorText : props.active ? 'var(--accent)' : colors.controlLabel};
   transition: color ${transitions.main};
   line-height: 1.4;
 `;

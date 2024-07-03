@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import TopBarProgress from 'react-topbar-progress-indicator';
-import { Loader, colors } from 'decap-cms-ui-default';
+import { Loader } from 'decap-cms-ui-default';
 
 import { loginUser, logoutUser } from '../../actions/auth';
 import { currentBackend } from '../../backend';
@@ -23,17 +23,39 @@ import NotFoundPage from './NotFoundPage';
 import Header from './Header';
 
 TopBarProgress.config({
-  barColors: {
-    0: colors.active,
-    '1.0': colors.active,
-  },
   shadowBlur: 0,
   barThickness: 2,
+});
+
+// Function for reading the value of a CSS variable
+function getCSSVariableValue(variableName) {
+  const value = getComputedStyle(document.documentElement).getPropertyValue(variableName).trim();
+  // console.log(`Value of ${variableName}:`, value);
+  return value;
+}
+
+// Execution after the page is fully loaded
+window.addEventListener('load', function () {
+  setTimeout(() => {
+    const accentColor = getCSSVariableValue('--accent');
+
+    if (accentColor) {
+      TopBarProgress.config({
+        barColors: {
+          0: accentColor,
+          '1.0': accentColor,
+        },
+      });
+    } else {
+      console.error('CSS variable --accent is not defined or has an invalid value.');
+    }
+  }, 100);
 });
 
 const AppMainContainer = styled.div`
   max-width: 1440px;
   margin: 0 auto;
+  padding-top: 60px;
 `;
 
 const ErrorContainer = styled.div`

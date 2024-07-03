@@ -3,10 +3,8 @@
 exports[`EditorToolbar should render normal save button 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -14,20 +12,47 @@ exports[`EditorToolbar should render normal save button 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -52,6 +77,7 @@ exports[`EditorToolbar should render normal save button 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -63,19 +89,30 @@ exports[`EditorToolbar should render normal save button 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-13 {
@@ -90,7 +127,13 @@ exports[`EditorToolbar should render normal save button 1`] = `
 }
 
 .emotion-13 .e1jeq5dr0 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-13 {
+    right: 0;
+  }
 }
 
 .emotion-15 {
@@ -103,15 +146,14 @@ exports[`EditorToolbar should render normal save button 1`] = `
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
@@ -132,12 +174,13 @@ exports[`EditorToolbar should render normal save button 1`] = `
 }
 
 .emotion-15:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-15:focus,
 .emotion-15:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-17 {
@@ -150,7 +193,7 @@ exports[`EditorToolbar should render normal save button 1`] = `
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -166,15 +209,18 @@ exports[`EditorToolbar should render normal save button 1`] = `
 }
 
 .emotion-19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -182,6 +228,14 @@ exports[`EditorToolbar should render normal save button 1`] = `
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-19 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-19 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-21 {
@@ -195,13 +249,29 @@ exports[`EditorToolbar should render normal save button 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-21 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-21 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-21 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -267,10 +337,8 @@ exports[`EditorToolbar should render normal save button 1`] = `
 exports[`EditorToolbar should render normal save button 2`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -278,20 +346,47 @@ exports[`EditorToolbar should render normal save button 2`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -316,6 +411,7 @@ exports[`EditorToolbar should render normal save button 2`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -327,19 +423,30 @@ exports[`EditorToolbar should render normal save button 2`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-13 {
@@ -354,7 +461,13 @@ exports[`EditorToolbar should render normal save button 2`] = `
 }
 
 .emotion-13 .e1jeq5dr0 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-13 {
+    right: 0;
+  }
 }
 
 .emotion-15 {
@@ -367,15 +480,14 @@ exports[`EditorToolbar should render normal save button 2`] = `
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
@@ -396,12 +508,13 @@ exports[`EditorToolbar should render normal save button 2`] = `
 }
 
 .emotion-15:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-15:focus,
 .emotion-15:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-17 {
@@ -414,7 +527,7 @@ exports[`EditorToolbar should render normal save button 2`] = `
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -430,15 +543,18 @@ exports[`EditorToolbar should render normal save button 2`] = `
 }
 
 .emotion-19 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -446,6 +562,14 @@ exports[`EditorToolbar should render normal save button 2`] = `
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-19 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-19 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-21 {
@@ -459,13 +583,29 @@ exports[`EditorToolbar should render normal save button 2`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-21 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-21 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-21 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -531,10 +671,8 @@ exports[`EditorToolbar should render normal save button 2`] = `
 exports[`EditorToolbar should render with default props 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -542,20 +680,47 @@ exports[`EditorToolbar should render with default props 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -580,6 +745,7 @@ exports[`EditorToolbar should render with default props 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -591,19 +757,30 @@ exports[`EditorToolbar should render with default props 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -616,14 +793,14 @@ exports[`EditorToolbar should render with default props 1`] = `
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab19;
-  color: #683bab;
+  background-color: var(--accent-light);
+  color: var(--accent);
 }
 
 .emotion-14 {
@@ -636,7 +813,7 @@ exports[`EditorToolbar should render with default props 1`] = `
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -652,15 +829,18 @@ exports[`EditorToolbar should render with default props 1`] = `
 }
 
 .emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -668,6 +848,14 @@ exports[`EditorToolbar should render with default props 1`] = `
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-18 {
@@ -681,13 +869,29 @@ exports[`EditorToolbar should render with default props 1`] = `
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-18 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-18 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-18 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -743,10 +947,8 @@ exports[`EditorToolbar should render with default props 1`] = `
 exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -754,20 +956,47 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -792,6 +1021,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -803,19 +1033,30 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -828,23 +1069,24 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -852,6 +1094,12 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-15 {
@@ -866,7 +1114,13 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
 }
 
 .emotion-15 .e1jeq5dr0 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    right: 0;
+  }
 }
 
 .emotion-17 {
@@ -879,16 +1133,14 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: #683bab19;
-  color: #683bab;
+  color: var(--accent);
 }
 
 .emotion-17:after {
@@ -907,9 +1159,24 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   color: currentColor;
 }
 
-.emotion-17:focus,
-.emotion-17:hover {
-  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
+.emotion-17:focus::before,
+.emotion-17:hover::before {
+  opacity: 0.15;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.emotion-17::before {
+  background: var(--accent);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .emotion-19 {
@@ -922,7 +1189,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -938,15 +1205,18 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
 }
 
 .emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -954,6 +1224,14 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-21 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-21 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-23 {
@@ -967,13 +1245,29 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-23 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-23 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-23 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -1041,10 +1335,8 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
 exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1052,20 +1344,47 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -1090,6 +1409,7 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -1101,19 +1421,30 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -1126,23 +1457,24 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -1150,6 +1482,12 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-15 {
@@ -1164,7 +1502,13 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
 }
 
 .emotion-15 .emotion-23 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    right: 0;
+  }
 }
 
 .emotion-17 {
@@ -1177,16 +1521,14 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: #683bab19;
-  color: #683bab;
+  color: var(--accent);
 }
 
 .emotion-17:after {
@@ -1205,9 +1547,24 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   color: currentColor;
 }
 
-.emotion-17:focus,
-.emotion-17:hover {
-  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
+.emotion-17:focus::before,
+.emotion-17:hover::before {
+  opacity: 0.15;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.emotion-17::before {
+  background: var(--accent);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .emotion-19 {
@@ -1272,15 +1629,18 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
 }
 
 .emotion-28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -1288,6 +1648,14 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-28 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-28 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-30 {
@@ -1301,13 +1669,29 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-30 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-30 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-30 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -1402,10 +1786,8 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
 exports[`EditorToolbar should render with status=pending_publish,useOpenAuthoring=false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1413,20 +1795,47 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -1451,6 +1860,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -1462,19 +1872,30 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -1487,23 +1908,24 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -1511,6 +1933,12 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-15 {
@@ -1525,7 +1953,13 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 }
 
 .emotion-15 .e1jeq5dr0 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    right: 0;
+  }
 }
 
 .emotion-17 {
@@ -1538,16 +1972,14 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: #683bab19;
-  color: #683bab;
+  color: var(--accent);
 }
 
 .emotion-17:after {
@@ -1566,9 +1998,24 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   color: currentColor;
 }
 
-.emotion-17:focus,
-.emotion-17:hover {
-  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
+.emotion-17:focus::before,
+.emotion-17:hover::before {
+  opacity: 0.15;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.emotion-17::before {
+  background: var(--accent);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .emotion-19 {
@@ -1581,7 +2028,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -1597,15 +2044,18 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 }
 
 .emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -1613,6 +2063,14 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-21 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-21 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-23 {
@@ -1626,13 +2084,29 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-23 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-23 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-23 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -1700,10 +2174,8 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 exports[`EditorToolbar should render with status=pending_publish,useOpenAuthoring=true 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1711,20 +2183,47 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -1749,6 +2248,7 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -1760,19 +2260,30 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -1785,23 +2296,24 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -1809,6 +2321,12 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-15 {
@@ -1823,7 +2341,13 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 }
 
 .emotion-15 .emotion-23 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    right: 0;
+  }
 }
 
 .emotion-17 {
@@ -1836,16 +2360,14 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: #683bab19;
-  color: #683bab;
+  color: var(--accent);
 }
 
 .emotion-17:after {
@@ -1864,9 +2386,24 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   color: currentColor;
 }
 
-.emotion-17:focus,
-.emotion-17:hover {
-  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
+.emotion-17:focus::before,
+.emotion-17:hover::before {
+  opacity: 0.15;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.emotion-17::before {
+  background: var(--accent);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .emotion-19 {
@@ -1913,15 +2450,18 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 }
 
 .emotion-26 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -1929,6 +2469,14 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-26 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-26 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-28 {
@@ -1942,13 +2490,29 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-28 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-28 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-28 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2038,10 +2602,8 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring=false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2049,20 +2611,47 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -2087,6 +2676,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -2098,19 +2688,30 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -2123,23 +2724,24 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -2147,6 +2749,12 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-15 {
@@ -2161,7 +2769,13 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 }
 
 .emotion-15 .e1jeq5dr0 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    right: 0;
+  }
 }
 
 .emotion-17 {
@@ -2174,16 +2788,14 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: #683bab19;
-  color: #683bab;
+  color: var(--accent);
 }
 
 .emotion-17:after {
@@ -2202,9 +2814,24 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   color: currentColor;
 }
 
-.emotion-17:focus,
-.emotion-17:hover {
-  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
+.emotion-17:focus::before,
+.emotion-17:hover::before {
+  opacity: 0.15;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.emotion-17::before {
+  background: var(--accent);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .emotion-19 {
@@ -2217,7 +2844,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -2233,15 +2860,18 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 }
 
 .emotion-21 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -2249,6 +2879,14 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-21 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-21 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-23 {
@@ -2262,13 +2900,29 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-23 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-23 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-23 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2336,10 +2990,8 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring=true 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2347,20 +2999,47 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -2385,6 +3064,7 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -2396,19 +3076,30 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -2421,23 +3112,24 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -2445,6 +3137,12 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-15 {
@@ -2459,7 +3157,13 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 }
 
 .emotion-15 .emotion-23 {
-  color: #683bab;
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    right: 0;
+  }
 }
 
 .emotion-17 {
@@ -2472,16 +3176,14 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   display: block;
-  padding-left: 20px;
   padding-right: 35px;
   position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  background: #683bab19;
-  color: #683bab;
+  color: var(--accent);
 }
 
 .emotion-17:after {
@@ -2500,9 +3202,24 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   color: currentColor;
 }
 
-.emotion-17:focus,
-.emotion-17:hover {
-  background: oklch(from #683bab19 l c h / calc(alpha + 5%));
+.emotion-17:focus::before,
+.emotion-17:hover::before {
+  opacity: 0.15;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.emotion-17::before {
+  background: var(--accent);
+  opacity: 0.1;
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
 }
 
 .emotion-19 {
@@ -2567,15 +3284,18 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 }
 
 .emotion-28 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -2583,6 +3303,14 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-28 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-28 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-30 {
@@ -2596,13 +3324,29 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-30 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-30 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-30 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2697,10 +3441,8 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 exports[`EditorToolbar should render with workflow controls hasUnpublishedChanges=false,isNewEntry=false,isModification=false,useOpenAuthoring=false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2708,20 +3450,47 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -2746,6 +3515,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -2757,19 +3527,30 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -2782,23 +3563,24 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -2806,6 +3588,12 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-14 {
@@ -2818,7 +3606,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -2834,15 +3622,18 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -2850,6 +3641,14 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-18 {
@@ -2863,13 +3662,29 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-18 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-18 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-18 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -2924,10 +3739,8 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 exports[`EditorToolbar should render with workflow controls hasUnpublishedChanges=false,isNewEntry=false,isModification=false,useOpenAuthoring=true 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2935,20 +3748,47 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -2973,6 +3813,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -2984,19 +3825,30 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -3009,23 +3861,24 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -3035,16 +3888,25 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   cursor: default;
 }
 
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
+}
+
 .emotion-14 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -3052,6 +3914,14 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-14 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-14 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-16 {
@@ -3065,13 +3935,29 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-16 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3121,10 +4007,8 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 exports[`EditorToolbar should render with workflow controls hasUnpublishedChanges=true,isNewEntry=false,isModification=false,useOpenAuthoring=false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3132,20 +4016,47 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -3170,6 +4081,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -3181,19 +4093,30 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -3206,23 +4129,24 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -3230,6 +4154,12 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-14 {
@@ -3242,7 +4172,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -3258,15 +4188,18 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -3274,6 +4207,14 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-18 {
@@ -3287,13 +4228,29 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-18 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-18 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-18 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3348,10 +4305,8 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 exports[`EditorToolbar should render with workflow controls hasUnpublishedChanges=true,isNewEntry=false,isModification=false,useOpenAuthoring=true 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3359,20 +4314,47 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -3397,6 +4379,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -3408,19 +4391,30 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -3433,23 +4427,24 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -3457,6 +4452,12 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-14 {
@@ -3469,7 +4470,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -3485,15 +4486,18 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -3501,6 +4505,14 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-18 {
@@ -3514,13 +4526,29 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-18 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-18 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-18 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3575,10 +4603,8 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 exports[`EditorToolbar should render with workflow controls hasUnpublishedChanges=true,isNewEntry=false,isModification=true,useOpenAuthoring=false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3586,20 +4612,47 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -3624,6 +4677,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -3635,19 +4689,30 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -3660,23 +4725,24 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -3684,6 +4750,12 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-14 {
@@ -3696,7 +4768,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -3712,15 +4784,18 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -3728,6 +4803,14 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-18 {
@@ -3741,13 +4824,29 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-18 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-18 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-18 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div
@@ -3802,10 +4901,8 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 exports[`EditorToolbar should render with workflow controls hasUnpublishedChanges=true,isNewEntry=false,isModification=true,useOpenAuthoring=true 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  width: 100%;
   z-index: 300;
   background-color: #fff;
-  height: 60px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3813,20 +4910,47 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding-right: var(--space-m);
+  }
 }
 
 .emotion-2 {
   color: #717a89;
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .emotion-2 {
+    margin-right: 16px;
+  }
 }
 
 .emotion-4 {
   font-size: 15px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .emotion-4 {
+    display: none!important;
+  }
 }
 
 .emotion-6 {
@@ -3851,6 +4975,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
   -webkit-flex: 10;
   -ms-flex: 10;
   flex: 10;
@@ -3862,19 +4987,30 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 }
 
 .emotion-10 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
+}
+
+.emotion-10 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-10 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-12 {
@@ -3887,23 +5023,24 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  background-color: #683bab;
+  background-color: var(--accent);
   color: #fff;
 }
 
 .emotion-12:hover {
-  background: oklch(from #683bab calc(l + 0.05) c h);
+  background: color-mix(in hsl, var(--accent) 95%, white);
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: oklch(from #683bab calc(l - 0.05) c h);
+  background: var(--accent);
+  background: color-mix(in hsl, var(--accent) 95%, black);
 }
 
 .emotion-12[disabled] {
@@ -3911,6 +5048,12 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   color: #717a89;
   opacity: 0.5;
   cursor: default;
+}
+
+@media (max-width: 600px) {
+  .emotion-12[disabled] {
+    display: none;
+  }
 }
 
 .emotion-14 {
@@ -3923,7 +5066,7 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   height: 36px;
   line-height: 36px;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 0 16px;
   margin: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -3939,15 +5082,18 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-16 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 16px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 12px;
+  -webkit-flex: none;
+  -ms-flex: none;
+  flex: none;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
@@ -3955,6 +5101,14 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+}
+
+.emotion-16 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-16 [class*='DropdownList'] {
+  position: fixed;
 }
 
 .emotion-18 {
@@ -3968,13 +5122,29 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
   -ms-flex-align: center;
   align-items: center;
   border: 0 solid #dfdfe3;
+  gap: 12px;
+}
+
+.emotion-18 [class*='StyledWrapper'] {
+  position: initial;
+}
+
+.emotion-18 [class*='DropdownList'] {
+  top: 50px;
+  position: fixed;
+}
+
+@media (max-width: 600px) {
+  .emotion-18 [class*='DropdownList'] {
+    right: 0;
+  }
 }
 
 <div
     class="emotion-0 emotion-1"
   >
     <mock-link
-      classname="css-82unxu-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
+      classname="css-19vfk0k-ToolbarSectionBackLink-toolbarSection e1d2l9mo18"
       to=""
     >
       <div

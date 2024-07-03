@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { dirname, sep } from 'path';
 import { stringTemplate } from 'decap-cms-lib-widgets';
-import { Icon, colors, components, lengths } from 'decap-cms-ui-default';
+import { Icon, components, lengths } from 'decap-cms-ui-default';
 import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { sortBy } from 'lodash';
@@ -60,8 +60,8 @@ const TreeNavLink = styled(NavLink)`
     &:hover,
     &:active,
     &.${props.activeClassName} {
-      color: ${colors.active};
-      background-color: ${colors.activeBackground};
+      color: var(--accent);
+      background-color: var(--accent-light);
       border-left-color: #4863c6;
     }
   `};

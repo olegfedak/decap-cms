@@ -94,7 +94,7 @@ const ErrorBoundaryContainer = styled.div`
   }
 
   a {
-    color: ${colors.active};
+    color: var(--accent);
   }
 `;
 

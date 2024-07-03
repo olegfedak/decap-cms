@@ -34,10 +34,11 @@ const styles = {
     display: flex;
     align-items: center;
     border: 0 solid ${colors.textFieldBorder};
+    gap: 12px;
   `,
   publishedButton: css`
-    background-color: ${colors.activeBackground};
-    color: ${colors.active};
+    background-color: var(--accent-light);
+    color: var(--accent);
   `,
 };
 
@@ -80,14 +81,21 @@ const DropdownButton = styled(StyledDropdownButton)`
 `;
 
 const ToolbarContainer = styled.div`
-  width: 100%;
   z-index: ${zIndex.zIndex300};
   background-color: ${colorsRaw.white};
-  height: 60px;
   display: flex;
   justify-content: space-between;
-  padding-right: 12px;
-  overflow-x: auto;
+  align-items: center;
+  gap: 16px;
+  padding-right: var(--space-l);
+  flex: 1;
+  margin: 0 auto;
+  height: 100%;
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    padding-right: var(--space-m);
+  }
 `;
 
 const ToolbarSectionMain = styled.div`
@@ -96,13 +104,22 @@ const ToolbarSectionMain = styled.div`
   display: flex;
   gap: 10;
   justify-content: space-between;
-  padding: 0 16px;
+  padding: 0 var(--space-m);
 `;
 
 const ToolbarSubSectionFirst = styled.div`
-  display: flex;
-  gap: 16px;
+  display: inline-flex;
   align-items: center;
+  gap: 12px;
+  flex: none;
+
+  [class*='StyledWrapper'] {
+    position: initial;
+  }
+
+  [class*='DropdownList'] {
+    position: fixed;
+  }
 `;
 
 const ToolbarSubSectionLast = styled(ToolbarSubSectionFirst)`
@@ -113,20 +130,40 @@ const ToolbarSubSectionLast = styled(ToolbarSubSectionFirst)`
 const ToolbarSectionBackLink = styled(Link)`
   ${styles.toolbarSection};
   font-weight: normal;
-  padding: 0 16px;
+  padding: 0 var(--space-l);
   flex: none;
   gap: 0;
-  min-width: 200px;
   max-width: 70vw;
 
   &:hover,
   &:focus {
     background-color: #f1f2f4;
   }
+
+  @media (min-width: 600px) {
+    min-width: 200px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 var(--space-m);
+  }
 `;
 
 const ToolbarSectionMeta = styled.div`
   ${styles.toolbarSection};
+
+  [class*='StyledWrapper'] {
+    position: initial;
+  }
+
+  [class*='DropdownList'] {
+    top: 50px;
+    position: fixed;
+
+    @media (max-width: 600px) {
+      right: 0;
+    }
+  }
 `;
 
 const ToolbarDropdown = styled(Dropdown)`
@@ -134,7 +171,11 @@ const ToolbarDropdown = styled(Dropdown)`
   position: initial;
 
   ${Icon} {
-    color: ${colorsRaw.accent};
+    color: var(--accent);
+  }
+
+  @media (max-width: 600px) {
+    right: 0;
   }
 `;
 
@@ -142,12 +183,19 @@ const BackArrow = styled.div`
   color: ${colors.text};
   font-size: 21px;
   font-weight: 600;
-  margin-right: 16px;
+
+  @media (min-width: 600px) {
+    margin-right: 16px;
+  }
 `;
 
 const BackCollection = styled.div`
   font-size: 15px;
   font-weight: 500;
+
+  @media (max-width: 600px) {
+    display: none !important;
+  }
 `;
 
 const BackStatus = styled.div`
@@ -184,6 +232,12 @@ const SaveButton = styled(ToolbarButton)`
   &[disabled] {
     ${buttons.disabled};
   }
+
+  @media (max-width: 600px) {
+    &[disabled] {
+      display: none;
+    }
+  }
 `;
 
 const PublishedToolbarButton = styled(DropdownButton)`
@@ -204,13 +258,13 @@ const StatusButton = styled(DropdownButton)`
 
 const PreviewButtonContainer = styled.div`
   margin-right: 12px;
-  color: ${colorsRaw.accent};
+  color: var(--accent);
   display: flex;
   align-items: center;
 
   a,
   ${Icon} {
-    color: ${colorsRaw.accent};
+    color: var(--accent);
   }
 
   ${Icon} {
@@ -223,7 +277,7 @@ const RefreshPreviewButton = styled.button`
   background: none;
   border: 0;
   cursor: pointer;
-  color: ${colorsRaw.accent};
+  color: var(--accent);
 
   span {
     margin-right: 6px;
@@ -234,6 +288,7 @@ const PreviewLink = RefreshPreviewButton.withComponent('a');
 
 const PublishDropDownItem = styled(DropdownItem)`
   min-width: initial;
+  white-space: normal;
 `;
 
 const StatusDropdownItem = styled(DropdownItem)`

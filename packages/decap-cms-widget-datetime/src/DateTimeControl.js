@@ -155,6 +155,7 @@ class DateTimeControl extends React.Component {
           display: flex !important;
           gap: 16px;
           align-items: center;
+          justify-content: space-between;
         `}
       >
         <input

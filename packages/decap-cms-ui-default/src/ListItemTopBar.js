@@ -74,9 +74,10 @@ ListItemTopBar.propTypes = {
 const StyledListItemTopBar = styled(ListItemTopBar)`
   display: flex;
   justify-content: space-between;
-  height: 26px;
+  height: 32px;
   border-radius: 0 ${lengths.borderRadius} 0 0;
   position: relative;
+  align-items: center;
 `;
 
 export default StyledListItemTopBar;

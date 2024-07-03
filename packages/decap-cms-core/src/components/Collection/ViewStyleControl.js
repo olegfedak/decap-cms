@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Icon, buttons, colors } from 'decap-cms-ui-default';
+import { Icon, buttons } from 'decap-cms-ui-default';
 
 import { VIEW_STYLE_LIST, VIEW_STYLE_GRID } from '../../constants/collectionViews';
 
@@ -13,7 +13,7 @@ const ViewControlsSection = styled.div`
 
 const ViewControlsButton = styled.button`
   ${buttons.button};
-  color: ${props => (props.isActive ? colors.active : '#b3b9c4')};
+  color: ${props => (props.isActive ? 'var(--accent)' : '#b3b9c4')};
   background-color: transparent;
   display: block;
   padding: 0;

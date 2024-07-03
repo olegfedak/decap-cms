@@ -8,7 +8,7 @@ const stateColors = {
     text: colors.controlLabel,
   },
   active: {
-    background: colors.active,
+    background: 'var(--accent)',
     text: colors.textLight,
   },
   error: {
@@ -30,7 +30,7 @@ const FieldLabel = styled.label`
   display: inline-block;
   border: 0;
   border-radius: ${lengths.borderRadius} ${lengths.borderRadius} 0 0;
-  padding: 3px 6px 3px;
+  padding: 3px 6px;
   margin: 0;
   transition: all ${transitions.main};
   position: relative;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-import { colors, colorsRaw, transitions } from './styles';
+import { colorsRaw, transitions } from './styles';
 
 const ToggleContainer = styled.button`
   display: inline-flex;
@@ -41,7 +41,7 @@ const ToggleBackground = styled.span`
   width: 34px;
   height: 20px;
   border-radius: 10px;
-  background-color: ${colors.active};
+  background-color: var(--accent);
 `;
 
 function Toggle({

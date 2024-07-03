@@ -13,8 +13,8 @@ import NestedCollection from './NestedCollection';
 
 const styles = {
   sidebarNavLinkActive: css`
-    color: ${colors.active};
-    background-color: ${colors.activeBackground};
+    color: var(--accent);
+    background-color: var(--accent-light);
   `,
 };
 

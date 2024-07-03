@@ -7,7 +7,7 @@ import { Map, List } from 'immutable';
 import { once } from 'lodash';
 import { v4 as uuid } from 'uuid';
 import { oneLine } from 'common-tags';
-import { lengths, components, buttons, colors, IconButton } from 'decap-cms-ui-default';
+import { lengths, components, buttons, colors, IconButton, colorsRaw } from 'decap-cms-ui-default';
 import { basename } from 'decap-cms-lib-util';
 import { arrayMoveImmutable as arrayMove } from 'array-move';
 import {
@@ -29,7 +29,7 @@ const ImageWrapper = styled.div`
   width: 155px;
   height: 100px;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   border: solid 1px ${colors.textFieldBorder};
   border-radius: ${lengths.borderRadius};
   overflow: hidden;
@@ -184,6 +184,12 @@ const FileWidgetButtonRemove = styled.button`
   color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
+
+  &:focus,
+  &:hover {
+    color: ${colorsRaw.redDark};
+    box-shadow: 0 0 0 1px ${colorsRaw.redDark}56, 0 1px 2px 0 ${colorsRaw.redDark}36;
+  }
 `;
 
 function isMultiple(value) {

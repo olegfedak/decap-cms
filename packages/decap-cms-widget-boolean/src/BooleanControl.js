@@ -8,7 +8,7 @@ function BooleanBackground({ isActive, ...props }) {
   return (
     <ToggleBackground
       css={css`
-        background-color: ${isActive ? colors.active : colors.inactive};
+        background-color: ${isActive ? 'var(--accent)' : colors.inactive};
       `}
       {...props}
     />

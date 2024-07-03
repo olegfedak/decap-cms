@@ -95,8 +95,9 @@ const lengths = {
   richTextEditorMinHeight: '300px',
   borderWidth: '2px',
   topCardWidth: '682px',
-  pageMargin: '20px 18px',
-  objectWidgetTopBarContainerPadding: '0 14px 0',
+  pageMargin: '20px 20px',
+  objectWidgetTopBarContainerPadding: '0 20px 0',
+  popupShadow: '0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5)',
 };
 
 const borders = {
@@ -118,10 +119,13 @@ const shadows = {
     box-shadow: 0 2px 6px 0 rgba(68, 74, 87, 0.1),0  1px 8px 0 rgba(68, 74, 87, 0.1);
   `,
   dropDeep: `
-    box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5)
+    box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5);
   `,
   inset: `
     box-shadow: inset 0 0 4px rgba(68, 74, 87, 0.3);
+  `,
+  popup: `
+    box-shadow: 0 20px 35px 0 rgba(68, 74, 87, 0.15),0 0px 1px 0px rgba(68, 74, 87, 0.5);
   `,
 };
 
@@ -193,7 +197,7 @@ const buttons = {
     height: 36px;
     line-height: 36px;
     font-weight: 500;
-    padding: 0 20px;
+    padding: 0 16px;
   `,
   widget: css`
     display: flex;
@@ -209,8 +213,8 @@ const buttons = {
 
     &:focus,
     &:hover {
-      color: ${colorsRaw.accent};
-      box-shadow: 0 0 0 1px ${colorsRaw.accent}56, 0 1px 2px 0 ${colorsRaw.accent}36;
+      color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent), 0 1px 2px 0 var(--accent-light);
     }
   `,
   medium: css`
@@ -227,24 +231,38 @@ const buttons = {
     line-height: 23px;
   `,
   accent: css`
-    background-color: ${colorsRaw.accent};
+    background-color: var(--accent);
     color: ${colorsRaw.white};
 
     &:hover {
-      background: oklch(from ${colorsRaw.accent} calc(l + 0.05) c h);
+      background: color-mix(in hsl, var(--accent) 95%, white);
     }
     &:focus,
     &:active {
-      background: oklch(from ${colorsRaw.accent} calc(l - 0.05) c h);
+      background: var(--accent);
+      background: color-mix(in hsl, var(--accent) 95%, black);
     }
   `,
   lightAccent: css`
-    background: ${colors.activeBackground};
-    color: ${colors.active};
-
+    color: var(--accent);
     &:focus,
     &:hover {
-      background: oklch(from ${colors.activeBackground} l c h / calc(alpha + 5%));
+      &::before {
+        opacity: 0.15;
+        transition: opacity ${transitions.main};
+      }
+    }
+
+    &::before {
+      background: var(--accent);
+      opacity: 0.1;
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity ${transitions.main};
     }
   `,
   gray: css`
@@ -263,7 +281,7 @@ const buttons = {
 
     &:focus,
     &:hover {
-      background-color: oklch(from ${colorsRaw.grayLight} l c h / calc(alpha + 5%));
+      background-color: hsl(from ${colorsRaw.grayLight} h s l / calc(alpha + 5%));
     }
   `,
   grayText: css`
@@ -379,7 +397,7 @@ const components = {
     padding: ${lengths.objectWidgetTopBarContainerPadding};
   `,
   dropdownList: css`
-    ${shadows.dropDeep};
+    ${shadows.popup};
     background-color: ${colorsRaw.white};
     border-radius: ${lengths.borderRadius};
     overflow: hidden;
@@ -391,7 +409,9 @@ const components = {
     color: ${colorsRaw.grayDark};
     font-weight: 500;
     border-bottom: 1px solid #eaebf1;
-    padding: 8px 14px;
+    padding: 8px var(--space-m);
+    width: 100%;
+    text-align: left;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -404,8 +424,8 @@ const components = {
     &:hover,
     &:active,
     &:focus {
-      color: ${colors.active};
-      background-color: ${colors.activeBackground};
+      color: var(--accent);
+      background-color: var(--accent-light);
     }
   `,
   viewControlsText: css`
@@ -419,6 +439,7 @@ const components = {
 const reactSelectStyles = {
   control: styles => ({
     ...styles,
+    color: colors.text,
     border: 0,
     boxShadow: 'none',
     padding: '9px 0 9px 12px',
@@ -426,13 +447,22 @@ const reactSelectStyles = {
   option: (styles, state) => ({
     ...styles,
     backgroundColor: state.isSelected
-      ? `${colors.active}`
+      ? 'var(--accent-light)'
       : state.isFocused
-      ? `${colors.activeBackground}`
+      ? 'var(--accent-light)'
       : 'transparent',
     paddingLeft: '22px',
+    color: state.isSelected ? 'var(--accent)' : ``,
   }),
-  menu: styles => ({ ...styles, right: 0, zIndex: zIndex.zIndex300 }),
+  menu: styles => ({
+    ...styles,
+    right: 0,
+    zIndex: zIndex.zIndex300,
+    borderRadius: lengths.borderRadius,
+    marginBlock: '4px',
+    overflow: 'auto',
+    boxShadow: lengths.popupShadow,
+  }),
   container: styles => ({ ...styles, padding: '0 !important' }),
   indicatorSeparator: (styles, state) =>
     state.hasValue && state.selectProps.isClearable
@@ -442,17 +472,17 @@ const reactSelectStyles = {
   clearIndicator: styles => ({ ...styles, color: `${colors.controlLabel}` }),
   multiValue: styles => ({
     ...styles,
-    backgroundColor: colors.activeBackground,
+    backgroundColor: 'var(--accent-light)',
     borderRadius: lengths.borderRadius,
   }),
   multiValueLabel: styles => ({
     ...styles,
-    color: colors.active,
+    color: 'var(--accent)',
     fontWeight: 500,
   }),
   multiValueRemove: styles => ({
     ...styles,
-    color: colors.active,
+    color: 'var(--accent)',
     ':hover': {
       color: colors.errorText,
     },
@@ -479,6 +509,12 @@ function GlobalStyles() {
       styles={css`
         :root {
           --accent: #683bab;
+          --accent-light: #683bab19;
+          --space-xs: 8px;
+          --space-s: 12px;
+          --space-m: 16px;
+          --space-l: 20px;
+          --space-xl: 24px;
         }
 
         *,

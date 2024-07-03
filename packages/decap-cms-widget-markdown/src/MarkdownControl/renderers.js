@@ -193,9 +193,9 @@ function ThematicBreak(props) {
           css={
             isSelected &&
             css`
-              box-shadow: 0 0 0 2px ${colors.active};
+              box-shadow: 0 0 0 2px var(--accent);
               border-radius: 8px;
-              color: ${colors.active};
+              color: var(--accent);
             `
           }
         />
@@ -250,7 +250,7 @@ function Image(props) {
         css={
           isSelected &&
           css`
-            box-shadow: 0 0 0 2px ${colors.active};
+            box-shadow: 0 0 0 2px var(--accent);
           `
         }
       />

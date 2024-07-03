@@ -14,7 +14,6 @@ const LibraryBottom = styled.div`
   flex-direction: row-reverse;
   overflow-x: auto;
   margin-inline: -20px;
-  padding-inline: 20px;
 `;
 
 const RowContainer = styled.div`
@@ -26,7 +25,8 @@ const RowContainer = styled.div`
 const ButtonsContainer = styled.div`
   display: flex;
   gap: 10px;
-  width: 100%;
+  padding-inline: 20px;
+  justify-content: end;
 `;
 
 function MediaLibraryBottom({

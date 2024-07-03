@@ -31,15 +31,17 @@ const SearchInput = styled.input`
   background-color: transparent;
   border-radius: ${lengths.borderRadius};
   font-size: 14px;
-  padding: 10px 6px 10px 36px;
+  font-weight: 500;
+  padding: 10px 6px 10px 38px;
   width: 100%;
   position: relative;
   z-index: ${zIndex.zIndex1};
   transition: ${transitions.main};
 
-  &:focus {
+  &:focus,
+  &:active {
     outline: none;
-    box-shadow: inset 0 0 0 2px ${colors.active};
+    box-shadow: inset 0 0 0 2px var(--accent);
   }
 `;
 
@@ -72,15 +74,15 @@ const SuggestionHeader = styled.li`
 
 const SuggestionItem = styled.li(
   ({ isActive }) => `
-  color: ${isActive ? colors.active : colorsRaw.grayDark};
-  background-color: ${isActive ? colors.activeBackground : 'inherit'};
+  color: ${isActive ? 'var(--accent)' : colorsRaw.grayDark};
+  background-color: ${isActive ? 'var(--accent-light)' : 'inherit'};
   padding: 6px 6px 6px 34px;
   cursor: pointer;
   position: relative;
 
   &:hover {
-    color: ${colors.active};
-    background-color: ${colors.activeBackground};
+    color: var(--accent);
+    background-color: var(--accent-light);
   }
 `,
 );

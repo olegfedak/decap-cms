@@ -8,7 +8,7 @@ import { components, buttons } from 'decap-cms-ui-default';
 
 const CollectionTopContainer = styled.div`
   ${components.cardTop};
-  margin-bottom: 22px;
+  margin-bottom: var(--space-l);
 `;
 
 const CollectionTopRow = styled.div`

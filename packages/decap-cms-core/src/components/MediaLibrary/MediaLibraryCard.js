@@ -11,7 +11,7 @@ const Card = styled.div`
   height: ${props => props.height};
   margin: ${props => props.margin};
   border: ${borders.textField};
-  border-color: ${props => props.isSelected && colors.active};
+  border-color: ${props => props.isSelected && 'var(--accent)'};
   border-radius: ${lengths.borderRadius};
   cursor: pointer;
   overflow: hidden;

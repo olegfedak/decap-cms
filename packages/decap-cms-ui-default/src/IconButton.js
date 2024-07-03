@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Icon from './Icon';
-import { buttons, colors, colorsRaw, shadows } from './styles';
+import { buttons, colors, colorsRaw } from './styles';
 
 const sizes = {
   small: '28px',
@@ -11,9 +11,9 @@ const sizes = {
 
 const ButtonRound = styled.button`
   ${buttons.button};
-  ${shadows.dropMiddle};
+  ${buttons.widget};
   background-color: ${colorsRaw.white};
-  color: ${props => colors[props.isActive ? `active` : `inactive`]};
+  color: ${props => [props.isActive ? `var(--accent)` : `${colors.inactive}`]};
   border-radius: 32px;
   display: flex;
   justify-content: center;
@@ -21,6 +21,10 @@ const ButtonRound = styled.button`
   width: ${props => sizes[props.size]};
   height: ${props => sizes[props.size]};
   padding: 0;
+
+  &:hover {
+    color: ${props => [props.isActive ? `var(--accent)` : `${colors.inactive}`]};
+  }
 `;
 
 function IconButton({ size, isActive, type, onClick, className, title }) {

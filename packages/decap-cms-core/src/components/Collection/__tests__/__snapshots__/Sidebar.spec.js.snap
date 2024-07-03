@@ -256,8 +256,8 @@ exports[`Sidebar should render sidebar with a simple collection 1`] = `
 .emotion-6:hover,
 .emotion-6:active,
 .emotion-6.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
 }
 
 <aside
@@ -377,8 +377,8 @@ exports[`Sidebar should render sidebar without search 1`] = `
 .emotion-6:hover,
 .emotion-6:active,
 .emotion-6.sidebar-active {
-  color: #683bab;
-  background-color: #683bab19;
+  color: var(--accent);
+  background-color: var(--accent-light);
 }
 
 <aside

@@ -3,18 +3,22 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { ClassNames } from '@emotion/react';
 import { List, Map } from 'immutable';
-import { colors, lengths, ObjectWidgetTopBar } from 'decap-cms-ui-default';
+import { colors, ObjectWidgetTopBar } from 'decap-cms-ui-default';
 import { stringTemplate } from 'decap-cms-lib-widgets';
 
 const styleStrings = {
   nestedObjectControl: `
-    padding: 6px 14px 0;
+    padding: 6px 20px 0;
     border-top: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   `,
   objectWidgetTopBarContainer: `
-    padding: ${lengths.objectWidgetTopBarContainerPadding};
+    padding: 0 var(--space-l);
+
+    @media (max-width: 600px) {
+      padding: 0 var(--space-m);
+    }
   `,
   collapsedObjectControl: `
     display: none;

@@ -10,7 +10,6 @@ import {
   DropdownItem,
   StyledDropdownButton,
   Loader,
-  lengths,
   components,
   buttons,
 } from 'decap-cms-ui-default';
@@ -29,8 +28,13 @@ import WorkflowList from './WorkflowList';
 const WorkflowContainer = styled.div`
   width: 100%;
   max-width: 1440px;
-  padding: ${lengths.pageMargin} 0;
+  padding: var(--space-l) var(--space-l) 0;
   overflow-y: hidden;
+  overflow-x: hidden;
+
+  @media (max-width: 600px) {
+    padding: var(--space-m) var(--space-m) 0;
+  }
 `;
 
 const WorkflowTop = styled.div`
@@ -39,6 +43,7 @@ const WorkflowTop = styled.div`
 
 const WorkflowTopRow = styled.div`
   display: flex;
+  gap: 20px;
   justify-content: space-between;
 `;
 

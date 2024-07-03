@@ -9,7 +9,8 @@ import {
   DropdownItem,
   DropdownButton,
   colorsRaw,
-  colors,
+  buttons,
+  transitions,
 } from 'decap-cms-ui-default';
 
 import { stripProtocol } from '../../lib/urlHelper';
@@ -35,9 +36,11 @@ const AvatarImage = styled.img`
 
 const AvatarPlaceholderIcon = styled(Icon)`
   ${styles.avatarImage};
+  ${buttons.widget}
   height: 32px;
   color: ${colorsRaw.gray};
-  background-color: ${colors.textFieldBorder};
+  padding: 0;
+  transition: all ${transitions.main};
 `;
 
 const AppHeaderSiteLink = styled.a`
@@ -83,8 +86,7 @@ function SettingsDropdown({ displayUrl, isTestRepo, imageUrl, onLogoutClick, t }
         </AppHeaderSiteLink>
       ) : null}
       <Dropdown
-        isInHeader={true}
-        dropdownTopOverlap="50px"
+        dropdownTopOverlap="36px"
         dropdownWidth="100px"
         dropdownPosition="right"
         renderButton={() => (

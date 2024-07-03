@@ -4,7 +4,7 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import styled from '@emotion/styled';
 import { connect } from 'react-redux';
 import { translate } from 'react-polyglot';
-import { lengths, components } from 'decap-cms-ui-default';
+import { components } from 'decap-cms-ui-default';
 
 import { getNewEntryUrl } from '../../lib/urlHelper';
 import Sidebar from './Sidebar';
@@ -26,17 +26,18 @@ import {
 } from '../../reducers/entries';
 
 const CollectionContainer = styled.div`
-  margin: ${lengths.pageMargin};
+  margin: var(--space-l);
 
   @media (max-width: 800px) {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-m);
+    margin: var(--space-m);
   }
 `;
 
 const CollectionMain = styled.main`
-  @media (min-width: 800px) {
+  @media (min-width: 801px) {
     padding-left: 270px;
   }
 `;

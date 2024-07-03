@@ -54,7 +54,7 @@ const NestedObjectLabel = styled.div`
   border-top: 0;
   border-radius: 0 0 ${lengths.borderRadius} ${lengths.borderRadius};
   background-color: ${colors.inputBackground};
-  padding: 13px;
+  padding: 7px 13px 13px;
 `;
 
 const styleStrings = {
@@ -62,13 +62,21 @@ const styleStrings = {
     display: none;
   `,
   objectWidgetTopBarContainer: `
-    padding: ${lengths.objectWidgetTopBarContainerPadding};
+    padding: 0 var(--space-l);
+
+    @media (max-width: 600px) {
+      padding: 0 var(--space-m);
+    }
   `,
 };
 
 const styles = {
   listControlItem: css`
-    margin-block-end: 14px;
+    margin-block-end: var(--space-l);
+
+    @media (max-width: 600px) {
+      margin-block-end: var(--space-m);
+    }
   `,
   listControlItemCollapsed: css`
     padding-bottom: 0;

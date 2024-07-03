@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import { css, keyframes } from '@emotion/react';
 import { CSSTransition } from 'react-transition-group';
 
-import { colors, zIndex } from './styles';
+import { zIndex } from './styles';
 
 const styles = {
   disabled: css`
@@ -149,7 +149,7 @@ const StyledLoader = styled(Loader)`
   &:after {
     animation: ${animations.loader} 0.6s linear;
     animation-iteration-count: infinite;
-    border-color: ${colors.active} transparent transparent;
+    border-color: var(--accent) transparent transparent;
     box-shadow: 0 0 0 1px transparent;
   }
 `;

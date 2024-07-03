@@ -3,7 +3,13 @@
 exports[`ListControl should add to list when add button is clicked 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -18,7 +24,7 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -106,7 +112,7 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -116,8 +122,8 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -154,7 +160,13 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -165,7 +177,7 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -272,7 +284,13 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
 exports[`ListControl should remove from list when remove button is clicked 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -287,7 +305,7 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -375,7 +393,7 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -385,8 +403,8 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -423,7 +441,13 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -434,7 +458,7 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -571,7 +595,13 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
 exports[`ListControl should remove from list when remove button is clicked 2`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -586,7 +616,7 @@ exports[`ListControl should remove from list when remove button is clicked 2`] =
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -674,7 +704,7 @@ exports[`ListControl should remove from list when remove button is clicked 2`] =
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -684,8 +714,8 @@ exports[`ListControl should remove from list when remove button is clicked 2`] =
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -722,7 +752,13 @@ exports[`ListControl should remove from list when remove button is clicked 2`] =
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -733,7 +769,7 @@ exports[`ListControl should remove from list when remove button is clicked 2`] =
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -852,7 +888,13 @@ exports[`ListControl should render empty list 1`] = `
 exports[`ListControl should render list with fields with collapse = "false" and default minimize_collapsed ("false") 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -867,7 +909,7 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -955,7 +997,7 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -965,8 +1007,8 @@ exports[`ListControl should render list with fields with collapse = "false" and 
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -1003,7 +1045,13 @@ exports[`ListControl should render list with fields with collapse = "false" and 
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -1014,7 +1062,7 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -1151,7 +1199,13 @@ exports[`ListControl should render list with fields with collapse = "false" and 
 exports[`ListControl should render list with fields with collapse = "false" and default minimize_collapsed = "true" 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -1166,7 +1220,7 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -1254,7 +1308,7 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -1264,8 +1318,8 @@ exports[`ListControl should render list with fields with collapse = "false" and 
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -1302,7 +1356,13 @@ exports[`ListControl should render list with fields with collapse = "false" and 
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -1313,7 +1373,7 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -1450,7 +1510,13 @@ exports[`ListControl should render list with fields with collapse = "false" and 
 exports[`ListControl should render list with fields with default collapse ("true") and minimize_collapsed ("false") 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -1465,7 +1531,7 @@ exports[`ListControl should render list with fields with default collapse ("true
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -1553,7 +1619,7 @@ exports[`ListControl should render list with fields with default collapse ("true
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -1563,8 +1629,8 @@ exports[`ListControl should render list with fields with default collapse ("true
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -1601,7 +1667,13 @@ exports[`ListControl should render list with fields with default collapse ("true
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -1612,7 +1684,7 @@ exports[`ListControl should render list with fields with default collapse ("true
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -1749,7 +1821,13 @@ exports[`ListControl should render list with fields with default collapse ("true
 exports[`ListControl should render list with fields with default collapse ("true") and minimize_collapsed = "true" 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -1764,7 +1842,7 @@ exports[`ListControl should render list with fields with default collapse ("true
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -1852,7 +1930,7 @@ exports[`ListControl should render list with fields with default collapse ("true
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -1862,8 +1940,8 @@ exports[`ListControl should render list with fields with default collapse ("true
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -1954,7 +2032,13 @@ exports[`ListControl should render list with fields with default collapse ("true
 exports[`ListControl should render list with nested object 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -1969,7 +2053,7 @@ exports[`ListControl should render list with nested object 1`] = `
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -2057,7 +2141,7 @@ exports[`ListControl should render list with nested object 1`] = `
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -2067,8 +2151,8 @@ exports[`ListControl should render list with nested object 1`] = `
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -2105,7 +2189,13 @@ exports[`ListControl should render list with nested object 1`] = `
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -2116,7 +2206,7 @@ exports[`ListControl should render list with nested object 1`] = `
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div
@@ -2253,7 +2343,13 @@ exports[`ListControl should render list with nested object 1`] = `
 exports[`ListControl should render list with nested object with collapse = false 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  padding: 0 14px 0;
+  padding: 0 var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-0 {
+    padding: 0 var(--space-m);
+  }
 }
 
 .emotion-1 {
@@ -2268,7 +2364,7 @@ exports[`ListControl should render list with nested object with collapse = false
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  margin: 0 -14px;
+  margin: 0 -13px;
   padding: 13px 14px;
 }
 
@@ -2356,7 +2452,7 @@ exports[`ListControl should render list with nested object with collapse = false
   -ms-flex-align: center;
   align-items: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   background-color: #fff;
   color: #5D626F;
@@ -2366,8 +2462,8 @@ exports[`ListControl should render list with nested object with collapse = false
 
 .emotion-10:focus,
 .emotion-10:hover {
-  color: #683bab;
-  box-shadow: 0 0 0 1px #683bab56,0 1px 2px 0 #683bab36;
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
 
 .emotion-10 .emotion-7 {
@@ -2404,7 +2500,13 @@ exports[`ListControl should render list with nested object with collapse = false
 }
 
 .emotion-15 {
-  margin-block-end: 14px;
+  margin-block-end: var(--space-l);
+}
+
+@media (max-width: 600px) {
+  .emotion-15 {
+    margin-block-end: var(--space-m);
+  }
 }
 
 .emotion-17 {
@@ -2415,7 +2517,7 @@ exports[`ListControl should render list with nested object with collapse = false
   border-top: 0;
   border-radius: 0 0 6px 6px;
   background-color: #fff;
-  padding: 13px;
+  padding: 7px 13px 13px;
 }
 
 <div

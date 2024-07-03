@@ -23,7 +23,7 @@ import { checkBackendStatus } from '../../actions/status';
 
 const styles = {
   buttonActive: css`
-    color: ${colors.active};
+    color: var(--accent);
   `,
 };
 
@@ -32,7 +32,7 @@ function AppHeader(props) {
     <header
       css={css`
         ${shadows.dropMain};
-        position: sticky;
+        position: fixed;
         width: 100%;
         top: 0;
         background-color: ${colors.foreground};
@@ -44,21 +44,44 @@ function AppHeader(props) {
   );
 }
 
+const AppHeaderContentWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: 1440px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+`;
+
 const AppHeaderContent = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 20px;
-  margin: 0 auto;
-  height: 100%;
   align-items: center;
-  overflow-x: auto;
-  overflow-y: hidden;
+  gap: 16px;
+  padding: 0 20px;
+  flex: 1;
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 100%;
+  white-space: nowrap;
+
+  @media (max-width: 600px) {
+    padding: 0 var(--space-m);
+  }
 `;
 
-const AppHeaderButton = styled.button`
+const AppHeaderButton = styled.div`
   ${buttons.button};
   background: none;
   color: #7b8290;
@@ -99,7 +122,23 @@ const AppHeaderNavLink = AppHeaderButton.withComponent(NavLink);
 const AppHeaderActions = styled.div`
   display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
+  flex: none;
+
+  @media (max-width: 1440px) {
+    [class*='StyledWrapper'] {
+      position: initial;
+    }
+
+    [class*='DropdownList'] {
+      top: 50px;
+    }
+  }
+  @media (max-width: 600px) {
+    [class*='DropdownList'] {
+      right: 0;
+    }
+  }
 `;
 
 const AppHeaderQuickNewButton = styled(StyledDropdownButton)`
@@ -171,65 +210,66 @@ class Header extends React.Component {
 
     return (
       <AppHeader>
-        <AppHeaderContent>
-          <nav>
-            <AppHeaderNavList>
-              <li>
-                <AppHeaderNavLink
-                  to="/"
-                  activeClassName="header-link-active"
-                  isActive={(match, location) => location.pathname.startsWith('/collections/')}
-                >
-                  <Icon type="page" />
-                  {t('app.header.content')}
-                </AppHeaderNavLink>
-              </li>
-              {hasWorkflow && (
+        <AppHeaderContentWrapper>
+          <AppHeaderContent>
+            <nav>
+              <AppHeaderNavList>
                 <li>
-                  <AppHeaderNavLink to="/workflow" activeClassName="header-link-active">
-                    <Icon type="workflow" />
-                    {t('app.header.workflow')}
+                  <AppHeaderNavLink
+                    to="/"
+                    activeClassName="header-link-active"
+                    isActive={(match, location) => location.pathname.startsWith('/collections/')}
+                  >
+                    <Icon type="page" />
+                    {t('app.header.content')}
                   </AppHeaderNavLink>
                 </li>
-              )}
-              {showMediaButton && (
-                <li>
-                  <AppHeaderButton onClick={openMediaLibrary}>
-                    <Icon type="media-alt" />
-                    {t('app.header.media')}
-                  </AppHeaderButton>
-                </li>
-              )}
-            </AppHeaderNavList>
-          </nav>
-          <AppHeaderActions>
-            {creatableCollections.size > 0 && (
-              <Dropdown
-                isInHeader={true}
-                renderButton={() => (
-                  <AppHeaderQuickNewButton> {t('app.header.quickAdd')}</AppHeaderQuickNewButton>
+                {hasWorkflow && (
+                  <li>
+                    <AppHeaderNavLink to="/workflow" activeClassName="header-link-active">
+                      <Icon type="workflow" />
+                      {t('app.header.workflow')}
+                    </AppHeaderNavLink>
+                  </li>
                 )}
-                dropdownTopOverlap="48px"
-                dropdownWidth="160px"
-                dropdownPosition=""
-              >
-                {creatableCollections.map(collection => (
-                  <DropdownItem
-                    key={collection.get('name')}
-                    label={collection.get('label_singular') || collection.get('label')}
-                    onClick={() => this.handleCreatePostClick(collection.get('name'))}
-                  />
-                ))}
-              </Dropdown>
-            )}
-            <SettingsDropdown
-              displayUrl={displayUrl}
-              isTestRepo={isTestRepo}
-              imageUrl={user?.avatar_url}
-              onLogoutClick={onLogoutClick}
-            />
-          </AppHeaderActions>
-        </AppHeaderContent>
+                {showMediaButton && (
+                  <li>
+                    <AppHeaderButton onClick={openMediaLibrary}>
+                      <Icon type="media-alt" />
+                      {t('app.header.media')}
+                    </AppHeaderButton>
+                  </li>
+                )}
+              </AppHeaderNavList>
+            </nav>
+            <AppHeaderActions>
+              {creatableCollections.size > 0 && (
+                <Dropdown
+                  renderButton={() => (
+                    <AppHeaderQuickNewButton> {t('app.header.quickAdd')}</AppHeaderQuickNewButton>
+                  )}
+                  dropdownTopOverlap="30px"
+                  dropdownWidth="160px"
+                  dropdownPosition="auto"
+                >
+                  {creatableCollections.map(collection => (
+                    <DropdownItem
+                      key={collection.get('name')}
+                      label={collection.get('label_singular') || collection.get('label')}
+                      onClick={() => this.handleCreatePostClick(collection.get('name'))}
+                    />
+                  ))}
+                </Dropdown>
+              )}
+              <SettingsDropdown
+                displayUrl={displayUrl}
+                isTestRepo={isTestRepo}
+                imageUrl={user?.avatar_url}
+                onLogoutClick={onLogoutClick}
+              />
+            </AppHeaderActions>
+          </AppHeaderContent>
+        </AppHeaderContentWrapper>
       </AppHeader>
     );
   }

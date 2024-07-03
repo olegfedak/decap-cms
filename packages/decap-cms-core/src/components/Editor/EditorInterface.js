@@ -69,11 +69,11 @@ function ReactSplitPaneGlobalStyles() {
 
           &:active {
             &:before {
-              width: 4px;
+              width: 3px;
               height: 100%;
               top: 0;
               border-radius: 0;
-              background-color: ${colors.active};
+              background-color: var(--accent);
               transition: all ${transitions.main};
             }
           }
@@ -112,10 +112,28 @@ const EditorContainer = styled.div`
 
 const EditorHeader = styled.div`
   position: fixed;
-  top: 0;
   width: 100%;
-  height: 60px;
-  z-index: 320;
+  top: 0;
+  background-color: ${colors.foreground};
+  z-index: ${zIndex.zIndex300};
+  height: ${lengths.topBarHeight};
+`;
+
+const EditorHeaderContentWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const Editor = styled.div`
@@ -131,9 +149,13 @@ const PreviewPaneContainer = styled.div`
 `;
 
 const ControlPaneContainer = styled(PreviewPaneContainer)`
-  padding: 0 16px;
+  padding: 0 var(--space-l);
   position: relative;
   overflow-x: hidden;
+
+  @media (max-width: 600px) {
+    padding: 0 var(--space-m);
+  }
 `;
 
 const ViewControls = styled.div`
@@ -347,38 +369,44 @@ class EditorInterface extends Component {
     return (
       <EditorContainer>
         <EditorHeader>
-          <EditorToolbar
-            isPersisting={entry.get('isPersisting')}
-            isPublishing={entry.get('isPublishing')}
-            isUpdatingStatus={entry.get('isUpdatingStatus')}
-            isDeleting={entry.get('isDeleting')}
-            onPersist={this.handleOnPersist}
-            onPersistAndNew={() => this.handleOnPersist({ createNew: true })}
-            onPersistAndDuplicate={() => this.handleOnPersist({ createNew: true, duplicate: true })}
-            onDelete={onDelete}
-            onDeleteUnpublishedChanges={onDeleteUnpublishedChanges}
-            onChangeStatus={onChangeStatus}
-            showDelete={showDelete}
-            onPublish={onPublish}
-            unPublish={unPublish}
-            onDuplicate={onDuplicate}
-            onPublishAndNew={() => this.handleOnPublish({ createNew: true })}
-            onPublishAndDuplicate={() => this.handleOnPublish({ createNew: true, duplicate: true })}
-            user={user}
-            hasChanged={hasChanged}
-            displayUrl={displayUrl}
-            collection={collection}
-            hasWorkflow={hasWorkflow}
-            useOpenAuthoring={useOpenAuthoring}
-            hasUnpublishedChanges={hasUnpublishedChanges}
-            isNewEntry={isNewEntry}
-            isModification={isModification}
-            currentStatus={currentStatus}
-            onLogoutClick={onLogoutClick}
-            loadDeployPreview={loadDeployPreview}
-            deployPreview={deployPreview}
-            editorBackLink={editorBackLink}
-          />
+          <EditorHeaderContentWrapper>
+            <EditorToolbar
+              isPersisting={entry.get('isPersisting')}
+              isPublishing={entry.get('isPublishing')}
+              isUpdatingStatus={entry.get('isUpdatingStatus')}
+              isDeleting={entry.get('isDeleting')}
+              onPersist={this.handleOnPersist}
+              onPersistAndNew={() => this.handleOnPersist({ createNew: true })}
+              onPersistAndDuplicate={() =>
+                this.handleOnPersist({ createNew: true, duplicate: true })
+              }
+              onDelete={onDelete}
+              onDeleteUnpublishedChanges={onDeleteUnpublishedChanges}
+              onChangeStatus={onChangeStatus}
+              showDelete={showDelete}
+              onPublish={onPublish}
+              unPublish={unPublish}
+              onDuplicate={onDuplicate}
+              onPublishAndNew={() => this.handleOnPublish({ createNew: true })}
+              onPublishAndDuplicate={() =>
+                this.handleOnPublish({ createNew: true, duplicate: true })
+              }
+              user={user}
+              hasChanged={hasChanged}
+              displayUrl={displayUrl}
+              collection={collection}
+              hasWorkflow={hasWorkflow}
+              useOpenAuthoring={useOpenAuthoring}
+              hasUnpublishedChanges={hasUnpublishedChanges}
+              isNewEntry={isNewEntry}
+              isModification={isModification}
+              currentStatus={currentStatus}
+              onLogoutClick={onLogoutClick}
+              loadDeployPreview={loadDeployPreview}
+              deployPreview={deployPreview}
+              editorBackLink={editorBackLink}
+            />
+          </EditorHeaderContentWrapper>
         </EditorHeader>
         <Editor key={draftKey}>
           <ViewControls>

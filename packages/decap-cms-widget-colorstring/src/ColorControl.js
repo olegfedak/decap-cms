@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import ChromePicker from 'react-color';
 import tinycolor from 'tinycolor2';
-import { zIndex } from 'decap-cms-ui-default';
+import { zIndex, lengths } from 'decap-cms-ui-default';
 
 function ClearIcon() {
   return (
@@ -37,7 +37,7 @@ const ColorSwatchBackground = styled.div`
   height: 38px;
   width: 48px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 16px;
   border-radius: 5px;
 `;
 
@@ -52,7 +52,7 @@ const ColorSwatch = styled.div`
   height: 38px;
   width: 48px;
   margin-top: 10px;
-  margin-left: 14px;
+  margin-left: 16px;
   border-radius: 5px;
   text-align: center;
   font-size: 27px;
@@ -64,8 +64,8 @@ const ColorSwatch = styled.div`
 const ColorPickerContainer = styled.div`
   position: absolute;
   z-index: ${zIndex.zIndex1000};
-  margin-top: 48px;
-  margin-left: 12px;
+  margin-top: 50px;
+  margin-left: 14px;
 `;
 
 // fullscreen div to close color picker when clicking outside of picker
@@ -120,6 +120,22 @@ export default class ColorControl extends React.Component {
     // clear button is not displayed if allowInput: true
     const showClearButton = !allowInput && value;
 
+    // custom styles for ChromePicker
+    const customStyles = {
+      default: {
+        picker: {
+          width: '250px',
+          borderRadius: lengths.borderRadius,
+          overflow: 'hidden',
+          boxShadow: lengths.popupShadow,
+        },
+        input: {
+          fontSize: '14px',
+          height: '32px',
+        },
+      },
+    };
+
     return (
       <>
         {' '}
@@ -147,6 +163,7 @@ export default class ColorControl extends React.Component {
               color={value || ''}
               onChange={this.handleChange}
               disableAlpha={!field.get('enableAlpha', false)}
+              styles={customStyles}
             />
           </ColorPickerContainer>
         )}

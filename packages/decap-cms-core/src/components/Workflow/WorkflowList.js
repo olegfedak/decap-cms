@@ -14,39 +14,53 @@ import { selectEntryCollectionTitle } from '../../reducers/collections';
 
 const WorkflowListContainer = styled.div`
   height: calc(100vh - 80px);
+  width: auto;
   display: flex;
   gap: 16px;
-  margin: 0 -16px;
-  padding-inline: 16px;
+  margin: 0 -22px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
 
-  & > div {
-    scroll-snap-align: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 
-    @media (max-width: 460px) {
-      min-width: 80vw;
-    }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-    @media (min-width: 461px) and (max-width: 640px) {
-      min-width: 70vw;
-    }
+  & .inner-container {
+    display: flex;
+    gap: 16px;
+    padding: 0 var(--space-l);
+    flex: 1;
 
-    @media (min-width: 641px) and (max-width: 780px) {
-      min-width: 60vw;
-    }
+    & > div {
+      scroll-snap-align: center;
 
-    @media (min-width: 781px) and (max-width: 900px) {
-      min-width: 50vw;
-    }
+      @media (max-width: 460px) {
+        min-width: 80vw;
+      }
 
-    @media (min-width: 901px) and (max-width: 1000px) {
-      min-width: 40vw;
-    }
+      @media (min-width: 461px) and (max-width: 640px) {
+        min-width: 70vw;
+      }
 
-    @media (min-width: 1001px) {
-      width: 33.33%;
+      @media (min-width: 641px) and (max-width: 780px) {
+        min-width: 60vw;
+      }
+
+      @media (min-width: 781px) and (max-width: 900px) {
+        min-width: 50vw;
+      }
+
+      @media (min-width: 901px) and (max-width: 1000px) {
+        min-width: 40vw;
+      }
+
+      @media (min-width: 1001px) {
+        width: 33.33%;
+      }
     }
   }
 `;
@@ -104,7 +118,7 @@ const styles = {
     }
   `,
   columnHovered: css`
-    border-color: ${colors.active};
+    border-color: var(--accent);
   `,
   hiddenColumn: css`
     display: none;
@@ -220,7 +234,7 @@ class WorkflowList extends React.Component {
         >
           {(connect, { isHovered }) =>
             connect(
-              <div style={{ 'min-height': '100%' }}>
+              <div style={{ minHeight: '100%' }}>
                 <div
                   css={[
                     styles.column,
@@ -305,7 +319,11 @@ class WorkflowList extends React.Component {
     const ListContainer = this.props.isOpenAuthoring
       ? WorkflowListContainerOpenAuthoring
       : WorkflowListContainer;
-    return <ListContainer>{columns}</ListContainer>;
+    return (
+      <ListContainer>
+        <div className="inner-container">{columns}</div>
+      </ListContainer>
+    );
   }
 }
 
