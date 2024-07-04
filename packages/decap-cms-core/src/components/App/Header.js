@@ -98,7 +98,7 @@ const AppHeaderButton = styled.div`
 
   &:hover,
   &:active,
-  &:focus {
+  &:focus-visible {
     ${styles.buttonActive};
 
     ${Icon} {
