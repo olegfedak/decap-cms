@@ -644,19 +644,28 @@ export class EditorToolbar extends React.Component {
 
     return [
       <SaveButton
-        disabled={!hasChanged}
         key="save-button"
+        disabled={!hasChanged}
         onClick={() => hasChanged && onPersist()}
       >
         {isPersisting ? t('editor.editorToolbar.saving') : t('editor.editorToolbar.save')}
       </SaveButton>,
       currentStatus
         ? [
-          this.renderWorkflowStatusControls(),
-          !hasChanged && this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish }),
-        ]
-        : !isNewEntry &&
-        this.renderExistingEntryWorkflowPublishControls({ canCreate, canPublish, canDelete }),
+            <React.Fragment key="workflow-status-controls">
+              {this.renderWorkflowStatusControls()}
+              {!hasChanged && this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish })}
+            </React.Fragment>,
+          ]
+        : !isNewEntry && (
+            <React.Fragment key="existing-entry-workflow-publish-controls">
+              {this.renderExistingEntryWorkflowPublishControls({
+                canCreate,
+                canPublish,
+                canDelete,
+              })}
+            </React.Fragment>
+          ),
       (!showDelete || useOpenAuthoring) && !hasUnpublishedChanges && !isModification ? null : (
         <DeleteButton
           key="delete-button"
