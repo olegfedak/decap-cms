@@ -452,8 +452,8 @@ const reactSelectStyles = {
     backgroundColor: state.isSelected
       ? 'var(--accent-light)'
       : state.isFocused
-        ? 'var(--accent-light)'
-        : 'transparent',
+      ? 'var(--accent-light)'
+      : 'transparent',
     paddingLeft: '22px',
     color: state.isSelected ? 'var(--accent)' : ``,
   }),
