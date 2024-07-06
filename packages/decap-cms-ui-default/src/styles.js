@@ -235,12 +235,15 @@ const buttons = {
     color: ${colorsRaw.white};
 
     &:hover {
-      background: color-mix(in hsl, var(--accent) 95%, white);
+      background: hsl(from var(--accent) h s calc(l + 5%));
     }
     &:focus,
     &:active {
-      background: var(--accent);
-      background: color-mix(in hsl, var(--accent) 95%, black);
+      background: hsl(from var(--accent) h s calc(l - 5%));
+
+      @media (hover: none) {
+        background: var(--accent);
+      }
     }
   `,
   lightAccent: css`
@@ -390,7 +393,7 @@ const components = {
   cardTopDescription: css`
     max-width: 480px;
     color: ${colors.text};
-    font-size: 14px;
+    font-size: 15px;
     margin: 8px 0 0;
   `,
   objectWidgetTopBarContainer: css`
@@ -449,8 +452,8 @@ const reactSelectStyles = {
     backgroundColor: state.isSelected
       ? 'var(--accent-light)'
       : state.isFocused
-      ? 'var(--accent-light)'
-      : 'transparent',
+        ? 'var(--accent-light)'
+        : 'transparent',
     paddingLeft: '22px',
     color: state.isSelected ? 'var(--accent)' : ``,
   }),
@@ -528,7 +531,7 @@ function GlobalStyles() {
         }
 
         /**
-       * Don't show outlines if the user is utilizing mouse rather than keyboard.
+        * Don't show outlines if the user is utilizing mouse rather than keyboard.
           [data-whatintent='mouse'] *:focus {
             outline: none;
           }
@@ -548,6 +551,7 @@ function GlobalStyles() {
           background-color: ${colorsRaw.gray}15;
           color: ${colors.text};
           margin: 0;
+          line-height: 1.5;
         }
 
         ul,
@@ -565,7 +569,6 @@ function GlobalStyles() {
           font-family: ${fonts.primary};
           color: ${colors.textLead};
           font-size: 15px;
-          line-height: 1.5;
           margin-top: 0;
         }
 
@@ -576,6 +579,7 @@ function GlobalStyles() {
         h5,
         h6 {
           font-weight: 500;
+          line-height: 1.4;
         }
 
         h1 {

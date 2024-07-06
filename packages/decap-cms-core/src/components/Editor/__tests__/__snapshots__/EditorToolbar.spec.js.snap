@@ -174,13 +174,19 @@ exports[`EditorToolbar should render normal save button 1`] = `
 }
 
 .emotion-15:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-15:focus,
 .emotion-15:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-15:focus,
+  .emotion-15:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-17 {
@@ -508,13 +514,19 @@ exports[`EditorToolbar should render normal save button 2`] = `
 }
 
 .emotion-15:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-15:focus,
 .emotion-15:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-15:focus,
+  .emotion-15:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-17 {
@@ -1080,13 +1092,19 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=false 1`
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -1468,13 +1486,19 @@ exports[`EditorToolbar should render with status=draft,useOpenAuthoring=true 1`]
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -1919,13 +1943,19 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -2307,13 +2337,19 @@ exports[`EditorToolbar should render with status=pending_publish,useOpenAuthorin
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -2735,13 +2771,19 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -3123,13 +3165,19 @@ exports[`EditorToolbar should render with status=pending_review,useOpenAuthoring
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -3574,13 +3622,19 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -3872,13 +3926,19 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -4140,13 +4200,19 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -4438,13 +4504,19 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -4736,13 +4808,19 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
@@ -5034,13 +5112,19 @@ exports[`EditorToolbar should render with workflow controls hasUnpublishedChange
 }
 
 .emotion-12:hover {
-  background: color-mix(in hsl, var(--accent) 95%, white);
+  background: hsl(from var(--accent) h s calc(l + 5%));
 }
 
 .emotion-12:focus,
 .emotion-12:active {
-  background: var(--accent);
-  background: color-mix(in hsl, var(--accent) 95%, black);
+  background: hsl(from var(--accent) h s calc(l - 5%));
+}
+
+@media (hover: none) {
+  .emotion-12:focus,
+  .emotion-12:active {
+    background: var(--accent);
+  }
 }
 
 .emotion-12[disabled] {
