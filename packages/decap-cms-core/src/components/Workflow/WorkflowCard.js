@@ -23,23 +23,23 @@ const styles = {
 
 const WorkflowLink = styled(Link)`
   display: block;
-  padding: 0 20px 18px;
+  padding: 0 20px 16px;
   height: 200px;
   overflow: hidden;
 `;
 
 const CardCollection = styled.div`
-  font-size: 14px;
-  color: ${colors.textLead};
+  font-size: 13px;
   text-transform: uppercase;
-  margin-top: 18px;
+  margin-top: 16px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  letter-spacing: 0.05em;
 `;
 
 const CardTitle = styled.h2`
-  margin: 28px 0 0;
+  margin: var(--space-m) 0 0;
   color: ${colors.textLead};
 `;
 
@@ -50,7 +50,7 @@ const CardDateContainer = styled.div`
 const CardBody = styled.p`
   ${styles.text};
   color: ${colors.text};
-  margin: 24px 0 0;
+  margin: var(--space-s) 0 0;
   overflow-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
@@ -61,8 +61,9 @@ const CardButtonContainer = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  padding: 18px 20px;
+  padding: 12px 20px 16px;
   display: flex;
+  gap: 10px;
   opacity: 0;
   transition: opacity ${transitions.main};
   cursor: pointer;
@@ -71,7 +72,6 @@ const CardButtonContainer = styled.div`
 const DeleteButton = styled.button`
   ${styles.button};
   ${buttons.lightGray};
-  margin-right: 6px;
 
   &:hover {
     background-color: ${colorsRaw.redLight};
@@ -82,7 +82,6 @@ const DeleteButton = styled.button`
 const PublishButton = styled.button`
   ${styles.button};
   ${buttons.accent};
-  margin-left: 6px;
 
   &[disabled] {
     ${buttons.disabled};
@@ -91,9 +90,15 @@ const PublishButton = styled.button`
 
 const WorkflowCardContainer = styled.div`
   ${components.card};
-  margin-bottom: 16px;
+  margin-bottom: var(--space-s);
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 1000px) {
+    ${CardButtonContainer} {
+      opacity: 1;
+    }
+  }
 
   &:hover ${CardButtonContainer} {
     opacity: 1;
