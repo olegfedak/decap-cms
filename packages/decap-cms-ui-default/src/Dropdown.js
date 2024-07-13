@@ -34,7 +34,7 @@ const StyledDropdownButton = styled(DropdownButton)`
 const DropdownList = styled.ul`
   ${components.dropdownList};
   margin: 0;
-  min-width: max-content;
+
   position: absolute;
   top: auto;
   left: auto;

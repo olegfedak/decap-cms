@@ -3,14 +3,7 @@ import PropTypes from 'prop-types';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import {
-  buttons,
-  colors,
-  Dropdown,
-  DropdownItem,
-  StyledDropdownButton,
-  text,
-} from 'decap-cms-ui-default';
+import { buttons, Dropdown, DropdownItem, StyledDropdownButton, text } from 'decap-cms-ui-default';
 
 import EditorControl from './EditorControl';
 import {
@@ -32,8 +25,9 @@ const ControlPaneContainer = styled.div`
 const LocaleButton = styled(StyledDropdownButton)`
   ${buttons.button};
   ${buttons.medium};
-  color: ${colors.controlLabel};
-  background: ${colors.textFieldBorder};
+  ${buttons.lightAccent};
+  font-weight: 600;
+
   height: 100%;
 
   &:after {
@@ -47,13 +41,13 @@ const LocaleButtonWrapper = styled.div`
 
 const LocaleRowWrapper = styled.div`
   display: flex;
+  gap: 10px;
+  justify-content: center;
 `;
 
 const StyledDropdown = styled(Dropdown)`
   width: max-content;
-  margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: 20px;
 `;
 
 function LocaleDropdown({ locales, dropdownText, onLocaleChange }) {

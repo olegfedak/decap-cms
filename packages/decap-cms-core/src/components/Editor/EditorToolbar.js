@@ -91,7 +91,6 @@ const ToolbarContainer = styled.div`
   flex: 1;
   margin: 0 auto;
   height: 100%;
-  white-space: nowrap;
 
   @media (max-width: 600px) {
     padding-right: var(--space-m);
@@ -119,6 +118,7 @@ const ToolbarSubSectionFirst = styled.div`
 
   [class*='DropdownList'] {
     position: fixed;
+    min-width: 170px;
   }
 `;
 
@@ -159,9 +159,14 @@ const ToolbarSectionMeta = styled.div`
   [class*='DropdownList'] {
     top: 50px;
     position: fixed;
+    width: 160px;
+
+    @media (max-width: 1440px) {
+      right: var(--space-l);
+    }
 
     @media (max-width: 600px) {
-      right: 0;
+      right: var(--space-m);
     }
   }
 `;

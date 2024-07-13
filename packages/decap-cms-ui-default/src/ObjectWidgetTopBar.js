@@ -7,7 +7,6 @@ import ImmutablePropTypes from 'react-immutable-proptypes';
 import Icon from './Icon';
 import { buttons } from './styles';
 import Dropdown, { StyledDropdownButton, DropdownItem } from './Dropdown';
-import { dropRight } from 'lodash';
 
 const TopBarContainer = styled.div`
   align-items: center;
@@ -90,14 +89,13 @@ class ObjectWidgetTopBar extends React.Component {
   renderTypesDropdown(types) {
     return (
       <Dropdown
-        dropdownPosition='right'
-        dropdownWidth='160px'
+        dropdownPosition="right"
+        dropdownWidth="160px"
         renderButton={() => (
           <AddButtonDropdown>
             {this.props.t('editor.editorWidgets.list.addType', { item: this.props.label })}
           </AddButtonDropdown>
         )}
-
       >
         {types.map((type, idx) => (
           <DropdownItem

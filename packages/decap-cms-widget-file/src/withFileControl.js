@@ -7,7 +7,7 @@ import { Map, List } from 'immutable';
 import { once } from 'lodash';
 import { v4 as uuid } from 'uuid';
 import { oneLine } from 'common-tags';
-import { lengths, components, buttons, colors, IconButton, colorsRaw } from 'decap-cms-ui-default';
+import { lengths, buttons, colors, IconButton, colorsRaw, transitions } from 'decap-cms-ui-default';
 import { basename } from 'decap-cms-lib-util';
 import { arrayMoveImmutable as arrayMove } from 'array-move';
 import {
@@ -25,24 +25,27 @@ import { restrictToParentElement } from '@dnd-kit/modifiers';
 const MAX_DISPLAY_LENGTH = 50;
 
 const ImageWrapper = styled.div`
-  flex-basis: 155px;
+  ${buttons.widget}
   width: 155px;
   height: 100px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-  border: solid 1px ${colors.textFieldBorder};
   border-radius: ${lengths.borderRadius};
   overflow: hidden;
   cursor: ${props => (props.sortable ? 'pointer' : 'auto')};
+  padding: 0;
+  transition: all ${transitions.main};
+
+  &:focus,
+  &:active {
+    box-shadow: 0 0 0 2px var(--accent), 0 1px 2px 0 var(--accent-light);
+  }
 `;
 
 const SortableImageButtonsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  column-gap: 10px;
-  margin-right: 20px;
-  margin-top: -10px;
-  margin-bottom: 10px;
+  gap: 10px;
+  margin-top: 10px;
+  color: ${colors.inactive};
 `;
 
 const StyledImage = styled.img`
@@ -117,6 +120,8 @@ function SortableMultiImageWrapper({
       css={css`
         display: flex;
         flex-wrap: wrap;
+        gap: 10px;
+        margin-block-end: var(--space-m);
       `}
     >
       <DndContext
@@ -170,20 +175,16 @@ const FileWidgetButton = styled.button`
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5d626f;
   padding: 4px 10px;
-  box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
 `;
 
 const FileWidgetButtonRemove = styled.button`
   ${buttons.button};
-  ${components.badgeDanger};
+  ${buttons.widget};
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5d626f;
   padding: 4px 10px;
-  box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
 
   &:focus,
   &:hover {
@@ -447,7 +448,7 @@ export default function withFileControl({ forImage } = {}) {
       const { t, field } = this.props;
       const allowsMultiple = this.allowsMultiple();
       return (
-        <div>
+        <React.Fragment>
           {forImage ? this.renderImages() : null}
           <div>
             {forImage ? null : this.renderFileLinks()}
@@ -475,14 +476,14 @@ export default function withFileControl({ forImage } = {}) {
               </FileWidgetButtonRemove>
             </div>
           </div>
-        </div>
+        </React.Fragment>
       );
     };
 
     renderNoSelection = subject => {
       const { t, field } = this.props;
       return (
-        <span
+        <div
           css={css`
             display: flex;
             gap: 10px;
@@ -496,7 +497,7 @@ export default function withFileControl({ forImage } = {}) {
               {t(`editor.editorWidgets.${subject}.chooseUrl`)}
             </FileWidgetButton>
           ) : null}
-        </span>
+        </div>
       );
     };
 
@@ -506,14 +507,15 @@ export default function withFileControl({ forImage } = {}) {
 
       return (
         <div className={classNameWrapper}>
-          <span
+          <div
             css={css`
               display: flex;
               gap: 10px;
+              flex-flow: column;
             `}
           >
             {value ? this.renderSelection(subject) : this.renderNoSelection(subject)}
-          </span>
+          </div>
         </div>
       );
     }

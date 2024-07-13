@@ -36,11 +36,14 @@ const SearchInput = styled.input`
   width: 100%;
   position: relative;
   z-index: ${zIndex.zIndex1};
+
+  appearance: none;
   transition: ${transitions.main};
 
   &:focus,
   &:active {
     outline: none;
+
     box-shadow: inset 0 0 0 2px var(--accent);
   }
 `;

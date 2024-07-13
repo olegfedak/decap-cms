@@ -45,6 +45,13 @@ const WorkflowTopRow = styled.div`
   display: flex;
   gap: 20px;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    [class*='DropdownList'] {
+      right: 0;
+      left: auto;
+    }
+  }
 `;
 
 const WorkflowTopHeading = styled.h1`

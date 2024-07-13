@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Icon from './Icon';
-import { buttons, colors, colorsRaw } from './styles';
+import { buttons, colorsRaw } from './styles';
 
 const sizes = {
   small: '28px',
@@ -13,7 +13,7 @@ const ButtonRound = styled.button`
   ${buttons.button};
   ${buttons.widget};
   background-color: ${colorsRaw.white};
-  color: ${props => [props.isActive ? `var(--accent)` : `${colors.inactive}`]};
+  color: ${props => [props.isActive ? `var(--accent)` : `inherit`]};
   border-radius: 32px;
   display: flex;
   justify-content: center;
@@ -23,7 +23,14 @@ const ButtonRound = styled.button`
   padding: 0;
 
   &:hover {
-    color: ${props => [props.isActive ? `var(--accent)` : `${colors.inactive}`]};
+    color: ${props => props.isActive && 'var(--accent)'};
+    box-shadow: ${props =>
+      props.isActive && '0 0 0 1px var(--accent), 0 1px 2px 0 var(--accent-light)'};
+  }
+  &:active {
+    color: ${props => props.isActive && 'var(--accent)'};
+    box-shadow: ${props =>
+      props.isActive && '0 0 0 1px var(--accent), 0 1px 2px 0 var(--accent-light)'};
   }
 `;
 

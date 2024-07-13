@@ -10,7 +10,7 @@ import {
   DropdownButton,
   colorsRaw,
   buttons,
-  transitions,
+  colors,
 } from 'decap-cms-ui-default';
 
 import { stripProtocol } from '../../lib/urlHelper';
@@ -18,16 +18,23 @@ import { stripProtocol } from '../../lib/urlHelper';
 const styles = {
   avatarImage: css`
     width: 32px;
-    border-radius: 32px;
+    border-radius: 50%;
   `,
 };
 
 const AvatarDropdownButton = styled(DropdownButton)`
+  ${buttons.button}
+  ${buttons.widget}
+  ${buttons.medium}
   display: flex;
   cursor: pointer;
-  color: #1e2532;
+  color: ${colorsRaw.gray};
   background-color: transparent;
   align-items: center;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  border-radius: 50%;
 `;
 
 const AvatarImage = styled.img`
@@ -36,11 +43,8 @@ const AvatarImage = styled.img`
 
 const AvatarPlaceholderIcon = styled(Icon)`
   ${styles.avatarImage};
-  ${buttons.widget}
-  height: 32px;
-  color: ${colorsRaw.gray};
-  padding: 0;
-  transition: all ${transitions.main};
+  color: inherit;
+  background-color: ${colors.foreground};
 `;
 
 const AppHeaderSiteLink = styled.a`
@@ -87,7 +91,7 @@ function SettingsDropdown({ displayUrl, isTestRepo, imageUrl, onLogoutClick, t }
       ) : null}
       <Dropdown
         dropdownTopOverlap="36px"
-        dropdownWidth="100px"
+        dropdownWidth="160px"
         dropdownPosition="right"
         renderButton={() => (
           <AvatarDropdownButton>
@@ -96,6 +100,12 @@ function SettingsDropdown({ displayUrl, isTestRepo, imageUrl, onLogoutClick, t }
         )}
       >
         <DropdownItem label={t('ui.settingsDropdown.logOut')} onClick={onLogoutClick} />
+        <DropdownItem
+          label="Test Backend ↗"
+          href="https://www.decapcms.org/docs/test-backend"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
       </Dropdown>
     </React.Fragment>
   );

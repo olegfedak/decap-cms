@@ -115,13 +115,17 @@ exports[`ListControl should add to list when add button is clicked 1`] = `
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -396,13 +400,17 @@ exports[`ListControl should remove from list when remove button is clicked 1`] =
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -707,13 +715,17 @@ exports[`ListControl should remove from list when remove button is clicked 2`] =
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -1000,13 +1012,17 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -1311,13 +1327,17 @@ exports[`ListControl should render list with fields with collapse = "false" and 
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -1622,13 +1642,17 @@ exports[`ListControl should render list with fields with default collapse ("true
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -1933,13 +1957,17 @@ exports[`ListControl should render list with fields with default collapse ("true
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -2144,13 +2172,17 @@ exports[`ListControl should render list with nested object 1`] = `
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
@@ -2455,13 +2487,17 @@ exports[`ListControl should render list with nested object with collapse = false
   font-weight: 500;
   line-height: 1;
   background-color: #fff;
-  color: #5D626F;
+  color: #5d626f;
   padding: 4px 10px;
   box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15),0 1px 2px 0 rgba(68, 74, 87, 0.1);
 }
 
-.emotion-10:focus,
 .emotion-10:hover {
+  color: #555a65;
+  box-shadow: 0 0 0 1px #5D626F99,0 1px 2px 0 rgba(68, 74, 87, 0.1);
+}
+
+.emotion-10:focus {
   color: var(--accent);
   box-shadow: 0 0 0 1px var(--accent),0 1px 2px 0 var(--accent-light);
 }
