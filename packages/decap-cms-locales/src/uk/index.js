@@ -296,7 +296,7 @@ const uk = {
       draftHeader: 'В роботі',
       inReviewHeader: 'На розгляді',
       readyHeader: 'Готово',
-      currentEntries: '%{smart_count} запис |||| %{smart_count} записи |||| %{smart_count} записів',
+      currentEntries: '%{smart_count} |||| %{smart_count} |||| %{smart_count}',
     },
   },
 };

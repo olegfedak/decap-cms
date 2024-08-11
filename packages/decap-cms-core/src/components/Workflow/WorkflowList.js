@@ -144,22 +144,19 @@ const ColumnHeader = styled.h2`
   ${props =>
     props.name === 'draft' &&
     css`
-      background-color: ${colors.statusDraftBackground};
-      color: ${colors.statusDraftText};
+      background: none;
     `}
 
   ${props =>
     props.name === 'pending_review' &&
     css`
-      background-color: ${colors.statusReviewBackground};
-      color: ${colors.statusReviewText};
+      background: none;
     `}
 
   ${props =>
     props.name === 'pending_publish' &&
     css`
-      background-color: ${colors.statusReadyBackground};
-      color: ${colors.statusReadyText};
+      background: none;
     `}
 `;
 
@@ -169,7 +166,9 @@ const ColumnName = styled.div`
 
 const ColumnCount = styled.div`
   display: inline-block;
-  margin-inline-start: 10px;
+  margin-inline-start: 16px;
+  font-size: 17px;
+  color: ${colors.text};
 `;
 
 // This is a namespace so that we can only drop these elements on a DropTarget with the same

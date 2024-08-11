@@ -89,6 +89,8 @@ class ObjectWidgetTopBar extends React.Component {
   renderTypesDropdown(types) {
     return (
       <Dropdown
+        dropdownPosition="right"
+        dropdownWidth="160px"
         renderButton={() => (
           <AddButtonDropdown>
             {this.props.t('editor.editorWidgets.list.addType', { item: this.props.label })}

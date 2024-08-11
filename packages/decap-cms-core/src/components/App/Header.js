@@ -134,17 +134,18 @@ const AppHeaderActions = styled.div`
       top: 50px;
     }
   }
+
   @media (max-width: 600px) {
     [class*='DropdownList'] {
-      right: 0;
+      right: var(--space-m);
     }
   }
 `;
 
 const AppHeaderQuickNewButton = styled(StyledDropdownButton)`
   ${buttons.button};
+  ${buttons.widget};
   ${buttons.medium};
-  ${buttons.gray};
   margin-right: 8px;
 
   &:after {

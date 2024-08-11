@@ -92,7 +92,7 @@ const lengths = {
   topBarHeight: '60px',
   inputPadding: '16px 20px',
   borderRadius: '6px',
-  richTextEditorMinHeight: '300px',
+  richTextEditorMinHeight: '200px',
   borderWidth: '2px',
   topCardWidth: '682px',
   pageMargin: '20px 20px',
@@ -207,12 +207,15 @@ const buttons = {
     font-weight: 500;
     line-height: 1;
     background-color: ${colorsRaw.white};
-    color: ${colors.controlLabel};
+    color: #5d626f;
     padding: 4px 10px;
     box-shadow: 0 0 0 1px rgba(68, 74, 87, 0.15), 0 1px 2px 0 rgba(68, 74, 87, 0.1);
 
-    &:focus,
     &:hover {
+      color: #555a65;
+      box-shadow: 0 0 0 1px ${colors.controlLabel}99, 0 1px 2px 0 rgba(68, 74, 87, 0.1);
+    }
+    &:focus {
       color: var(--accent);
       box-shadow: 0 0 0 1px var(--accent), 0 1px 2px 0 var(--accent-light);
     }
@@ -235,34 +238,40 @@ const buttons = {
     color: ${colorsRaw.white};
 
     &:hover {
-      background: color-mix(in hsl, var(--accent) 95%, white);
+      background: hsl(from var(--accent) h s calc(l + 5%));
+
+      @media (hover: none) and (pointer: coarse) {
+        background: var(--accent);
+      }
     }
     &:focus,
     &:active {
-      background: var(--accent);
-      background: color-mix(in hsl, var(--accent) 95%, black);
+      background: hsl(from var(--accent) h s calc(l - 5%));
+
+      @media (hover: none) and (pointer: coarse) {
+        background: var(--accent);
+      }
     }
   `,
   lightAccent: css`
+    background-color: var(--accent-light);
     color: var(--accent);
-    &:focus,
+
     &:hover {
-      &::before {
-        opacity: 0.15;
-        transition: opacity ${transitions.main};
+      background: hsl(from var(--accent-light) h s l / 0.12);
+
+      @media (hover: none) and (pointer: coarse) {
+        background: var(--accent-light);
       }
     }
 
-    &::before {
-      background: var(--accent);
-      opacity: 0.1;
-      width: 100%;
-      height: 100%;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      transition: opacity ${transitions.main};
+    &:focus,
+    &:active {
+      background: hsl(from var(--accent-light) h s l / 0.15);
+
+      @media (hover: none) and (pointer: coarse) {
+        background: var(--accent-light);
+      }
     }
   `,
   gray: css`
@@ -390,7 +399,7 @@ const components = {
   cardTopDescription: css`
     max-width: 480px;
     color: ${colors.text};
-    font-size: 14px;
+    font-size: 15px;
     margin: 8px 0 0;
   `,
   objectWidgetTopBarContainer: css`
@@ -517,6 +526,10 @@ function GlobalStyles() {
           --space-xl: 24px;
         }
 
+        * {
+          accent-color: var(--accent);
+        }
+
         *,
         *:before,
         *:after {
@@ -528,7 +541,7 @@ function GlobalStyles() {
         }
 
         /**
-       * Don't show outlines if the user is utilizing mouse rather than keyboard.
+        * Don't show outlines if the user is utilizing mouse rather than keyboard.
           [data-whatintent='mouse'] *:focus {
             outline: none;
           }
@@ -548,6 +561,7 @@ function GlobalStyles() {
           background-color: ${colorsRaw.gray}15;
           color: ${colors.text};
           margin: 0;
+          line-height: 1.5;
         }
 
         ul,
@@ -565,7 +579,6 @@ function GlobalStyles() {
           font-family: ${fonts.primary};
           color: ${colors.textLead};
           font-size: 15px;
-          line-height: 1.5;
           margin-top: 0;
         }
 
@@ -576,6 +589,7 @@ function GlobalStyles() {
         h5,
         h6 {
           font-weight: 500;
+          line-height: 1.3;
         }
 
         h1 {

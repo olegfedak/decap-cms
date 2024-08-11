@@ -91,7 +91,6 @@ const ToolbarContainer = styled.div`
   flex: 1;
   margin: 0 auto;
   height: 100%;
-  white-space: nowrap;
 
   @media (max-width: 600px) {
     padding-right: var(--space-m);
@@ -119,6 +118,7 @@ const ToolbarSubSectionFirst = styled.div`
 
   [class*='DropdownList'] {
     position: fixed;
+    min-width: 170px;
   }
 `;
 
@@ -159,9 +159,14 @@ const ToolbarSectionMeta = styled.div`
   [class*='DropdownList'] {
     top: 50px;
     position: fixed;
+    width: 160px;
+
+    @media (max-width: 1440px) {
+      right: var(--space-l);
+    }
 
     @media (max-width: 600px) {
-      right: 0;
+      right: var(--space-m);
     }
   }
 `;
@@ -644,19 +649,28 @@ export class EditorToolbar extends React.Component {
 
     return [
       <SaveButton
-        disabled={!hasChanged}
         key="save-button"
+        disabled={!hasChanged}
         onClick={() => hasChanged && onPersist()}
       >
         {isPersisting ? t('editor.editorToolbar.saving') : t('editor.editorToolbar.save')}
       </SaveButton>,
       currentStatus
         ? [
-          this.renderWorkflowStatusControls(),
-          !hasChanged && this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish }),
-        ]
-        : !isNewEntry &&
-        this.renderExistingEntryWorkflowPublishControls({ canCreate, canPublish, canDelete }),
+            <React.Fragment key="workflow-status-controls">
+              {this.renderWorkflowStatusControls()}
+              {!hasChanged && this.renderNewEntryWorkflowPublishControls({ canCreate, canPublish })}
+            </React.Fragment>,
+          ]
+        : !isNewEntry && (
+            <React.Fragment key="existing-entry-workflow-publish-controls">
+              {this.renderExistingEntryWorkflowPublishControls({
+                canCreate,
+                canPublish,
+                canDelete,
+              })}
+            </React.Fragment>
+          ),
       (!showDelete || useOpenAuthoring) && !hasUnpublishedChanges && !isModification ? null : (
         <DeleteButton
           key="delete-button"
